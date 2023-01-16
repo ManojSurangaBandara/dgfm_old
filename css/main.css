@@ -1,0 +1,40 @@
+@charset "utf-8";
+/* CSS Document */
+
+#error{
+color:#F00;	
+}
+
+.login_h{
+background-image:url(../images/log_h.jpg);
+background-repeat:repeat-x;
+height:100px;
+}
+.tblborder_l{
+	border:1px solid #ca7920;	
+}
+#page{
+ width:775px;
+}
+.site-body{
+background-color:#6a3500;	
+}
+
+.loginText{
+font-family:Verdana, Geneva, sans-serif;
+font-weight:bold;
+font-size:13px;
+color:#960;
+}
+.loginBox{
+height:12px;
+width:100px
+font-family:Verdana, Geneva, sans-serif;
+font-size:14px;
+color:#333;
+}
+
+.footertext{
+	color:#FFF;
+	font-size:12px;
+}

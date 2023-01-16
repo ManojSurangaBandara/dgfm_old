@@ -1,0 +1,3 @@
+<graph xaxisname='Account Office' yaxisname='Amount' hovercapbg='DEDEBE' hovercapborder='889E6D' rotateNames='0' yAxisMaxValue='100' numdivlines='20' divLineColor='CCCCCC' divLineAlpha='80' decimalPrecision='0' showAlternateHGridColor='1' AlternateHGridAlpha='30' AlternateHGridColor='CCCCCC' caption='Annual Money Allocation and Expenditure Chart' subcaption= 'For the Year of 2021' >  
+  
+<categories font='Arial' fontSize='11' fontColor='000000'><category name='DTE OF FIN' /><br/><category name='SFHQ (C)' /><br/></categories><dataset seriesName='Allocation' color='1D8BD1' ><set value='' /><br/><set value='' /><br/></dataset><dataset seriesName='Expenditure' color='FF0000' ><set value='45057739.24999999' /><br/><set value='279840' /><br/></dataset></graph>

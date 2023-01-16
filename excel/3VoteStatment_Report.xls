@@ -1,0 +1,104 @@
+				<html xmlns:o="urn:schemas-microsoft-com:office:office"
+				xmlns:x="urn:schemas-microsoft-com:office:excel"
+				xmlns="http://www.w3.org/TR/REC-html40">
+
+				<head>
+				<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+				<meta name=ProgId content=Excel.Sheet>
+				<!--[if gte mso 9]><xml>
+				 <o:DocumentProperties>
+				  <o:LastAuthor>Sriram</o:LastAuthor>
+				  <o:LastSaved>2005-01-02T07:46:23Z</o:LastSaved>
+				  <o:Version>10.2625</o:Version>
+				 </o:DocumentProperties>
+				 <o:OfficeDocumentSettings>
+				  <o:DownloadComponents/>
+				 </o:OfficeDocumentSettings>
+				</xml><![endif]-->
+				<style>
+				<!--table
+					{mso-displayed-decimal-separator:"\.";
+					mso-displayed-thousand-separator:"\,";}
+				@page
+					{margin:1.0in .75in 1.0in .75in;
+					mso-header-margin:.5in;
+					mso-footer-margin:.5in;}
+				tr
+					{mso-height-source:auto;}
+				col
+					{mso-width-source:auto;}
+				br
+					{mso-data-placement:same-cell;}
+				.style0
+					{mso-number-format:General;
+					text-align:general;
+					vertical-align:bottom;
+					white-space:nowrap;
+					mso-rotate:0;
+					mso-background-source:auto;
+					mso-pattern:auto;
+					color:windowtext;
+					font-size:10.0pt;
+					font-weight:400;
+					font-style:normal;
+					text-decoration:none;
+					font-family:Arial;
+					mso-generic-font-family:auto;
+					mso-font-charset:0;
+					border:none;
+					mso-protection:locked visible;
+					mso-style-name:Normal;
+					mso-style-id:0;}
+				td
+					{mso-style-parent:style0;
+					padding-top:1px;
+					padding-right:1px;
+					padding-left:1px;
+					mso-ignore:padding;
+					color:windowtext;
+					font-size:10.0pt;
+					font-weight:400;
+					font-style:normal;
+					text-decoration:none;
+					font-family:Arial;
+					mso-generic-font-family:auto;
+					mso-font-charset:0;
+					mso-number-format:General;
+					text-align:general;
+					vertical-align:bottom;
+					border:none;
+					mso-background-source:auto;
+					mso-pattern:auto;
+					mso-protection:locked visible;
+					white-space:nowrap;
+					mso-rotate:0;}
+				.xl24
+					{mso-style-parent:style0;
+					white-space:normal;}
+				-->
+				</style>
+				<!--[if gte mso 9]><xml>
+				 <x:ExcelWorkbook>
+				  <x:ExcelWorksheets>
+				   <x:ExcelWorksheet>
+					<x:Name>srirmam</x:Name>
+					<x:WorksheetOptions>
+					 <x:Selected/>
+					 <x:ProtectContents>False</x:ProtectContents>
+					 <x:ProtectObjects>False</x:ProtectObjects>
+					 <x:ProtectScenarios>False</x:ProtectScenarios>
+					</x:WorksheetOptions>
+				   </x:ExcelWorksheet>
+				  </x:ExcelWorksheets>
+				  <x:WindowHeight>10005</x:WindowHeight>
+				  <x:WindowWidth>10005</x:WindowWidth>
+				  <x:WindowTopX>120</x:WindowTopX>
+				  <x:WindowTopY>135</x:WindowTopY>
+				  <x:ProtectStructure>False</x:ProtectStructure>
+				  <x:ProtectWindows>False</x:ProtectWindows>
+				 </x:ExcelWorkbook>
+				</xml><![endif]-->
+				</head>
+
+				<body link=blue vlink=purple>
+				<table x:str border=0 cellpadding=0 cellspacing=0 style='border-collapse: collapse;table-layout:fixed;'><tr><td class=xl24 width=64 ><strong>SFHQ (E) -Quarantine Activities ( S&T)-OUTSTANDING STATEMENT FROM  2022-01-01  TO 2022-02-21 </strong></td></tr><tr><tr><td class=xl24 width=64 ><strong>Ser No</strong></td><td class=xl24 width=64 ><strong>Bill No</strong></td><td class=xl24 width=64 ><strong>Supplier Name</strong></td><td class=xl24 width=64 ><strong>Supplier Address</strong></td><td class=xl24 width=64 ><strong>VAT Reg No</strong></td><td class=xl24 width=64 ><strong>Amount</strong></td><td class=xl24 width=64 ><strong>Invoice Date</strong></td><td class=xl24 width=64 ><strong>Invoice No</strong></td><td class=xl24 width=64 ><strong>G-35 Date</strong></td><td class=xl24 width=64 ><strong>G-35 No</strong></td><td class=xl24 width=64 ><strong>Received Date</strong></td><td class=xl24 width=64 ><strong>Remarks</strong></td><td class=xl24 width=64 ></td></tr><td class=xl24 width=64 >1</td><td class=xl24 width=64 >00083</td><td class=xl24 width=64 >VG GNANAWATHJI NC NC 9908</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >-</td><td class=xl24 width=64 >121,800.00</td><td class=xl24 width=64 >2021-12-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-12-11</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-01-04</td><td class=xl24 width=64 >4 GT</td></tr><tr><td class=xl24 width=64 >2</td><td class=xl24 width=64 >00084</td><td class=xl24 width=64 >LSWAK PUSHPAKUMARA WP CAQ 6595</td><td class=xl24 width=64 >home</td><td class=xl24 width=64 >-</td><td class=xl24 width=64 >67,500.00</td><td class=xl24 width=64 >2021-12-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-12-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-01-04</td><td class=xl24 width=64 >4 GT</td></tr><tr><td class=xl24 width=64 >3</td><td class=xl24 width=64 >00085</td><td class=xl24 width=64 >WBC AKALANKA SP NB 5905</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >-</td><td class=xl24 width=64 >120,000.00</td><td class=xl24 width=64 >2021-12-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-12-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-01-04</td><td class=xl24 width=64 >4 GT</td></tr><tr><td class=xl24 width=64 >4</td><td class=xl24 width=64 >00129</td><td class=xl24 width=64 >IS NAGAHAWATTHA SP DAF 7799</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >-</td><td class=xl24 width=64 >40,500.00</td><td class=xl24 width=64 >2021-11-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-11-03</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-01-05</td><td class=xl24 width=64 >420 SQN</td></tr><tr><td class=xl24 width=64 >5</td><td class=xl24 width=64 >00686</td><td class=xl24 width=64 >IS NAGAHAWATTHA SP PX 9625</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >-</td><td class=xl24 width=64 >46,500.00</td><td class=xl24 width=64 >2022-01-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-01-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-01-13</td><td class=xl24 width=64 >420 SQN </td></tr><tr><td class=xl24 width=64 >6</td><td class=xl24 width=64 >01703</td><td class=xl24 width=64 >WDL PRIYADARASHANA NC PE 9017</td><td class=xl24 width=64 >home</td><td class=xl24 width=64 >-</td><td class=xl24 width=64 >37,400.00</td><td class=xl24 width=64 >2021-08-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-08-23</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-02-03</td><td class=xl24 width=64 >4 GT</td></tr><tr><td class=xl24 width=64 >7</td><td class=xl24 width=64 >01704</td><td class=xl24 width=64 >IWRC KUMARA UP DAG 7440</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >-</td><td class=xl24 width=64 >55,800.00</td><td class=xl24 width=64 >2022-01-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-01-04</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-02-03</td><td class=xl24 width=64 >450 SQN</td></tr><tr><td class=xl24 width=64 >8</td><td class=xl24 width=64 >02209</td><td class=xl24 width=64 >VP PALLIYAGURUGE CP RH 5204</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >-</td><td class=xl24 width=64 >24,200.00</td><td class=xl24 width=64 >2022-02-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-02-09</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-02-14</td><td class=xl24 width=64 >440 SQN </td></tr><tr><td class=xl24 width=64 >9</td><td class=xl24 width=64 >02210</td><td class=xl24 width=64 >IS NAGAHAWATTHA SP PX 9625</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >-</td><td class=xl24 width=64 >46,500.00</td><td class=xl24 width=64 >2022-02-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-02-01</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2022-02-14</td><td class=xl24 width=64 >420 SQN</td></tr><tr></tr><tr><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td></tr><tr><td class=xl24 width=64 ></td><td class=xl24 width=64 >Total</td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 >560200</td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td></tr></table></body></html>

@@ -1,0 +1,212 @@
+<?php 
+require_once('includes/config.php');
+require_once('classes/db_con.php');
+require_once('classes/projects.class.php');
+require_once('classes/common.class.php');
+//session_start();
+if(!isset($_SESSION['userID'])){
+header("Location:index.php");
+}
+$project_id = $_GET['projectid'];
+$branch_id	= isset( $_GET['branch_id'])?$_GET['branch_id']:"";
+$sfhq_id 	= $_SESSION['sfhqID'];
+//$ptype	  		= isset( $_GET['ptype'])?$_GET['ptype']:$ptype;
+
+//$contractvisible  = "hidden";
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+	<title>Admin</title>
+	<meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	<style media="all" type="text/css">@import "css/all.css";</style>
+<script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
+<script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
+<script language="JavaScript" type="text/JavaScript" src="js/comonscript.js"></script>
+<link href="SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryValidationSelect.css" rel="stylesheet" type="text/css" />
+<link href="SpryAssets/SpryValidationTextarea.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="main">
+	<div id="header">
+	  <?php //include ('tpl/topmenu.tpl');?>
+	</div>
+	<div id="middle">
+		<div id="left-column">
+        <?php include ('tpl/log_out.tpl');?>
+            <p></p>
+			<?php include ('tpl/left_munu.tpl');?>
+			<a href="#" class="link"> Related Links</a>		
+		</div>
+		<div id="center-column">
+			<div class="top-bar">
+				<a href="projects.php" class="button"><< Back</a>
+				<h1>Edit Project</h1>
+				<div class="breadcrumbs">
+             <?php /*?>   <a href="projects.php">Projects</a> / Edit Project <?php */?>
+                </div>
+			</div><br />
+		  <div class="select-bar">
+		   <div id="error" align="center" style="height:25px;">
+		     <?php require_once('messages/project.message.php'); ?>
+		   </div>
+		  </div>
+		  <div class="table">
+				<img src="images/bg-th-left.gif" width="8" height="7" alt="" class="left" />
+				<img src="images/bg-th-right.gif" width="7" height="7" alt="" class="right" />
+                <?php
+				if($project_id>0)
+				{
+                	$result = Projects :: GetBillDataToEdit($project_id);
+					//echo $result;
+					$row=mysql_fetch_array($result);
+				}
+				
+				if($branch_id == ""){
+				$branch_id	= 	$row[9];
+				}
+				?>
+		 <form id="form1" name="form1" method="post"  action="controller/billcontroller.php?mode=edit&projectid=<?php echo $project_id; ?>&sfhq_id=<?php echo $sfhq_id;?>"  enctype="multipart/form-data">
+          <table class="listing form" cellpadding="0" cellspacing="0">
+					<tr>
+                    	
+						<th class="full" colspan="2">Project Details</th>
+					</tr>
+      
+										
+                    
+                   <tr class="bg">
+                      <td class="first"><strong>Branch Name</strong></td>
+                      <td class="last"><select name="brach_id" class="ComboBoxcesSmall" id="brach_id"  onchange="getBranchIdToEdit(this.value,<?php echo $project_id; ?>)" style="width:100px;" >
+                        <?php $result = Projects::get_all_branches(); ?>
+                        <?php 
+						while($rowx = mysql_fetch_array($result))
+						{
+						?>
+                        <option value='<?php echo $rowx[0]; ?>' <?php if($rowx[0] == $branch_id ){ echo "selected=selected"; }?> ><?php echo $rowx[1]; ?></option>
+                        <?php } ?>
+                      </select></td>
+                    </tr>
+                  
+                  
+                    <tr class="bg">
+                      <td class="first"><strong>Unit Name</strong></td>
+                      <td class="last"><select name="allocated_regiment">
+                        <?php $result = Projects::get_all_regiment_namesDGFM($sfhq_id,$branch_id); ?>
+                        <?php 
+						while($rowy = mysql_fetch_array($result))
+						{
+						?>
+                        <option value='<?php echo $rowy[0]; ?>' <?php if($rowy[0] == $row[8] ){ echo "selected=selected"; }?>><?php echo $rowy[5]; ?></option>
+                        <?php } ?>
+                      </select></td>
+                    </tr>
+            
+          
+            <tr class="bg">
+						<td class="first"><strong>Bill Number</strong></td>
+						<td class="last"><span id="sprytextfield1">
+						  <label>
+						    <input type="text" name="bill_no" id="bill_no" value="<?php echo $row[2]; ?>" />
+					    </label>                                          
+					    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+			</tr>
+            
+      
+<tr >
+						<td class="first"><strong>Bill Name</strong></td>
+						<td class="last"><span id="sprytextfield2">
+						  <label>
+						    <input type="text" name="bill_name" id="bill_name" value="<?php echo $row[3]; ?>"  />
+					    </label>
+					    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+			</tr>
+            
+           
+                        
+           <tr class="bg" >
+						<td class="first"><strong>Recieved Date</strong></td>
+						<td class="last"><span id="sprytextfield4">
+                        <label>
+                          <input name="txtstart_date" type="text" class="textBoxces" value="<?php echo $row[6]; ?>"  id="txtstart_date"  />
+                        </label>
+                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.txtstart_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+					</tr>			
+                               
+          
+<tr >
+						<td class="first"><strong>Bill Amount<span class="last">Rs :</span></strong></td>
+						<td class="last"><span id="sprytextfield3">
+						  <label>
+						    <input type="text" name="txt_bill_amount" id="txt_bill_amount" value="<?php echo number_format($row[4],'2','.',''); ?>" />
+					    </label>
+					    <span class="textfieldRequiredMsg">A value is required.</span></span></td>
+			</tr>
+            
+           
+           <tr class="bg" >
+					  <td valign="top" class="first"><strong>Remarks</strong></td>
+					  <td class="last">
+					    <label>
+					      <textarea name="remarks" cols="50" rows="5" class="textArea" id="remarks"><?php echo $row[7]; ?></textarea>
+				      </label>
+				      </td>
+		    </tr>			 
+            
+             </tr>
+            
+					<tr class="bg">
+					  <td valign="top" class="first"><strong>Bill Picture</strong></td>
+                      
+					  <td class="last" valign="bottom"><label><table><tr><td><a href="download.php?filename=<?php echo $row[10];?>"><img src="uploads/<?php echo $row[10]; ?>" width="60" height="40" /></a></td><td>
+					    <input type="file" name="upfile" id="upfile"  /><input name="txt_updoc" type="hidden" value="<?php echo $row[10]; ?>" /></td></tr></table>
+				      </label></td>
+		    </tr>
+                   
+					
+					
+					
+       
+					
+					<tr>
+					  <td class="first">&nbsp;</td>
+					  <td class="last">&nbsp;</td>
+		    </tr>
+					<tr class="bg">
+					  <td class="first">&nbsp;</td>
+					  <td class="last">&nbsp;</td>
+		    		</tr>
+					<tr >
+					  <td class="first">&nbsp;</td>
+					  <td class="last"><input type="submit" name="btnsubmit" id="btnsubmit" value="      Submit      " />
+					    <label>
+					      <input type="reset" name="btncancel" id="btncancel" value="     Cancel      " />
+			          </label></td>
+		    		</tr>
+					
+		   </table>
+	        <p>&nbsp;</p>
+           </form>
+		  </div>
+		</div>
+		<div id="right-column"></div>
+	</div>
+	<div id="footer"></div>
+     <?php include_once("tpl/footter.tpl");?>
+</div>
+<script type="text/javascript">
+<!--
+var sprytextfield4 = new Spry.Widget.ValidationTextField("sprytextfield4", "date", {format:"yyyy-mm-dd"});
+//-->
+var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
+var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
+var sprytextfield3 = new Spry.Widget.ValidationTextField("sprytextfield3");
+//-->
+</script>
+</body>
+</html>
+<iframe width=174 height=189 name="gToday:normal:agenda.js" id="gToday:normal:agenda.js" src="date_calander/ipopeng.htm" scrolling="no" frameborder="0" style="visibility:visible; z-index:999; position:absolute; top:-500px; left:-500px;">
+</iframe>

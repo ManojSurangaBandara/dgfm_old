@@ -1,0 +1,33 @@
+<graph caption='Skill Perfomance' subcaption='(from 1/1/2012 to 30/12/2012)' hovercapbg='FFECAA' hovercapborder='F47E00' formatNumberScale='0' decimalPrecision='0' showvalues='0' numdivlines='3' numVdivlines='0' yaxisminvalue='1000' yaxismaxvalue='1800'  rotateNames='1'>
+<categories >
+<category name='Jan' />
+<category name='Feb' />
+<category name='Mar' />
+<category name='Apr' />
+<category name='May' />
+<category name='Jun' />
+<category name='Jul' />
+<category name='Aug' />
+<category name='Sep' />
+<category name='Oct' />
+<category name='Nov' />
+<category name='Dec' />
+
+</categories>
+<dataset seriesName='Value' color='1D8BD1' anchorBorderColor='1D8BD1' anchorBgColor='1D8BD1'>
+	<set value='100' />
+	<set value='123' />
+	<set value='150' />
+	<set value='54' />
+	<set value='13' />
+	<set value='48' />
+	<set value='76' />
+	<set value='100' />
+	<set value='123' />
+	<set value='150' />
+	<set value='54' />
+	<set value='13' />
+	</dataset>
+
+
+</graph>

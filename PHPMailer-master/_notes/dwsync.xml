@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="class.phpmailer.php" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="class.phpmaileroauth.php" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="class.phpmaileroauthgoogle.php" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="class.pop3.php" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="class.smtp.php" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="composer.json" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="composer.lock" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="get_oauth_token.php" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="issue_template.md" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="LICENSE" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="my_config.php" server="Y:/" local="131299676910741179" remote="131299676910000000" />
+<file name="PHPMailerAutoload.php" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="VERSION" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="class.phpmailer.php" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="class.phpmaileroauth.php" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="class.phpmaileroauthgoogle.php" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="class.pop3.php" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="class.smtp.php" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="composer.json" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="composer.lock" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="get_oauth_token.php" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="issue_template.md" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="LICENSE" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="my_config.php" server="172.16.50.6/nara_new/" local="131558990297590764" remote="131558990400000000" />
+<file name="PHPMailerAutoload.php" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="VERSION" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+</dwsync>

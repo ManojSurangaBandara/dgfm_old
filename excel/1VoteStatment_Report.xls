@@ -1,0 +1,104 @@
+				<html xmlns:o="urn:schemas-microsoft-com:office:office"
+				xmlns:x="urn:schemas-microsoft-com:office:excel"
+				xmlns="http://www.w3.org/TR/REC-html40">
+
+				<head>
+				<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+				<meta name=ProgId content=Excel.Sheet>
+				<!--[if gte mso 9]><xml>
+				 <o:DocumentProperties>
+				  <o:LastAuthor>Sriram</o:LastAuthor>
+				  <o:LastSaved>2005-01-02T07:46:23Z</o:LastSaved>
+				  <o:Version>10.2625</o:Version>
+				 </o:DocumentProperties>
+				 <o:OfficeDocumentSettings>
+				  <o:DownloadComponents/>
+				 </o:OfficeDocumentSettings>
+				</xml><![endif]-->
+				<style>
+				<!--table
+					{mso-displayed-decimal-separator:"\.";
+					mso-displayed-thousand-separator:"\,";}
+				@page
+					{margin:1.0in .75in 1.0in .75in;
+					mso-header-margin:.5in;
+					mso-footer-margin:.5in;}
+				tr
+					{mso-height-source:auto;}
+				col
+					{mso-width-source:auto;}
+				br
+					{mso-data-placement:same-cell;}
+				.style0
+					{mso-number-format:General;
+					text-align:general;
+					vertical-align:bottom;
+					white-space:nowrap;
+					mso-rotate:0;
+					mso-background-source:auto;
+					mso-pattern:auto;
+					color:windowtext;
+					font-size:10.0pt;
+					font-weight:400;
+					font-style:normal;
+					text-decoration:none;
+					font-family:Arial;
+					mso-generic-font-family:auto;
+					mso-font-charset:0;
+					border:none;
+					mso-protection:locked visible;
+					mso-style-name:Normal;
+					mso-style-id:0;}
+				td
+					{mso-style-parent:style0;
+					padding-top:1px;
+					padding-right:1px;
+					padding-left:1px;
+					mso-ignore:padding;
+					color:windowtext;
+					font-size:10.0pt;
+					font-weight:400;
+					font-style:normal;
+					text-decoration:none;
+					font-family:Arial;
+					mso-generic-font-family:auto;
+					mso-font-charset:0;
+					mso-number-format:General;
+					text-align:general;
+					vertical-align:bottom;
+					border:none;
+					mso-background-source:auto;
+					mso-pattern:auto;
+					mso-protection:locked visible;
+					white-space:nowrap;
+					mso-rotate:0;}
+				.xl24
+					{mso-style-parent:style0;
+					white-space:normal;}
+				-->
+				</style>
+				<!--[if gte mso 9]><xml>
+				 <x:ExcelWorkbook>
+				  <x:ExcelWorksheets>
+				   <x:ExcelWorksheet>
+					<x:Name>srirmam</x:Name>
+					<x:WorksheetOptions>
+					 <x:Selected/>
+					 <x:ProtectContents>False</x:ProtectContents>
+					 <x:ProtectObjects>False</x:ProtectObjects>
+					 <x:ProtectScenarios>False</x:ProtectScenarios>
+					</x:WorksheetOptions>
+				   </x:ExcelWorksheet>
+				  </x:ExcelWorksheets>
+				  <x:WindowHeight>10005</x:WindowHeight>
+				  <x:WindowWidth>10005</x:WindowWidth>
+				  <x:WindowTopX>120</x:WindowTopX>
+				  <x:WindowTopY>135</x:WindowTopY>
+				  <x:ProtectStructure>False</x:ProtectStructure>
+				  <x:ProtectWindows>False</x:ProtectWindows>
+				 </x:ExcelWorkbook>
+				</xml><![endif]-->
+				</head>
+
+				<body link=blue vlink=purple>
+				<table x:str border=0 cellpadding=0 cellspacing=0 style='border-collapse: collapse;table-layout:fixed;'><tr><td class=xl24 width=64 ><strong>DES - Main Sewerage System (Panagoda Army Camp) - PAYMENT STATEMENT FROM  2021-01-01  TO 2021-12-17 </strong></td></tr><tr><tr><td class=xl24 width=64 ><strong>Ser No</strong></td><td class=xl24 width=64 ><strong>Bill No</strong></td><td class=xl24 width=64 ><strong>Supplier Name</strong></td><td class=xl24 width=64 ><strong>Supplier Address</strong></td><td class=xl24 width=64 ><strong>VAT Reg No</strong></td><td class=xl24 width=64 ><strong>Amount</strong></td><td class=xl24 width=64 ><strong>Invoice Date</strong></td><td class=xl24 width=64 ><strong>Invoice No</strong></td><td class=xl24 width=64 ><strong>G-35 Date</strong></td><td class=xl24 width=64 ><strong>G-35 No</strong></td><td class=xl24 width=64 ><strong>Bill H/O</strong></td><td class=xl24 width=64 ><strong>Received Date</strong></td><td class=xl24 width=64 ><strong>Remarks</strong></td><td class=xl24 width=64 ><strong>Paid Date </strong></td><td class=xl24 width=64 ></td></tr><td class=xl24 width=64 >1</td><td class=xl24 width=64 >30799</td><td class=xl24 width=64 >SK ENTERPRISES</td><td class=xl24 width=64 >home</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >1,535.76</td><td class=xl24 width=64 >2021-08-07</td><td class=xl24 width=64 >1822</td><td class=xl24 width=64 >2021-06-17</td><td class=xl24 width=64 >0</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-08-19</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >2021-10-29</td></tr><tr><td class=xl24 width=64 >2</td><td class=xl24 width=64 >30800</td><td class=xl24 width=64 >JAT HOLDING PVT LTD</td><td class=xl24 width=64 >home</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >67,198.90</td><td class=xl24 width=64 >2021-07-29</td><td class=xl24 width=64 >030994</td><td class=xl24 width=64 >2021-08-07</td><td class=xl24 width=64 >0</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-08-19</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >2021-10-29</td></tr><tr><td class=xl24 width=64 >3</td><td class=xl24 width=64 >30801</td><td class=xl24 width=64 >SIEMEN TRADING COMPANY</td><td class=xl24 width=64 >home</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >129.60</td><td class=xl24 width=64 >2021-07-31</td><td class=xl24 width=64 >82118</td><td class=xl24 width=64 >2021-07-29</td><td class=xl24 width=64 >0</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-08-19</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >2021-10-29</td></tr><tr><td class=xl24 width=64 >4</td><td class=xl24 width=64 >31569</td><td class=xl24 width=64 >SIEMEN TRADING COMPANY</td><td class=xl24 width=64 >home</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >410.40</td><td class=xl24 width=64 >2021-08-10</td><td class=xl24 width=64 >8407</td><td class=xl24 width=64 >2021-08-12</td><td class=xl24 width=64 >0</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-08-20</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >2021-10-29</td></tr><tr><td class=xl24 width=64 >5</td><td class=xl24 width=64 >37416</td><td class=xl24 width=64 >NINGBO MARKETING</td><td class=xl24 width=64 >home</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >18,750.00</td><td class=xl24 width=64 >2021-09-11</td><td class=xl24 width=64 >3292</td><td class=xl24 width=64 >2021-10-04</td><td class=xl24 width=64 >0</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-10-04</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >2021-12-14</td></tr><tr><td class=xl24 width=64 >6</td><td class=xl24 width=64 >39567</td><td class=xl24 width=64 >JAT HOLDINGS LIMITED</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >0</td><td class=xl24 width=64 >4,047.58</td><td class=xl24 width=64 >2021-09-17</td><td class=xl24 width=64 >026537</td><td class=xl24 width=64 >2021-10-12</td><td class=xl24 width=64 >0</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-10-13</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >2021-12-14</td></tr><tr><td class=xl24 width=64 >7</td><td class=xl24 width=64 >40249</td><td class=xl24 width=64 >PABODA SUPPLIER</td><td class=xl24 width=64 >home</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >34,408.80</td><td class=xl24 width=64 >2021-09-19</td><td class=xl24 width=64 >1702</td><td class=xl24 width=64 >2021-10-14</td><td class=xl24 width=64 >1180</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-10-15</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >2021-12-14</td></tr><tr><td class=xl24 width=64 >8</td><td class=xl24 width=64 >41644</td><td class=xl24 width=64 >SIEMEN TRADING COMPANY</td><td class=xl24 width=64 >home</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >1,096.20</td><td class=xl24 width=64 >2021-10-02</td><td class=xl24 width=64 >8615</td><td class=xl24 width=64 >2021-10-27</td><td class=xl24 width=64 >1262</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-10-28</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >2021-12-14</td></tr><tr><td class=xl24 width=64 >9</td><td class=xl24 width=64 >41645</td><td class=xl24 width=64 >SOORIYA ENTERPRISES & TIMBER STORES PVT LTD</td><td class=xl24 width=64 >home</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >25,080.00</td><td class=xl24 width=64 >2021-10-02</td><td class=xl24 width=64 >0352</td><td class=xl24 width=64 >2021-10-02</td><td class=xl24 width=64 >1207</td><td class=xl24 width=64 >1</td><td class=xl24 width=64 >2021-10-28</td><td class=xl24 width=64 ></td><td class=xl24 width=64 >2021-12-14</td></tr><tr></tr><tr><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td></tr><tr><td class=xl24 width=64 ></td><td class=xl24 width=64 >Total</td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 >152657.24</td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td></tr></table></body></html>

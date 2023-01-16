@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<dwsync>
+<file name="code_generator.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="contactform.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="contents.html" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="contentsutf8.html" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="DKIM.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="exceptions.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="gmail.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="gmail_xoauth.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="index.html" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="mail.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="mailing_list.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="pop_before_smtp.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="sendmail.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="send_file_upload.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="send_multiple_file_upload.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="signed-mail.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="smtp.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="smtp_check.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="smtp_no_auth.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="ssl_options.phps" server="Y:/" local="131392637720000000" remote="131392637720000000" />
+<file name="code_generator.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="contactform.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="contents.html" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="contentsutf8.html" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="DKIM.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="exceptions.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="gmail.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="gmail_xoauth.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="index.html" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="mail.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="mailing_list.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="pop_before_smtp.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="sendmail.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="send_file_upload.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="send_multiple_file_upload.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="signed-mail.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="smtp.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="smtp_check.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="smtp_no_auth.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+<file name="ssl_options.phps" server="172.16.50.6/nara_new/" local="131392637720000000" remote="131557533600000000" />
+</dwsync>

@@ -1,0 +1,43 @@
+
+
+
+.sidebarmenu{
+margin:0px 0;
+padding:0;
+width:195px;
+}
+
+.sidebarmenu a.menuitem:visited, .sidebarmenu .menuitem:active{
+color: white;
+}
+.sidebarmenu a.menuitem .statusicon{
+position: absolute;
+top:0px;
+right:7px;
+border: none;
+}
+
+.sidebarmenu div.submenu{
+background: white;
+}
+.sidebarmenu div.submenu ul{ 
+list-style-type: none;
+margin: 0;
+padding: 0 0 0px 0;
+}
+.sidebarmenu div.submenu ul li{
+border-bottom: 0px dotted #bfd1d9;
+}
+.sidebarmenu div.submenu ul li a{
+display: block;
+color: black;
+text-decoration: none;
+padding:5px 0;
+padding-left: 10px;
+}
+.sidebarmenu div.submenu ul li a:hover{
+background: #e2f0ff;
+color: #0e4354;
+}
+
+

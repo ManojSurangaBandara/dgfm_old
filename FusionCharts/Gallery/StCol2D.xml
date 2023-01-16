@@ -1,0 +1,5 @@
+<graph xAxisName='Vote Types' yAxisName='Allocation' caption='Annual Money Allocation Chart' subCaption='For the Year of 2022' 
+ decimalPrecision='0' rotateNames='1' numDivLines='3' numberPrefix='Rs:' showValues='0' formatNumberScale='0'>
+ 
+ 
+ <categories font='Arial' fontSize='11' fontColor='000000'><category name='TRIPOLI' /><br/><category name='SFHQ(WEST)' /><br/><category name='SFHQ(Wanni)' /><br/><category name='SFHQ(E)' /><br/><category name='SFHQ(J)' /><br/><category name='SFHQ(KLN)' /><br/><category name='SFHQ(MLT)' /><br/><category name='SFHQ(C)' /><br/></categories><dataset seriesName='Recurrent' color='AFD8F8' showValues='0' ></dataset><dataset seriesName='Capital' color='F6BD0F' showValues='0' ></dataset><dataset seriesName='Others' color='8BBA00' showValues='0' ></dataset></graph>

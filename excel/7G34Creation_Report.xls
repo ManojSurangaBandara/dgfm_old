@@ -1,0 +1,104 @@
+				<html xmlns:o="urn:schemas-microsoft-com:office:office"
+				xmlns:x="urn:schemas-microsoft-com:office:excel"
+				xmlns="http://www.w3.org/TR/REC-html40">
+
+				<head>
+				<meta http-equiv=Content-Type content="text/html; charset=us-ascii">
+				<meta name=ProgId content=Excel.Sheet>
+				<!--[if gte mso 9]><xml>
+				 <o:DocumentProperties>
+				  <o:LastAuthor>Sriram</o:LastAuthor>
+				  <o:LastSaved>2005-01-02T07:46:23Z</o:LastSaved>
+				  <o:Version>10.2625</o:Version>
+				 </o:DocumentProperties>
+				 <o:OfficeDocumentSettings>
+				  <o:DownloadComponents/>
+				 </o:OfficeDocumentSettings>
+				</xml><![endif]-->
+				<style>
+				<!--table
+					{mso-displayed-decimal-separator:"\.";
+					mso-displayed-thousand-separator:"\,";}
+				@page
+					{margin:1.0in .75in 1.0in .75in;
+					mso-header-margin:.5in;
+					mso-footer-margin:.5in;}
+				tr
+					{mso-height-source:auto;}
+				col
+					{mso-width-source:auto;}
+				br
+					{mso-data-placement:same-cell;}
+				.style0
+					{mso-number-format:General;
+					text-align:general;
+					vertical-align:bottom;
+					white-space:nowrap;
+					mso-rotate:0;
+					mso-background-source:auto;
+					mso-pattern:auto;
+					color:windowtext;
+					font-size:10.0pt;
+					font-weight:400;
+					font-style:normal;
+					text-decoration:none;
+					font-family:Arial;
+					mso-generic-font-family:auto;
+					mso-font-charset:0;
+					border:none;
+					mso-protection:locked visible;
+					mso-style-name:Normal;
+					mso-style-id:0;}
+				td
+					{mso-style-parent:style0;
+					padding-top:1px;
+					padding-right:1px;
+					padding-left:1px;
+					mso-ignore:padding;
+					color:windowtext;
+					font-size:10.0pt;
+					font-weight:400;
+					font-style:normal;
+					text-decoration:none;
+					font-family:Arial;
+					mso-generic-font-family:auto;
+					mso-font-charset:0;
+					mso-number-format:General;
+					text-align:general;
+					vertical-align:bottom;
+					border:none;
+					mso-background-source:auto;
+					mso-pattern:auto;
+					mso-protection:locked visible;
+					white-space:nowrap;
+					mso-rotate:0;}
+				.xl24
+					{mso-style-parent:style0;
+					white-space:normal;}
+				-->
+				</style>
+				<!--[if gte mso 9]><xml>
+				 <x:ExcelWorkbook>
+				  <x:ExcelWorksheets>
+				   <x:ExcelWorksheet>
+					<x:Name>srirmam</x:Name>
+					<x:WorksheetOptions>
+					 <x:Selected/>
+					 <x:ProtectContents>False</x:ProtectContents>
+					 <x:ProtectObjects>False</x:ProtectObjects>
+					 <x:ProtectScenarios>False</x:ProtectScenarios>
+					</x:WorksheetOptions>
+				   </x:ExcelWorksheet>
+				  </x:ExcelWorksheets>
+				  <x:WindowHeight>10005</x:WindowHeight>
+				  <x:WindowWidth>10005</x:WindowWidth>
+				  <x:WindowTopX>120</x:WindowTopX>
+				  <x:WindowTopY>135</x:WindowTopY>
+				  <x:ProtectStructure>False</x:ProtectStructure>
+				  <x:ProtectWindows>False</x:ProtectWindows>
+				 </x:ExcelWorkbook>
+				</xml><![endif]-->
+				</head>
+
+				<body link=blue vlink=purple>
+				<table x:str border=0 cellpadding=0 cellspacing=0 style='border-collapse: collapse;table-layout:fixed;'><tr><td class=xl24 width=64 ><strong>CHANDRAPALA CONSTRUCTION  </strong></td></tr><tr><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >3909740.6099999994</td></tr><tr><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 >222-01-2-1203 (iii)</td><td class=xl24 width=64 >44597.5</td></tr><tr><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ><strong>TOTAL<strong></td><td class=xl24 width=64 ><strong>3954338.11<strong></td></tr><tr><td class=xl24 width=64 ><strong>From : 2022-02-18</strong></td></tr><tr><td class=xl24 width=64 ><strong>To &nbsp;&nbsp;&nbsp; : 2022-02-20</strong></td></tr><tr><tr><td class=xl24 width=64 ><strong>No</strong></td><td class=xl24 width=64 ><strong>Bill No</strong></td><td class=xl24 width=64 ><strong>Ref No</strong></td><td class=xl24 width=64 ><strong>Vote Code</strong></td><td class=xl24 width=64 ><strong>Amount</strong></td><td class=xl24 width=64 ></td></tr><td class=xl24 width=64 >1</td><td class=xl24 width=64 >16744</td><td class=xl24 width=64 >485</td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >1,006,387.09</td></tr><tr><td class=xl24 width=64 >2</td><td class=xl24 width=64 >16741</td><td class=xl24 width=64 >499</td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >1,492,643.77</td></tr><tr><td class=xl24 width=64 >3</td><td class=xl24 width=64 >16749</td><td class=xl24 width=64 >489</td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >869.80</td></tr><tr><td class=xl24 width=64 >4</td><td class=xl24 width=64 >16746</td><td class=xl24 width=64 >487</td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >1,203.00</td></tr><tr><td class=xl24 width=64 >5</td><td class=xl24 width=64 >16739</td><td class=xl24 width=64 >486</td><td class=xl24 width=64 >222-01-2-1203 (iii)</td><td class=xl24 width=64 >44,597.50</td></tr><tr><td class=xl24 width=64 >6</td><td class=xl24 width=64 >16740</td><td class=xl24 width=64 >498</td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >539,539.70</td></tr><tr><td class=xl24 width=64 >7</td><td class=xl24 width=64 >16748</td><td class=xl24 width=64 >491</td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >2,572.70</td></tr><tr><td class=xl24 width=64 >8</td><td class=xl24 width=64 >16745</td><td class=xl24 width=64 >483</td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >98,393.40</td></tr><tr><td class=xl24 width=64 >9</td><td class=xl24 width=64 >16742</td><td class=xl24 width=64 >501</td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >753,603.10</td></tr><tr><td class=xl24 width=64 >10</td><td class=xl24 width=64 >16753</td><td class=xl24 width=64 >496/497</td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >12,034.05</td></tr><tr><td class=xl24 width=64 >11</td><td class=xl24 width=64 >16747</td><td class=xl24 width=64 >490</td><td class=xl24 width=64 >222-01-2-1203 (ii)</td><td class=xl24 width=64 >2,494.00</td></tr><tr></tr><tr><td class=xl24 width=64 ><strong>TOTAL</strong></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ><strong>3,954,338.11</strong></td></tr><tr></tr><tr></tr><tr><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 >......................</td></tr><tr><td class=xl24 width=64 ><strong>Prepared By</strong></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ><strong>Checked By </strong></td></tr><tr></tr><tr><td class=xl24 width=64 >I hereby certify that the charges in this Shedule aggregating Rs : <strong> three million, nine hundred and fifty-four thousand, three hundred and thirty-eight point one one</strong> have been duly authorised by Government that the services have been actually and Bona fide performed , and that payments have been properly made to individuals whose acquittanses are annexed.</td></tr><tr></tr><tr></tr><tr></tr><tr></tr><tr><td class=xl24 width=64 > 20.02.2022 </td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 >......................</td></tr><tr><td class=xl24 width=64 ><strong>Date</strong></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ></td><td class=xl24 width=64 ><strong>Signature</strong></td></tr><tr></tr></table></body></html>
