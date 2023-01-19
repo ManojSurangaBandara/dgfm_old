@@ -164,7 +164,7 @@ switch($mode)
 		{
 			session_unset();
 			session_destroy();
-			session_unset($_SESSION['log_year']);
+			unset($_SESSION['log_year']);
 			//session_destroy($_SESSION['log_year']);
 			header("Location:../index.php");		
 		}

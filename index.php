@@ -128,12 +128,9 @@ xmlhttp.send();
 							  <?php 						  
 							   
                             $user_Type = Login :: getUserType();
-                            while($row=mysql_fetch_array($user_Type)){
-                       
+							foreach ($user_Type as $row) {
                             ?>
                               <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; ?></option>
-                           
-                               
                               <?php }  ?>
                             </select>
                             </td>

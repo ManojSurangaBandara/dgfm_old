@@ -25,7 +25,7 @@ class Common{
 	///////////////////////////////////////////////////////////////////////////     DGFM           
 	
 	
-	function GetDGFMBillDetails($projType,$sfhq_id)
+	public static function GetDGFMBillDetails($projType,$sfhq_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM txt_bill_details 							
@@ -36,7 +36,7 @@ class Common{
 		return $data;	
 	}
 	/////54544646
-	function GetDGFMBillDetailsToBigUser($billstatus,$branch_id,$user_t_id,$log_year)
+	public static function GetDGFMBillDetailsToBigUser($billstatus,$branch_id,$user_t_id,$log_year)
 	{
 		if($branch_id==6)
 		{
@@ -53,7 +53,7 @@ class Common{
 		return $data;	
 	}
 	
-	function GetAllUserAccount()
+	public static function GetAllUserAccount()
 	{
 		
 		$db1 = new db_con();
@@ -66,7 +66,7 @@ class Common{
 		return $data;	
 	}
 	
-	function GetBranchNametoPsoView($branch_id)	
+	public static function GetBranchNametoPsoView($branch_id)	
 	{
 		$db1 = new db_con();
 		$sqlselect = "select branch_name from m_branches WHERE branch_id = $branch_id";			
@@ -75,7 +75,7 @@ class Common{
 				
 	}
 	
-	function GetAllAcountType()	
+	public static function GetAllAcountType()	
 	{
 	
 		
@@ -87,7 +87,7 @@ class Common{
 				
 	}
 	
-	function GetUserType($typeid)	
+	public static function GetUserType($typeid)	
 	{
 		//echo $typeid;
 		//die();
@@ -132,7 +132,7 @@ class Common{
 				
 	}
 	
-	function GetDGFMSearchChiefAccValue($text)
+	public static function GetDGFMSearchChiefAccValue($text)
 	{
 		
 		$db1 = new db_con();
@@ -152,7 +152,7 @@ class Common{
 	
 	
 	
-	function GetDGFMBillDetailsToviewDgfm($billstatus,$sfhq_id,$unit_dis_id)
+	public static function GetDGFMBillDetailsToviewDgfm($billstatus,$sfhq_id,$unit_dis_id)
 	{
 		if($unit_dis_id == 0)
 		{
@@ -173,7 +173,7 @@ class Common{
 	}
 	
 	
-	function GetBillNoforPSOView($billstatus,$branch_id,$vote_id,$log_year)
+	public static function GetBillNoforPSOView($billstatus,$branch_id,$vote_id,$log_year)
 	{
 			
 		$db1 = new db_con();
@@ -212,7 +212,7 @@ class Common{
 	}
 	
 	
-	function GetDGFMBillDetailsToSFHQ($billstatus,$branch_id,$user_t_id,$sfhq_id,$log_year)
+	public static function GetDGFMBillDetailsToSFHQ($billstatus,$branch_id,$user_t_id,$sfhq_id,$log_year)
 	{
 		if($branch_id==6)
 		{
@@ -231,7 +231,7 @@ class Common{
 	}
 	
 	
-	function GetBillDetailstoDGFM($branch_id,$sfhq_id,$bill_status)
+	public static function GetBillDetailstoDGFM($branch_id,$sfhq_id,$bill_status)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM txt_bill_details 							
@@ -244,7 +244,7 @@ class Common{
 	
 	
 	
-		function GetDGFMHomePage($branch_id,$sfhq_id,$txt,$bill_status){
+		public static function GetDGFMHomePage($branch_id,$sfhq_id,$txt,$bill_status){
 	//echo $ProjStatus;
 				$db1 = new db_con();
 				$sqlselect = "SELECT  d.Bill_Id
@@ -269,7 +269,7 @@ class Common{
 	}
 	
 	
-	function GetDGFMHomePagePagination($branch_id,$sfhq_id,$txt,$bill_status,$start, $length){
+	public static function GetDGFMHomePagePagination($branch_id,$sfhq_id,$txt,$bill_status,$start, $length){
 		$db1 = new db_con();
 	//	echo $ProjStatus;
 		
@@ -296,7 +296,7 @@ class Common{
 		}
 	
 	
-	function GetDteDetailsToPsoView($billId,$user_type_id){
+	public static function GetDteDetailsToPsoView($billId,$user_type_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  d.Bill_Id
 		,d.Bill_No
@@ -333,7 +333,7 @@ class Common{
 	}
 	
 		
-	function GetBiguserBillDetailsToView($billId,$user_type_id){
+	public static function GetBiguserBillDetailsToView($billId,$user_type_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  d.Bill_Id
 		,d.Bill_No
@@ -376,7 +376,7 @@ class Common{
 		return $data;	
 	}
 	
-	function GetAddress($billId){
+	public static function GetAddress($billId){
 		$db1 = new db_con();
 		$sqlselect = "select Sup_Name,address_line1,address_line2,address_line3,address_line4
 		,(select Cheque_No from txt_bill_details where Bill_Id=$billId) as chkno
@@ -390,7 +390,7 @@ class Common{
 		return $data;	
 	}
 	
-	function SupDetailstoSMS($billId){
+	public static function SupDetailstoSMS($billId){
 		$db1 = new db_con();
 		$sqlselect = "SELECT s.is_vehicle,
 		CONCAT('Trf Credit ','Rs. ',(SELECT Amount FROM vote_bill_amount WHERE Bill_Id = $billId),' on ',
@@ -412,7 +412,7 @@ class Common{
 		return $data;	
 	}
 	
-	function CfAccSupDetSMSbyFeed($sup_id){
+	public static function CfAccSupDetSMSbyFeed($sup_id){
 		
 		//echo '12'; die();
  		
@@ -444,7 +444,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		return $data;	
 	}
 	
-		function SendSMStoSFHQ($billId){
+		public static function SendSMStoSFHQ($billId){
 		$db1 = new db_con();
 		$sqlselect = "SELECT s.is_vehicle,
 		CONCAT('Trf Credit ','Rs. ',(SELECT Amount FROM sfhq_vote_bill_amount WHERE Bill_Id = $billId),' on ',
@@ -470,7 +470,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetRegAccAddress($billId){
+	public static function GetRegAccAddress($billId){
 		$db1 = new db_con();
 		$sqlselect = "select Sup_Name,address_line1,address_line2,address_line3,address_line4 
 		,(select Cheque_No from sfhq_bill_details where Bill_Id=$billId) as chkno
@@ -485,7 +485,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	}
 	
 	////View Supplier all details
-		function GetAllSupplierDetails($SupId){
+		public static function GetAllSupplierDetails($SupId){
 			
 		$db1 = new db_con();
 		
@@ -507,7 +507,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	}
 	//
 	
-	function GetSFHQBillDetailsToPSOView($billId,$user_type_id){
+	public static function GetSFHQBillDetailsToPSOView($billId,$user_type_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  d.Bill_Id
 		,d.Bill_No
@@ -553,7 +553,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		return $data;	
 	}
 	
-	function GetSumofSFHQBillstoPSOView($status,$search,$branch_id,$vote_id,$log_year){
+	public static function GetSumofSFHQBillstoPSOView($status,$search,$branch_id,$vote_id,$log_year){
 		$db1 = new db_con();
 		$sqlselect = "SELECT sum(b.Amount) as amount,t.vote_number as voteName
 					 FROM sfhq_vote_bill_amount as b 
@@ -575,7 +575,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	}
 	
 		
-	function GetVtCode($vote_id){
+	public static function GetVtCode($vote_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT vote_number as voteName FROM votes where vote_id=$vote_id";
 		
@@ -586,7 +586,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		return $data;	
 	}
 	
-	function GetSumofDirectoratebillstoPSOView($status,$search,$branch_id,$vote_id,$log_year){
+	public static function GetSumofDirectoratebillstoPSOView($status,$search,$branch_id,$vote_id,$log_year){
 		$db1 = new db_con();
 		$sqlselect = "SELECT sum(b.Amount) as Amt
 					 FROM vote_bill_amount as b 
@@ -607,7 +607,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetSFHQTotalValueofStatus($status,$search,$branch_id,$vote_id){
+	public static function GetSFHQTotalValueofStatus($status,$search,$branch_id,$vote_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  d.Bill_Id
 		,d.Bill_No
@@ -652,7 +652,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		return $data;	
 	}
 	
-	function GetSFHQBillDetailsToView($billId,$user_type_id){
+	public static function GetSFHQBillDetailsToView($billId,$user_type_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  d.Bill_Id
 		,d.Bill_No
@@ -701,7 +701,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		return $data;	
 	}
 	
-	function GetBillDetailsToView($billId){
+	public static function GetBillDetailsToView($billId){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  d.Bill_Id
 		,d.Bill_No
@@ -726,7 +726,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	}
 	
 	
-	function GetVotesName(){
+	public static function GetVotesName(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM votes ORDER BY vote_number ASC";
 		$data = $db1->GetAll($sqlselect);
@@ -734,7 +734,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		return $data;	
 	}
 	
-		function GetTypeofVotes(){
+		public static function GetTypeofVotes(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM vote_type ";
 		$data = $db1->GetAll($sqlselect);
@@ -745,7 +745,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetReleventVotesName($branch_Id){
+	public static function GetReleventVotesName($branch_Id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT v.vote_id,v.vote_number,v.description FROM pso_view_chart as vc
 		INNER JOIN votes as v on v.vote_id=vc.Vote_ID
@@ -760,14 +760,14 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	}
 	
 	
-		function GetBranchName(){
+		public static function GetBranchName(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM m_branches";
 		$data = $db1->GetAll($sqlselect);
 		return $data;	
 	}
 	
-	function GetSHGQName(){
+	public static function GetSHGQName(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM m_sfhq";
 		$data = $db1->GetAll($sqlselect);
@@ -779,7 +779,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 
 
-	function GetMenu($logingID){
+	public static function GetMenu($logingID){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM menus WHERE login_type='$logingID' AND active =1";
 		$data = $db1->GetAll($sqlselect);
@@ -787,7 +787,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	}
 	
 	
-	function GetSubMenu($submenuID,$logingID){
+	public static function GetSubMenu($submenuID,$logingID){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM menus WHERE Sub_menu_type =$submenuID AND login_type=$logingID AND active =1";
 		$data = $db1->GetAll($sqlselect);
@@ -797,7 +797,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetForceType(){
+	public static function GetForceType(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM force_type";
 		$data = $db1->GetAll($sqlselect);
@@ -808,7 +808,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetSFHQName(){
+	public static function GetSFHQName(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM m_sfhq";
 		$data = $db1->GetAll($sqlselect);
@@ -819,7 +819,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetGEName(){
+	public static function GetGEName(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM ge";
 		$data = $db1->GetAll($sqlselect);
@@ -831,7 +831,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function UserTypeName(){
+	public static function UserTypeName(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM user_type where act=1";
 		$data = $db1->GetAll($sqlselect);
@@ -840,7 +840,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	//and pd.project_name LIKE 
 	
-	function GetDesHomePage($unit_id,$txt,$ProjStatus){
+	public static function GetDesHomePage($unit_id,$txt,$ProjStatus){
 	//echo $ProjStatus;
 		$db1 = new db_con();
 		$sqlselect 	= "SELECT  	pd.project_id,
@@ -868,7 +868,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetDesHomePagePagination($unit_id,$txt,$ProjStatus,$start, $length){
+	public static function GetDesHomePagePagination($unit_id,$txt,$ProjStatus,$start, $length){
 		$db1 = new db_con();
 	//	echo $ProjStatus;
 		
@@ -898,7 +898,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetSentprojectReports($projectID,$sendstatus){
+	public static function GetSentprojectReports($projectID,$sendstatus){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  
 							proj_pro_report_id ,
@@ -922,7 +922,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetSentprojectReportsPagination($projectID,$sendstatus,$start,$length){
+	public static function GetSentprojectReportsPagination($projectID,$sendstatus,$start,$length){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  
 							proj_pro_report_id ,
@@ -944,7 +944,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	}	
 	
 	
-	function GetProject($project_id)
+	public static function GetProject($project_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT t1.project_id,
@@ -989,7 +989,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 
 	
-	function GetProjectNames($unit_id,$projType)
+	public static function GetProjectNames($unit_id,$projType)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT project_id,
@@ -1002,7 +1002,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		//echo $sqlselect;
 		return $data;	
 	}
-	function GetAllprojectReports($projectID){
+	public static function GetAllprojectReports($projectID){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  
 							proj_pro_report_id ,
@@ -1025,7 +1025,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetAllprojectReportsPagination($projectID,$start,$length){
+	public static function GetAllprojectReportsPagination($projectID,$start,$length){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  
 							proj_pro_report_id ,
@@ -1047,7 +1047,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	
 	
 	
-	function GetProgressReportDetails($progressID){
+	public static function GetProgressReportDetails($progressID){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  
 				            ppr.proj_pro_report_id,
@@ -1083,7 +1083,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		return $data;	
 	}	
 	
-	function getallbilldetails($billno){
+	public static function getallbilldetails($billno){
 	$db1 = new db_con();
 		$sqlselect = "SELECT  t1.*,t2.description FROM vote_bill_amount as t1 INNER JOIN votes as t2 ON t1.Vote_ID = t2.vote_id WHERE t1.Bill_No=$billno";
 		$data = $db1->GetAll($sqlselect);
@@ -1093,7 +1093,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 	}
 	
 	
-	function getallbilldetailstosfhq($billno,$billid){
+	public static function getallbilldetailstosfhq($billno,$billid){
 	$db1 = new db_con();
 		$sqlselect = "SELECT  t1.*,t2.description FROM sfhq_vote_bill_amount as t1 INNER JOIN votes as t2 ON t1.Vote_ID = t2.vote_id WHERE t1.Bill_No=$billno and t1.Bill_Id = $billid";
 		$data = $db1->GetAll($sqlselect);

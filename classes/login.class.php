@@ -9,7 +9,7 @@ class Login{
 		
 	}
 	
-	function getRecord($username,$password,$usertype,$sfhq,$branch){
+	public static function getRecord($username,$password,$usertype,$sfhq,$branch){
 		
 	
 		$db1 = new db_con();
@@ -27,7 +27,7 @@ class Login{
 	
 	
 	
-	function getUserType()
+	public static function getUserType()
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM user_type where act=1 ";		
@@ -49,14 +49,14 @@ class Login{
 	
 	
 	
-	function getBranches()
+	public static function getBranches()
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM m_branches";
 		$data = $db1->GetAll($sqlselect);
 		return $data;		
 	}
-	function getSFHQ()
+	public static function getSFHQ()
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM m_sfhq";

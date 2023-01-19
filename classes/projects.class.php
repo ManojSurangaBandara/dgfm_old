@@ -44,18 +44,18 @@ function convertNumber($num)
 
    $output = "";
 
-   if($num{0} == "-")
+   if($num[0] == "-")
    {
       $output = "negative ";
       $num = ltrim($num, "-");
    }
-   else if($num{0} == "+")
+   else if($num[0] == "+")
    {
       $output = "positive ";
       $num = ltrim($num, "+");
    }
    
-   if($num{0} == "0")
+   if($num[0] == "0")
    {
       $output .= "zero";
    }
@@ -66,14 +66,14 @@ function convertNumber($num)
       $groups = explode(" ", $group);
 
       $groups2 = array();
-      foreach($groups as $g) $groups2[] = Projects :: convertThreeDigit($g{0}, $g{1}, $g{2});
+      foreach($groups as $g) $groups2[] = Projects :: convertThreeDigit($g[0], $g[1], $g[2]);
 
       for($z = 0; $z < count($groups2); $z++)
       {
          if($groups2[$z] != "")
          {
             $output .= $groups2[$z].Projects :: convertGroup(11 - $z).($z < 11 && !array_search('', array_slice($groups2, $z + 1, -1))
-             && $groups2[11] != '' && $groups[11]{0} == '0' ? " and " : ", ");
+             && $groups2[11] != '' && $groups[11][0] == '0' ? " and " : ", ");
          }
       }
 
@@ -83,7 +83,7 @@ function convertNumber($num)
    if($dec > 0)
    {
       $output .= " point";
-      for($i = 0; $i < strlen($dec); $i++) $output .= " ".Projects :: convertDigit($dec{$i});
+      for($i = 0; $i < strlen($dec); $i++) $output .= " ".Projects :: convertDigit($dec[$i]);
    }
 
    return $output;

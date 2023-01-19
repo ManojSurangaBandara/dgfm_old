@@ -3,15 +3,17 @@
 <div class="sidebarmenu">
             <?php 
 		$menu1 = Common :: GetMenu($_SESSION['userType']);
-		while($row=mysql_fetch_array($menu1)){
-	
+            foreach ($menu1 as $row) {
+
 		?>
                 <a class="menuitem submenuheader link" href="<?php echo $row[2]; ?>"><?php echo $row[1]; ?></a>
                 <div class="submenu">
                     <ul >
                     <?php 
-                    $menu2 = Common :: GetSubMenu($row[0]);
-                    while($subrow=mysql_fetch_array($menu2)){                
+                    $menu2 = Common :: GetSubMenu($row[0],"");
+                  foreach ($menu2 as $subrow) {
+                        
+                      
                     ?> 
                   
                     <li><a href="<?php echo $subrow[2]; ?>"><?php echo $subrow[1]; ?></a></li>                    
@@ -27,7 +29,7 @@
 			<ul class="nav">
 				<?php 
 		$menu = Common :: GetMenu($_SESSION['userType']);
-		while($row=mysql_fetch_array($menu)){
+            foreach ($menu as $row) {
 	
 		?>
                 <li><a href="<?php echo $row[2]; ?>"><?php echo $row[1]; ?></a></li>

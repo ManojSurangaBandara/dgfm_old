@@ -2,7 +2,7 @@
 
 @session_start(); 
 
-if(!isset($_SESSION['log_year'])){
+if($_SESSION['log_year']==null){
 	
 	$log_year=date('Y');
 }
@@ -26,8 +26,8 @@ $mydb1 			= $log_year.'dgfm';
 
 /* Database configuration */
 
-define('DB_HOST','localhost');
-// define('DB_HOST','172.16.60.12');
+// define('DB_HOST','localhost');
+define('DB_HOST','172.16.60.12');
 
 //define('DB_HOST','172.16.0.29');
 //define('DB_HOST','220.247.214.182');
@@ -39,14 +39,14 @@ define('DB_HOST','localhost');
 // define('DB_USER','user_dgfm');
 // define('DB_PWD','l3g!0n');
 
-// define('DB_USER','dgfm');
-// define('DB_PWD','Dgfm@1234');
+define('DB_USER','dgfm');
+define('DB_PWD','Dgfm@1234');
 
-define('DB_USER','root');
-define('DB_PWD','');
+// define('DB_USER','root');
+// define('DB_PWD','');
 
-//define('DB_DB',$mydb1);
-define('DB_DB', '2022dgfm');
+define('DB_DB',$mydb1);
+// define('DB_DB', '2022dgfm');
 define('DB_TYPE','mysql');
 
 ?>
