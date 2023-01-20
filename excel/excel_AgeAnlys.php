@@ -140,12 +140,12 @@ switch($sfhq_id)
 	//	}     
 		$i=1;		
 		
-                //$row_count = mysql_num_rows($esrunit)+mysql_num_rows($sfhq_result);
+                //$row_count = count($esrunit)+count($sfhq_result);
                 //echo $row_count;exit;
                 
-	while($rowesrunit=mysql_fetch_array($esrunit))
-	{			
-	
+		
+	foreach ($esrunit as $rowesrunit) {
+		
 				
 				
 	
@@ -335,11 +335,9 @@ switch($sfhq_id)
                     $excel->writeLine($title_2);
 
                     //11-12-2015 added
-                    while($rowsfhqesrunit=mysql_fetch_array($sfhq_result))
-                   {			
-
-
-
+                    			
+					foreach ($sfhq_result as $rowsfhqesrunit) {
+					
                         //print_r($rowsfhqesrunit);
                                            if($id1==''){
 

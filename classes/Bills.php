@@ -38,7 +38,7 @@ class Bills{
 	
 	////////////////////////////////////////////////////////////// DGFM
 	
-	function GetVoteData($id)
+	public static function GetVoteData($id)
 	{
 		$db1 = new db_con();
 		//$sqlselect = "SELECT * FROM votes WHERE vote_id =$id";
@@ -58,15 +58,15 @@ class Bills{
 	}
 	
 	
-	function CheckIsPrivilege($uid)
+	public static function CheckIsPrivilege($uid)
 	{
 		$db1 = new db_con();
 		$sqlcheck = "SELECT Isprivilege_user FROM users WHERE user_id = $uid";
 		$data = $db1->GetAll($sqlcheck);
-		return $data;	
+		return $data;
 
 	}
-	function saveNewSfhqBill(		   $brach_id,	
+	public static function saveNewSfhqBill(		   $brach_id,	
 									   $sfhq_id, 
 									   $allocated_regiment,
 						          	   $bill_ref_no,
@@ -104,11 +104,12 @@ class Bills{
 					  FROM sfhq_bill_details WHERE Sfhq_Id=$sfhq_id ";
 		$max = $db->GetAll($get_max);		
 		
-		$num_rows = mysql_num_rows($max);
+		$num_rows = count($max);
 					
 					if ($num_rows >0 ) { 
 					
-					while($rowmax=mysql_fetch_array($max)){						
+					foreach ($max as $rowmax) {
+									
 					$bill_no = $rowmax[0];			
 						
 						$bill_no = $bill_no+1;		
@@ -255,7 +256,7 @@ class Bills{
 	}
 
 
-	function saveNewBigUserBill(
+	public static function saveNewBigUserBill(
 									   $brach_id,			   
 						          	   $bill_ref_no,
 						   			   $Payee_name,
@@ -290,15 +291,13 @@ class Bills{
 		$db = new db_con();	
 		$get_max = "SELECT MAX(Bill_No) as maxbillno FROM txt_bill_details";
 		$max = $db->GetAll($get_max);	
-		$num_rows = mysql_num_rows($max);
+		$num_rows = count($max);
 					
 					if ($num_rows >0 ) { 
-					
-					while($rowmax=mysql_fetch_array($max)){						
-					$bill_no = $rowmax[0];			
-						
+							
+					foreach ($max as $rowmax) {
+						$bill_no = $rowmax[0];			
 						$bill_no = $bill_no+1;		
-						
 						
 						switch (strlen($bill_no)) {
 							case 1:
@@ -441,7 +440,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 	}
 	
 									
-	function saveNewBill($billno,
+	public static function saveNewBill($billno,
 									   $bill_name,			   
 						          	   $amount,
 						   			   $allocated_regiment,
@@ -494,7 +493,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 	}
 	
 	
-	function EditBillsDetails($billno,$bill_name,$amount,
+	public static function EditBillsDetails($billno,$bill_name,$amount,
 											   $allocated_regiment,
 											   $bill_date,
 											   $up_file,
@@ -525,7 +524,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 		return $data;
 	}
 	
-	function EditBillsDetailsSFHQ($bill_no ,
+	public static function EditBillsDetailsSFHQ($bill_no ,
 									   $brach_id,			   
 						          	   $bill_ref_no,
 						   			   $Payee_name,
@@ -593,7 +592,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 	
 	
 	
-	function EditBillsDetailsBigUser($bill_no ,
+	public static function EditBillsDetailsBigUser($bill_no ,
 									   $brach_id,			   
 						          	   $bill_ref_no,
 						   			   $Payee_name,
@@ -644,7 +643,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 	
 	
 	///////////////////////////////////////////////////////DGFM
-	function UpdateBillAmountDetails($id,$billno,$voteid,$amount){
+	public static function UpdateBillAmountDetails($id,$billno,$voteid,$amount){
 		$db1 = new db_con();
 		 $sqlinsert = "UPDATE vote_bill_amount SET	 
 													 Vote_ID=$voteid,
@@ -656,7 +655,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 	}
 	
 	
-	function UpdateBillAmountDetailsToSfhq($id,$billno,$voteid,$amount){
+	public static function UpdateBillAmountDetailsToSfhq($id,$billno,$voteid,$amount){
 		$db1 = new db_con();
 		 $sqlinsert = "UPDATE sfhq_vote_bill_amount SET	 
 													 Vote_ID=$voteid,
@@ -667,7 +666,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 		return $data;
 	}
 	
-	function InsertbillAmountDetails($bill_no,$vote_id1,$amount1,$billid){
+	public static function InsertbillAmountDetails($bill_no,$vote_id1,$amount1,$billid){
 		$db1 = new db_con();
 												$sqlinsert = "INSERT INTO  vote_bill_amount(Bill_No,Bill_Id,Vote_ID,Amount)
 												VALUES ('$bill_no',$billid,$vote_id1,'$amount1' )";
@@ -679,7 +678,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 		}
 		
 		
-	function InsertbillAmountDetailsToSfhq($bill_no,$vote_id1,$amount1,$billid){
+	public static function InsertbillAmountDetailsToSfhq($bill_no,$vote_id1,$amount1,$billid){
 		$db1 = new db_con();
 		$sqlinsert = "INSERT INTO  sfhq_vote_bill_amount(Bill_No,Bill_Id,Vote_ID,Amount)
 					VALUES ('$bill_no',$billid,$vote_id1,'$amount1' )";
@@ -689,7 +688,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 												
 		}
 		
-	function GetMaxID(){
+	public static function GetMaxID(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT MAX(Bill_Id) as max FROM txt_bill_details";
 		$data = $db1->GetAll($sqlselect);
@@ -700,7 +699,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 	
 	
 	
-	function GetAllProjects($unitid,$ge_id,$projType,$txt){
+	public static function GetAllProjects($unitid,$ge_id,$projType,$txt){
 		$db1 = new db_con();
 		$sqlselect = "SELECT project_reference_id,
 										project_name,
@@ -724,7 +723,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 	
 	
 	
-	function GetAllProjectsPagination($unitid,$ge_id,$projType,$txt,$start,$length){
+	public static function GetAllProjectsPagination($unitid,$ge_id,$projType,$txt,$start,$length){
 		$db1 = new db_con();
 		$sqlselect = "SELECT project_reference_id,
 										project_name,
@@ -747,7 +746,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 	}
 	
 	
-	function GetProjectType()
+	public static function GetProjectType()
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM project_type";
@@ -756,7 +755,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 	}
 	
 	
-	function GetProjectData($id)
+	public static function GetProjectData($id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM m_project_details WHERE project_id =$id";
@@ -766,7 +765,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 	
 	
 	
-		function editProject($project_id,
+		public static function editProject($project_id,
 						   $project_reference_id,
 						   $project_name,
 						   $job_number,		
@@ -831,14 +830,14 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 		return $data;
 	}
 	
-	function GetGEName($esrid){
+	public static function GetGEName($esrid){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM ge WHERE  Esr_unit_id= '$esrid'";
 		$data = $db1->GetAll($sqlselect);
 		return $data;	
 	}
 	
-	function DeleteProject($id)
+	public static function DeleteProject($id)
 	{
 		$db1 = new db_con();
 		$sqldelete2 = "DELETE FROM billdetails WHERE Progress_id IN 
@@ -859,7 +858,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 
 	}
 	
-	function CancelProject($id,$status,$com_status)
+	public static function CancelProject($id,$status,$com_status)
 	{
 		$db1 = new db_con();
 		$sqlcancel = "UPDATE  m_project_details SET project_status = $status , 

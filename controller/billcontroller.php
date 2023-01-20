@@ -354,8 +354,9 @@ switch($mode)
 		
 		$resultcheck = Bills :: CheckIsPrivilege($user_id);
 		$val="";
-		while($row = mysql_fetch_array($resultcheck))
-			{
+		
+		foreach ($resultcheck as $row) {
+			
 				$val=$row[0];
 			}
 				if($val==1)
@@ -377,11 +378,7 @@ switch($mode)
 					 header("Location:../projects.php?msg=18");	
 					
 				}
-				
-				
-				
-				
-			
+
 			break;
 			
 			
@@ -392,8 +389,9 @@ switch($mode)
 		
 		$resultcheck = Bills :: CheckIsPrivilege($user_id);
 		$val="";
-		while($row = mysql_fetch_array($resultcheck))
-			{
+
+		foreach ($resultcheck as $row) {
+
 				$val=$row[0];
 			}
 				//if($val==1)
@@ -422,8 +420,9 @@ switch($mode)
 		
 		$resultcheck = Bills :: CheckIsPrivilege($user_id);
 		$val="";
-		while($row = mysql_fetch_array($resultcheck))
-			{
+	
+		foreach ($resultcheck as $row) {
+			
 				$val=$row[0];
 			}
 				//if($val==1)
@@ -496,8 +495,9 @@ switch($mode)
 		
 		$resultcheck = Bills :: CheckIsPrivilege($user_id);
 		$val="";
-		while($row = mysql_fetch_array($resultcheck))
-			{
+		
+		foreach ($resultcheck as $row) {
+			
 				$val=$row[0];
 			}
 							
@@ -735,9 +735,9 @@ switch($mode)
 		$ststus				= 0;
 		
 		$max = Bills :: GetMaxID();
-		while($rowmax=mysql_fetch_array($max)){	
 		
-		$val = $rowmax[0] +1;
+		foreach ($max as $rowmax) {
+			$val = $rowmax[0] +1;
 		 
 		}    
 		

@@ -71,7 +71,7 @@ $user_type_id = $_SESSION['userType'];
 				{
                 	$result1 = Projects :: GetBillDataToBigUser($project_id,$user_type_id);
 					//echo $result;
-					$row=mysql_fetch_array($result1);
+					$row=$result1[0];
 					
 					
 				}		
@@ -152,7 +152,7 @@ $user_type_id = $_SESSION['userType'];
                      <td class="last"><select name="Payee_name" disabled="disabled" class="ComboBoxcesSmall"  id="Payee_name"   style="width:430px;" >
                         <?php $result = Projects::get_all_Suplier(0); ?>
                         <?php 
-						while($row1 = mysql_fetch_array($result))
+						foreach ($result as $row1) 
 						{
 						?>
                         <option value='<?php echo $row1[0]; ?>' <?php if($row1[0] == $row[2] ){ echo "selected=selected"; }?> ><?php echo $row1[1]; ?></option>
@@ -268,7 +268,7 @@ $user_type_id = $_SESSION['userType'];
 				$result = ProjectsProgress :: GetBillAmountandVotes($project_id,$row[1]);
 					 $total;	
 						$i=1;
-						while($row2 = mysql_fetch_array($result))
+						foreach ($result as $row2) 
 						{
 							
 							$total= $total+ $row2[2];	
@@ -317,7 +317,7 @@ $user_type_id = $_SESSION['userType'];
                     <td class="last"><select name="rt_reason" class="ComboBoxcesSmall"  id="rt_reason"   style="width:430px;" >
                         <?php $result = Projects::get_all_rtnreason(); ?>
                         <?php 
-						while($row1 = mysql_fetch_array($result))
+						foreach ($result as $row1) 
 						{
 						?>
                         <option value='<?php echo $row1[0]; ?>'><?php echo $row1[1]; ?></option>
@@ -345,7 +345,7 @@ $user_type_id = $_SESSION['userType'];
                     <td class="last"><select name="rt_reason" disabled="disabled" class="ComboBoxcesSmall"  id="rt_reason"   style="width:430px;" >
                         <?php $result = Projects::get_all_rtnreason(); ?>
                         <?php 
-						while($row1 = mysql_fetch_array($result))
+						foreach ($result as $row1) 
 						{
 						?>
                         <option value='<?php echo $row1[0]; ?>' <?php if($row1[0] == $row[12] ){ echo "selected=selected"; }?> ><?php echo $row1[1]; ?></option>

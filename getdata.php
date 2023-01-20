@@ -14,7 +14,8 @@ if($id == 3 || $id == 10 ){
     <select name="cmb_sfhq" id="cmb_sfhq">
       <?php 
 	$sfhq = Login :: getSFHQ();
-	while($row=mysql_fetch_array($sfhq)){
+  foreach ($sfhq as $row) 
+  {
 	
 	?>
       <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; ?></option>
@@ -36,7 +37,7 @@ elseif($id == 4){
     <select name="cmb_branch" id="cmb_branch">
       <?php 
 	$branches = Login :: getBranches();
-	while($row=mysql_fetch_array($branches)){
+  foreach ($branches as $row) {
 	
 	?>
       <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; ?></option>

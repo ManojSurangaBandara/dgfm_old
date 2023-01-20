@@ -20,7 +20,7 @@ class Users{
 		
 	}
 	
-	function getUser($username,$usertype,$unitID){
+	public static function getUser($username,$usertype,$unitID){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM users WHERE user_name='$username' AND unit_id='$unitID' AND user_type='$usertype'";
 		$data = $db1->Getrow($sqlselect);
@@ -28,7 +28,7 @@ class Users{
 	}
 	
 	
-	function SaveUserCreation($typeid, $branchsfhq,$txtusername,$pass,$myname,$nic,$tele,$email,$user_id,$today,$isprivilege)
+	public static function SaveUserCreation($typeid, $branchsfhq,$txtusername,$pass,$myname,$nic,$tele,$email,$user_id,$today,$isprivilege)
 	{    
 	
 	
@@ -73,7 +73,7 @@ class Users{
 	}
 	
 	
-	function CheckAuthorityUserCreation($Authousername,$Authopassword,$user_type)
+	public static function CheckAuthorityUserCreation($Authousername,$Authopassword,$user_type)
 	{
 		
 		$db1 = new db_con();		
@@ -86,7 +86,7 @@ class Users{
 	}
 	
 	
-	function CheckUsername($username)
+	public static function CheckUsername($username)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT user_name FROM users WHERE user_name = '$username' ";	
@@ -99,7 +99,7 @@ class Users{
 	
 	
 	
-	function SaveUser($username,$password,$location,$usertype,$sfhq_id,$geid,$Authousername,$Is_Privilege,$Pers_name,$nic,$Tele,$emailadd)	              
+	public static function SaveUser($username,$password,$location,$usertype,$sfhq_id,$geid,$Authousername,$Is_Privilege,$Pers_name,$nic,$Tele,$emailadd)	              
 	{
 	$db1 = new db_con();
 	$sqlselect = "INSERT INTO users(user_name,pass,location,user_type,sfhq_id,ge_id,AuthorityUser,Isprivilege_user,Name,NIC,Telephone,Email) 
@@ -113,7 +113,7 @@ class Users{
 	
 	
 	
-	function UpdateUserCreation($userid,$username,$password,$location,$usertype,$unitId,$geid)
+	public static function UpdateUserCreation($userid,$username,$password,$location,$usertype,$unitId,$geid)
 	{
 		$db1 = new db_con();
 		$sqlupdate = "UPDATE users SET 
@@ -130,7 +130,7 @@ class Users{
 	
 	
 	
-	function UpdateUser($userid,$username,$password,$usertype,$unitId,$geid,$privilege)
+	public static function UpdateUser($userid,$username,$password,$usertype,$unitId,$geid,$privilege)
 	{
 		
 		$db1 = new db_con();
@@ -149,7 +149,7 @@ class Users{
 	}
 	
 	
-	function UpdateOtherUserAccount($userid,$password)
+	public static function UpdateOtherUserAccount($userid,$password)
 	{
 		$db1 = new db_con();
 		$sqlupdate = "UPDATE users SET 	pass = '$password'
@@ -159,7 +159,7 @@ class Users{
 		return $data;		
 	}
 	
-	function getAllUsers(){
+	public static function getAllUsers(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT t1.user_id,t1.user_name,t1.location ,t1.user_type,t1.unit_id,t2.type_name,t3.unit_name,t4.ge_name
 		                    FROM users AS t1 
@@ -171,7 +171,7 @@ class Users{
 	}
 	
 	
-	function getAllUsersForUserType($usertype,$userid){		
+	public static function getAllUsersForUserType($usertype,$userid){		
 		
 		$db1 = new db_con();
 		$sqlselect = "SELECT t1.user_id,t1.user_name,t1.location,t1.user_type
@@ -185,7 +185,7 @@ class Users{
 		return $data;	
 	}
 	
-	function getAllUsersForUserTypePagination($usertype,$userid,$start,$length){		
+	public static function getAllUsersForUserTypePagination($usertype,$userid,$start,$length){		
 		
 		$db1 = new db_con();
 		$sqlselect = "SELECT t1.user_id,t1.user_name,t1.location,t1.user_type
@@ -204,7 +204,7 @@ class Users{
 	
 
 	
-	function getUserData($userid)
+	public static function getUserData($userid)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM users WHERE user_id='$userid'";
@@ -212,7 +212,7 @@ class Users{
 		return $data;	
 	}
 	
-	function UserDelete($id)
+	public static function UserDelete($id)
 	{
 		$db1 = new db_con();
 		$sqldelete = "DELETE FROM users WHERE user_id = $id";
@@ -221,7 +221,7 @@ class Users{
 
 	}
 	
-	function DeactivateUser($id)
+	public static function DeactivateUser($id)
 	{
 		$today = date('Y-m-d');
 		$db1 = new db_con();

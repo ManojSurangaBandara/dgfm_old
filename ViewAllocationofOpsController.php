@@ -90,7 +90,7 @@ ddaccordion.init({
                     <td class="last"><select name="branch_id" class="ComboBoxcesSmall" id="branch_id" style="width:80px;">
                         <?php $result = Projects::GetBranchName($branch_id); ?>
                         <?php 
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 						?>
                        <option value='<?php echo $row[0]; ?>'><?php echo $row[1]; ?></option>
@@ -131,7 +131,7 @@ ddaccordion.init({
 			$result = Money :: getMoneyAllocationDetails($year_r,$branch_id);
 			if (!$result) return;
 		
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -139,7 +139,7 @@ ddaccordion.init({
 				
 				$result = Money :: getBranchViewMoneyAllocationPagination($year_r,$branch_id,$current1, $length);				
 				if (!$result) return;			
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -180,7 +180,7 @@ ddaccordion.init({
 					
 						
 						$i = $page_id *100 +1;
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 							$ttl=0;
 							$ttlexped=0;

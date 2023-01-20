@@ -69,7 +69,7 @@ $project_id 	= $_GET['billID'];
 				{
                 	$result = Projects :: GetBillData($project_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 				}
 				?>
 		 <form id="form1" name="form1" method="post" action="controller/projects.controller.php?mode=settlenow&projectid=<?php echo $project_id; ?>">
@@ -158,7 +158,7 @@ $project_id 	= $_GET['billID'];
 						   
 							 <?php 
 							$esrunit = Common :: GetVotesName();
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
 						      <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $unit_id){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
 						      <?php } ?>

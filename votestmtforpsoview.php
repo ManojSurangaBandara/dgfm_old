@@ -15,7 +15,7 @@ $branch_id  	= $_SESSION['branchID'];
 $Branch = Vote :: GetBranchNametoPsoView($branch_id);
 
 //$sfname = Projects :: GetSFHQName($sfhq_id);
-//while($sftitle=mysql_fetch_array($sfname))
+//foreach ($sfname as $sftitle)
 //{
 //	$sfhq_name = $sftitle[0];
 //}
@@ -118,7 +118,7 @@ ddaccordion.init({
 						   
 							 <?php 
 							$esrunit = Vote:: VotesreltoBranch($branch_id);
-							while($rowesrunit=mysql_fetch_array($esrunit)){?>
+							foreach ($esrunit as $rowesrunit) {?>
 						     <option value="<?php echo $rowesrunit[0];  ?>" <?php if( $rowesrunit[0] == $vote_id){ echo "selected=selected"; }?> > <?php echo $rowesrunit[1]; ?></option>
                
 						      <?php }?>

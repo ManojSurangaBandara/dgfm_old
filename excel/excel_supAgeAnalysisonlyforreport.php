@@ -104,8 +104,7 @@ $myArrtitle=array("<strong>SRI LANKA ARMY - ".$sfhqname."- SUPPLIER AGE ANALYSIS
 		}
 		$i=1;		
 		
-	while($rowesrunit=mysql_fetch_array($esrunit))
-	{			
+	foreach ($esrunit as $rowesrunit) {		
 	
 				
 				
@@ -286,9 +285,8 @@ $myArrtitle=array("<strong>SRI LANKA ARMY - ".$sfhqname."- SUPPLIER AGE ANALYSIS
             
             $excel->writeLine($title_2);
             
-            while($sfhqrowesrunit=mysql_fetch_array($sfhqesrunit))
-            {			
-
+            		
+			foreach ($sfhqesrunit as $sfhqrowesrunit) {
 
 
                 

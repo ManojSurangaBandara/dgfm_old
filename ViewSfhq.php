@@ -126,7 +126,7 @@ switch($sfhq_id)
 
 	 
 	$project = Common :: GetDGFMBillDetailsToviewDgfm($status,$sfhq_id,$unit_dis_id);
-	 while($rowproject=mysql_fetch_array($project)){
+	 foreach ($project as $rowproject){
 	 
 		 if($search_str == ""){
 			 $search_str = "'{$rowproject[1]}'";
@@ -218,7 +218,7 @@ ddaccordion.init({
 						    <option value="0">All</option>
 							 <?php 
 							$esrunit = Projects::get_all_Unit_related_Sfhq($sfhq_id);
-							while($rowesrunit=mysql_fetch_array($esrunit)){?>
+							foreach ($esrunit as $rowesrunit) {?>
                    
                             
 						     <option value="<?php echo $rowesrunit[0];  ?>" <?php if( $rowesrunit[0] == $unit_dis_id){ echo "selected=selected"; }?> > <?php if ($rowesrunit[5]!='') { echo $rowesrunit[5];} else { echo $rowesrunit[3];}  ?></option>
@@ -279,7 +279,7 @@ Reg No or Sup Name
 		else{	$result = Projects :: GetAllBillsDGFMToBigestUser($sfhq_id,$status,$search,$unit_dis_id);
 			if (!$result) return;
 		}
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -296,7 +296,7 @@ Reg No or Sup Name
 				if (!$result) return;	
 				
 				}		
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -398,7 +398,7 @@ Reg No or Sup Name
                   <?php 
 						
 						$i = $page_id *100 +1;							
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 					?>
 					<tr>

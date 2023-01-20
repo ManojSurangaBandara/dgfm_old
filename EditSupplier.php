@@ -62,7 +62,7 @@ $sfhq_id 	= $_SESSION['sfhqID'];
                 	$result = Vote::SelectSupplierDetailRow($sup_id);
 					//echo $result;
 					//exit;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 					
 				}
 				?>
@@ -126,7 +126,7 @@ $sfhq_id 	= $_SESSION['sfhqID'];
 							 <?php 							
 							$bankname = Projects::get_VehRunPlace($sfhq_id);
 							
-							while($rowbank=mysql_fetch_array($bankname))
+							foreach ($bankname as $rowbank) 
 							{
 							?>
 						<option value='<?php echo $rowbank[0];  ?>'  <?php if($rowbank[0] == $row[17] ){ echo "selected=selected"; }?> > <?php echo $rowbank[1]; ?></option>
@@ -260,7 +260,7 @@ $sfhq_id 	= $_SESSION['sfhqID'];
 							 <?php 							
 							$bankname = Projects::get_all_BankDetails();
 							
-							while($rowbank=mysql_fetch_array($bankname))
+							foreach ($bankname as $rowbank) 
 							{
 							?>
 						<option value='<?php echo $rowbank[0];  ?>'  <?php if($rowbank[1] == $row[5] ){ echo "selected=selected"; }?> > <?php echo $rowbank[1]; ?></option>

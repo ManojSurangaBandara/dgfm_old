@@ -95,7 +95,7 @@ ddaccordion.init({
 			$result = Units :: GetUnitDetails();
 			if (!$result) return;
 		
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -103,7 +103,7 @@ ddaccordion.init({
 				
 				$result = Units :: GetUnitDetailsPagination($current1, $length);				
 				if (!$result) return;			
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;		
@@ -137,7 +137,7 @@ ddaccordion.init({
                   
                   <?php 
                   
-                  	while($row2 = mysql_fetch_array($myresult))
+					foreach ($myresult as $row2) 
 					{	?>
                   
                   	<tr>
@@ -178,7 +178,7 @@ ddaccordion.init({
                   <?php 
 						
 						$i = $page_id *10 +2;
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 													
 					?>

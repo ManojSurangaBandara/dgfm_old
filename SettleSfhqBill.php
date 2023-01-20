@@ -69,7 +69,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 				{
                 	$result = Projects :: GetBillDataToSFHQ($sfhq_id ,$project_id,$user_type_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 				}
 				
 				$result = ProjectsProgress :: GetBillAmountandVotesToSfhq($project_id,$row[1]);
@@ -294,7 +294,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 			 $total;
 						
 						$i=1;
-						while($row1 = mysql_fetch_array($result))
+						foreach ($result as $row1) 
 						{
 							$total= $total+ $row1[2];	
 					?>

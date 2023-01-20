@@ -46,8 +46,8 @@
 		
 		
 	$i=1;			
-	while($rowesrunit=mysql_fetch_array($result))
-	{			
+	
+	foreach ($result as $rowesrunit) {
 				$val1 = $rowesrunit[5]-($rowesrunit[6]+$rowesrunit[7]);
 	
 				$excel->writeCol($i);	

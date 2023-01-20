@@ -97,7 +97,7 @@ switch($mode)
 		} else if($isveh==0){
 			
 			$res = Vote :: GetMaxsupid();				
-			$ro=mysql_fetch_array($res);
+			$ro=$res[0];
 			
 			$fin_vehno=$ro[0]+1;
 			$vrp=0;
@@ -123,7 +123,7 @@ switch($mode)
 		//echo  "55"." ".$vrp; die();
 		
 		//$result = Vote::GetMaxsupid();				
-	//	$row=mysql_fetch_array($result);
+	//	$row=$result[0];
 
 		
 		//$user_id 	= $_SESSION['userID'];

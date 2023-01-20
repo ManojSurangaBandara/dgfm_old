@@ -224,7 +224,7 @@ $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);
 			 $result = ProjectsProgress :: GetBillAmountandVotesToSfhq($progressdata['Bill_No']);
 					 $total;	
 						$i=1;
-						while($row2 = mysql_fetch_array($result))
+						foreach ($result as $row2) 
 						{
 							$total= $total+ $row2[2];	
 					?>

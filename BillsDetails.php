@@ -13,7 +13,7 @@ $rid="";
 $id		=	isset( $_GET['id'])?$_GET['id']:$id;
 if($id !=0 || $id != "id"){
 	$result = ProjectsProgress :: GetTembillDetails($id);
-	while($rowdata = mysql_fetch_array($result)){
+	foreach ($result as $rowdata) {
 		$rid = $rowdata[0];
 		$des = $rowdata[1];
 		$amount = $rowdata[2];
@@ -83,7 +83,7 @@ if($id !=0 || $id != "id"){
 						
 						$id= "id";
 						$result = ProjectsProgress :: GetTembillDetails($id);
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 					?>
 		        <tr>

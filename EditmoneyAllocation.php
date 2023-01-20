@@ -105,7 +105,7 @@ xmlhttp.send();
 									
                 	$result = Money :: SelectMoneyAllocationDetailRow($allocationid);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 					
 					
 				
@@ -142,7 +142,7 @@ xmlhttp.send();
                             <td class="last"><select name="brach_id" class="ComboBoxcesSmall" id="brach_id"   style="width:100px;" onchange="editbranchvalue(this.value,<?php echo $allocationid; ?>)" >
                         <?php $result = Projects::get_all_Operationalbranches(); ?>
                         <?php 
-						while($row1 = mysql_fetch_array($result))
+						foreach ($result as $row1) 
 						{
 						?>
                        <option value='<?php echo $row1[0]; ?>' <?php if($row1[0] == $brach_id ){ echo "selected=selected"; }?> ><?php echo $row1[1]; ?></option>
@@ -160,7 +160,7 @@ xmlhttp.send();
                    <?php 
 				    
 							$esrunit = Common :: GetReleventVotesName($brach_id);
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $row[4]){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>

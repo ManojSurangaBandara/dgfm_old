@@ -112,7 +112,7 @@ ddaccordion.init({
                             <td class="last">     <select name="branch_id" class="ComboBoxcesSmall" id="branch_id"   style="width:80px;" onchange="getAccountOffice(this.value,'<?php echo $year_r; ?>')" >
                         <?php $result = Projects::get_all_Operationalbranches(); ?>
                         <?php 
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 						?>
                        <option value='<?php echo $row[0]; ?>' <?php if($row[0] == $branch_id ){ echo "selected=selected"; }?> ><?php echo $row[1]; ?></option>
@@ -157,7 +157,7 @@ ddaccordion.init({
                  <td width="20%" ><select name="vote"  id="vote"  onchange="getvotecode(this.value,'<?php echo $year_r; ?>','<?php echo $branch_id; ?>')" >
                    <?php 
 							$esrunit = Common :: GetReleventVotesName($branch_id);
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                             
 
@@ -195,7 +195,7 @@ ddaccordion.init({
 			$result = Money :: getMoneyAllocationDetails($year_r,$branch_id);
 			if (!$result) return;
 		
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -203,7 +203,7 @@ ddaccordion.init({
 				
 				$result = Money :: getMoneyAllocationDetailsPagination($year_r,$branch_id,$current1, $length);				
 				if (!$result) return;			
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -230,7 +230,7 @@ ddaccordion.init({
 					
 						
 						$i = $page_id *100 +1;
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 					?>
 					<tr>

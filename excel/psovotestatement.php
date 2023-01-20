@@ -37,8 +37,7 @@
 		
 		
 		$Vote= Projects :: GetVoteName($vote_id);
-		while($newsupname=mysql_fetch_array($Vote))
-		{
+		foreach ($Vote as $newsupname) {
 			$Vote_name = $newsupname[0];
 		}
 	
@@ -158,8 +157,7 @@
 		$tot="";
 		
 		
-	while($rowesrunit=mysql_fetch_array($esrunit))
-	{			
+	foreach ($esrunit as $rowesrunit) {		
 	
                 $excel->writeCol($i);			
                 $excel->writeCol($rowesrunit[0]);

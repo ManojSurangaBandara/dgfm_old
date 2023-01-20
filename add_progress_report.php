@@ -92,7 +92,7 @@ xmlhttp.send();
 				{
                 	$result = Projects :: GetProjectData($project_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);			
+					$row = $result[0];		
 					
 				}
 				
@@ -134,7 +134,8 @@ xmlhttp.send();
 				  	
 							
 							$projectprogress = ProjectsProgress :: GetAllProjects($unitid,$ge_id);
-							while($rowprojectprodress = mysql_fetch_array($projectprogress)){
+							foreach ($projectprogress as $rowprojectprodress) {
+							
 							?>
 					        <option value="<?php echo $rowprojectprodress[0]; ?>" ><?php echo $rowprojectprodress[1]; ?></option>
 					        <?php } ?>

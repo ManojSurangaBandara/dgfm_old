@@ -65,7 +65,7 @@ document.location.href="New_Supplier.php?isveh="+isveh;
 				
                 //	$result = Units::GetMaxidforGroupbySFHQ($sfhq_id);
 					//echo $result;
-					//$row=mysql_fetch_array($result);
+					//$row=$result[0];
 					
 				
 					/*switch($sfhq_id)
@@ -215,7 +215,7 @@ document.location.href="New_Supplier.php?isveh="+isveh;
 							 <?php 							
 							$bankname = Projects::get_VehRunPlace($sfhq_id);
 							
-							while($rowbank=mysql_fetch_array($bankname)){?>
+							foreach ($bankname as $rowbank) {?>
 						     <option value="<?php echo $rowbank[0];  ?>" > <?php echo $rowbank[1]; ?></option>
 						     <?php }?>
 	          </select>
@@ -359,7 +359,7 @@ document.location.href="New_Supplier.php?isveh="+isveh;
 							 <?php 							
 							$bankname = Projects::get_all_BankDetails();
 							
-							while($rowbank=mysql_fetch_array($bankname)){?>
+							foreach ($bankname as $rowbank) {?>
 						     <option value="<?php echo $rowbank[0];  ?>" > <?php echo $rowbank[1]; ?></option>
 						     <?php }?>
 	          </select>

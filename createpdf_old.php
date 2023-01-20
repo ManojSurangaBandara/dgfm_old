@@ -49,7 +49,7 @@ function ImprovedTable($header,$data)
         $this->Cell($w[$i],5,$header[$i],1,0,'C');
     $this->Ln();
     //Data
-    while($rowm = mysql_fetch_array($data))
+    foreach ($data as $rowm) 
 	{
         $this->SetFont('Times','',6);
 		$this->Cell($w[0],4,$rowm[0],'LR');

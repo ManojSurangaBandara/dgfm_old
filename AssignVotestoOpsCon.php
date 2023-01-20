@@ -107,7 +107,7 @@ xmlhttp.send();
 				{
                 	$result = Units::SelectUnitDetailRow($unit_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 					
 				}
 				?>
@@ -128,7 +128,7 @@ xmlhttp.send();
                             <td width="528" class="last"><select name="procon_id" class="ComboBoxcesSmall" id="procon_id"   style="width:100px;" onchange="showprocContobudget(this.value)" >
                         <?php $result = Projects::get_all_ProController(); ?>
                         <?php 
-						while($row3 = mysql_fetch_array($result))
+						foreach ($result as $row3)
 						{
 						?>
                        <option value='<?php echo $row3[0]; ?>' <?php if($row3[0] == $pro_id ){ echo "selected=selected"; }?> ><?php echo $row3[1]; ?></option>
@@ -146,7 +146,7 @@ xmlhttp.send();
                             <td class="last"><select name="opcon_id" class="ComboBoxcesSmall" id="opcon_id"   style="width:100px;" >
                         <?php $result = Projects::get_all_OpstoProcController($pro_id); ?>
                         <?php 
-						while($row3 = mysql_fetch_array($result))
+						foreach ($result as $row3)
 						{
 						?>
                        <option value='<?php echo $row3[0]; ?>' ><?php echo $row3[1]; ?></option>
@@ -162,7 +162,7 @@ xmlhttp.send();
 							
 							$esrunit = Common :: GetVotesName();
 							
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $vote_id1){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>

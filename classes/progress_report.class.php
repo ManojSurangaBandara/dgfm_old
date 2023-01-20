@@ -35,7 +35,7 @@ class ProjectsProgress{
 	
 	///////////////////////////////////////////DGFM
 	
-	function GetBillAmountandVotes($id,$Bill_No){
+	public static function GetBillAmountandVotes($id,$Bill_No){
 		$db1 = new db_con();
 		$sqlselect = "SELECT v.Bill_No,v.Vote_ID, v.Amount,T.vote_number,T.description 
 		
@@ -59,7 +59,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function GetBillAmountandVotesToSfhq($id,$bill_no ){
+	public static function GetBillAmountandVotesToSfhq($id,$bill_no ){
 		$db1 = new db_con();
 		$sqlselect = "SELECT v.Bill_No,v.Vote_ID, v.Amount,T.vote_number,T.description 
 		, (IFNULL((SELECT SUM(amount) FROM m_money_allocation WHERE Vot_Number = v.Vote_ID) ,0)
@@ -80,7 +80,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-		function GetBillAmountandVoteswithname($id){
+		public static function GetBillAmountandVoteswithname($id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT Bill_No,Vote_ID, Amount FROM vote_bill_amount WHERE Bill_No = $id";
 		
@@ -93,7 +93,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
 	/////////////////////////////////////////// DGFM
 	
-	function GetAllProjects($unitid,$ge_id){
+	public static function GetAllProjects($unitid,$ge_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT project_id,project_name,project_type 
 						FROM m_project_details WHERE project_status =1 and proj_completing_status =0
@@ -107,7 +107,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function GetMaxID(){
+	public static function GetMaxID(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT MAX(proj_pro_report_id) as max FROM project_progress_report";
 		$data = $db1->GetAll($sqlselect);
@@ -115,7 +115,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	}
 	
 		
-	function Truncate_tembill(){
+	public static function Truncate_tembill(){
 		$db1 = new db_con();
 		$sqltruncate = "TRUNCATE TABLE temp_billdetails";
 		$data = $db1->GetAll($sqltruncate);
@@ -128,7 +128,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function GetTembillDetails($id){
+	public static function GetTembillDetails($id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM temp_billdetails WHERE id = $id";
 		
@@ -136,7 +136,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 		$data = $db1->GetAll($sqlselect);
 		return $data;	
 	}
-	function GetBillDetails($id){
+	public static function GetBillDetails($id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM billdetails WHERE Progress_id = $id";
 		
@@ -146,7 +146,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	}
 		
 	
-	function GetProjectData($projectID){
+	public static function GetProjectData($projectID){
 		$db1 = new db_con();
 		$sqlselect = "SELECT 
 		project_id,
@@ -171,7 +171,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-	function GetprojectReports($projectID){
+	public static function GetprojectReports($projectID){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  
 							proj_pro_report_id ,
@@ -196,7 +196,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	}	
 	
 	
-	function GetprojectReportsPagination($projectID,$start,$length){
+	public static function GetprojectReportsPagination($projectID,$start,$length){
 		$db1 = new db_con();
 		$sqlselect = "SELECT  
 							proj_pro_report_id ,
@@ -222,7 +222,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function saveProjectReport($proj_id,$allocated_ammount_year,$allocated_ammount,$paid_year,$paid_amount,$completing_state_as_percentage,$report_file,$report_file1,$report_file2,$report_file3,$remarks,$report_date,$create_user_id,$create_date,$sending_states,$report_states,$total_complete,$IsTBapproval,$Aproval_Date,$award_sum)
+	public static function saveProjectReport($proj_id,$allocated_ammount_year,$allocated_ammount,$paid_year,$paid_amount,$completing_state_as_percentage,$report_file,$report_file1,$report_file2,$report_file3,$remarks,$report_date,$create_user_id,$create_date,$sending_states,$report_states,$total_complete,$IsTBapproval,$Aproval_Date,$award_sum)
 	{
 		
 		$db1 = new db_con();
@@ -282,7 +282,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function GetProjectType()
+	public static function GetProjectType()
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM project_type";
@@ -290,7 +290,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 		return $data;		
 	}
 	
-	function editProject($project_id,
+	public static function editProject($project_id,
 						   $project_reference_id,
 						   $project_name,
 						   $project_status,
@@ -338,14 +338,14 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 		return $data;
 	}
 	
-	function GetGEName($esrid){
+	public static function GetGEName($esrid){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM ge WHERE  Esr_unit_id= '$esrid'";
 		$data = $db1->GetAll($sqlselect);
 		return $data;	
 	}
 	
-	function DeleteProjectReport($id)
+	public static function DeleteProjectReport($id)
 	{
 		$db1 = new db_con();
 		$sqldelete = "DELETE FROM project_progress_report WHERE proj_pro_report_id = $id";
@@ -357,7 +357,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 		$data = $db1->Execute($sqldelete);
 		return $data;
 	}
-	function DeleteToEditBillDetails($id)
+	public static function DeleteToEditBillDetails($id)
 	{
 		$db1 = new db_con();
 		$sqldelete = "DELETE FROM billdetails WHERE Progress_id = $id";
@@ -369,7 +369,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function DeleteTempBillsDetails($id)
+	public static function DeleteTempBillsDetails($id)
 	{
 		$db1 = new db_con();
 		$sqldelete = "DELETE FROM temp_billdetails WHERE Id = $id";
@@ -378,7 +378,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 
 	}
 	
-	function CheckIsPrivilege($uid)
+	public static function CheckIsPrivilege($uid)
 	{
 		$db1 = new db_con();
 		$sqlcheck = "SELECT Isprivilege_user FROM users WHERE user_id = $uid";
@@ -391,7 +391,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function UpdateStatusProjectReport($id)
+	public static function UpdateStatusProjectReport($id)
 	{
 		$db1 = new db_con();
 		$sqldelete = "Update project_progress_report SET sending_status = 1 WHERE proj_pro_report_id = $id";
@@ -400,7 +400,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 
 	}
 	
-	function TemporysaveBillDetails($description,$amount)
+	public static function TemporysaveBillDetails($description,$amount)
 	{
 		$db1 = new db_con();
 		$sqltempsave = "INSERT INTO temp_billdetails (Description,Amount) VALUES ('$description','$amount') ";
@@ -410,7 +410,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 
 	}
 	
-	function TemporyUpdateBillDetails($rowid,$description,$amount)
+	public static function TemporyUpdateBillDetails($rowid,$description,$amount)
 	{
 		
 		
@@ -424,7 +424,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-	function saveBillDetails($progid)
+	public static function saveBillDetails($progid)
 	{
 		$db1 = new db_con();
 		$sqlbilsave = "INSERT INTO billdetails (Progress_id,Description,Amount) SELECT $progid, Description, Amount
@@ -437,7 +437,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function InsertIntoBillsToTempTable($progid)
+	public static function InsertIntoBillsToTempTable($progid)
 	{
 		$db1 = new db_con();
 		
@@ -454,7 +454,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function GetprogressReport($progress_id){
+	public static function GetprogressReport($progress_id){
 		$db1 = new db_con();
 		$sqlselect =   "SELECT  ppr.proj_pro_report_id,
 								ppr.proj_id,
@@ -491,7 +491,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = v.Vote_ID AND ab.Bill_Staus = 1),0)
 	
             
 	
-	function editProjectProgressreport( $proj_pro_report_id,
+	public static function editProjectProgressreport( $proj_pro_report_id,
 										$report_date,
 										$allocated_ammount_year,
 										$allocated_ammount,

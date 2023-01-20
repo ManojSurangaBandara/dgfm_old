@@ -10,7 +10,7 @@ class Regiment{
 		
 	}
 	
-	function SaveRegiment($regiment_name, $Description){
+	public static function SaveRegiment($regiment_name, $Description){
 		$db1 = new db_con();
 		$sqlinsert = "INSERT INTO  all_army_regiments (regiment_name,description) 
 						VALUES ('$regiment_name','$Description')";
@@ -20,7 +20,7 @@ class Regiment{
 	}
 	
 	
-	function GetRegimentDetails()
+	public static function GetRegimentDetails()
 	{
 		$db1 = new db_con();
 		$sqlselect = "select * from all_army_regiments";
@@ -29,14 +29,14 @@ class Regiment{
 	}
 	
 		
-	function SelectRegimentDetailRow($id)
+	public static function SelectRegimentDetailRow($id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM all_army_regiments WHERE  id =$id";
 		$data = $db1->GetAll($sqlselect);
 		return $data;
 	}
-	function Regiment_Update($regiment_name, $description, $id)
+	public static function Regiment_Update($regiment_name, $description, $id)
 	{
 		$db1 = new db_con();		
 		
@@ -50,7 +50,7 @@ class Regiment{
 				return $data;
 	}
 
-	function Regiment_Delete($id)
+	public static function Regiment_Delete($id)
 	{
 		$db1 = new db_con();
 		$sqldelete = "DELETE  FROM all_army_regiments WHERE id = '$id'";
@@ -58,7 +58,7 @@ class Regiment{
 		return $data;
 
 	}
-	function GetRegimentDetails_pagination($start, $length)
+	public static function GetRegimentDetails_pagination($start, $length)
 	{
 		$db1 = new db_con();
 		$sqlselect = "select * from all_army_regiments limit $start, $length";		

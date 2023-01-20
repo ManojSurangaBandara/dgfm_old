@@ -54,7 +54,7 @@ $unit_id = $_GET['unitid'];
 				{
                 	$result = Units::SelectUnitDetailRow($unit_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 					
 				}
 				?>

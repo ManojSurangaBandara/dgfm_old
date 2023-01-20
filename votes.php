@@ -75,7 +75,7 @@ $user_type_id = $_SESSION['userType'];
 			$result = Vote :: GetVoteDetails();
 			if (!$result) return;
 		
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -83,7 +83,7 @@ $user_type_id = $_SESSION['userType'];
 				
 				$result = Vote :: GetVoteDetails_pagination($current1,  $limit);				
 				if (!$result) return;			
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -129,7 +129,7 @@ $user_type_id = $_SESSION['userType'];
 								}
 						
 						$i = $page_id *400 +1;
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{ 
 						
 								

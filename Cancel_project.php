@@ -60,7 +60,7 @@ $status	  		= isset( $_GET['cval'])?$_GET['cval']:$status;
 				{
                 	$result = Projects :: GetBillData($project_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 				}
 				?>
 		 <form id="form1" name="form1" method="post" action="controller/projects.controller.php?mode=cancel&projectid=<?php echo $project_id; ?>&cval=<?php echo $status; ?>">

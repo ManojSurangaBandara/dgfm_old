@@ -259,7 +259,7 @@ $projdata = Common :: GetProject($project_id);
 			$result = Common :: GetAllprojectReports($project_id);
 			if (!$result) return;
 		
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -267,7 +267,7 @@ $projdata = Common :: GetProject($project_id);
 				
 				$result = Common :: GetAllprojectReportsPagination($project_id,$current1, $length);				
 				if (!$result) return;			
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -311,7 +311,7 @@ $projdata = Common :: GetProject($project_id);
                   <?php 
 						
 						$i=1;
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 					?>
                   

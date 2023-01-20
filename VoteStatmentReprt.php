@@ -11,7 +11,7 @@ header("Location:index.php");
 }
 $sfhq_id = $_SESSION['sfhqID'];	
 $sfname = Projects :: GetSFHQName($sfhq_id);
-while($sftitle=mysql_fetch_array($sfname))
+foreach ($sfname as $sftitle)
 {
 	$sfhq_name = $sftitle[0];
 }
@@ -114,7 +114,7 @@ ddaccordion.init({
 						   
 							 <?php 
 							$esrunit = Vote:: GetVoteDetails();
-							while($rowesrunit=mysql_fetch_array($esrunit)){?>
+							foreach ($esrunit as $rowesrunit) {?>
 						     <option value="<?php echo $rowesrunit[0];  ?>" <?php if( $rowesrunit[0] == $vote_id){ echo "selected=selected"; }?> > <?php echo $rowesrunit[1]; ?></option>
                
 						      <?php }?>

@@ -85,7 +85,7 @@ document.location.href="NewAccountCreation.php?typeid="+typeid;
 					    	<?php 	
 						 	$ranks = Common :: GetAllAcountType();
 							
-							while($rowissueplace = mysql_fetch_array($ranks)){
+							foreach ($ranks as $rowissueplace) {
 							?>                            
 					        <option value="<?php echo $rowissueplace[0]; ?>" <?php if($rowissueplace[0]==$typeid) { echo "selected=selected"; } ?> ><?php echo $rowissueplace[1]; ?></option>
 					      
@@ -112,7 +112,7 @@ document.location.href="NewAccountCreation.php?typeid="+typeid;
 					    	<?php 	
 						 	$unit = Common :: GetUserType($typeid);
 							
-							while($rowunit = mysql_fetch_array($unit)){
+							foreach ($unit as $rowunit) {
 							?>                            
 					        <option value="<?php echo $rowunit[0]; ?>" ><?php echo $rowunit[1]; ?></option>
 					      

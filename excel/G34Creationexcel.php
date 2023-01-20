@@ -26,7 +26,7 @@
 		$txt_to_date 		=	isset( $_POST['txt_to_date'])?$_POST['txt_to_date']:$today;
 		
 		$supname = Projects :: GetSupplierName($sup_id);
-		while($newsupname=mysql_fetch_array($supname))
+		foreach ($supname as $newsupname) 
 		{
 		$sup_name = $newsupname[0];
 		}
@@ -53,7 +53,7 @@
 		$excel->writeLine($myArrtitle);
 		$excel->writeRow();	
 		$totvote=0;
-		while($voteArray=mysql_fetch_array($voteSum))
+		foreach ($voteSum as $voteArray) 
 		{
 		$excel->writeCol('');	
 		$excel->writeCol('');	
@@ -89,7 +89,7 @@
 		$excel->writeLine($myArr);		
 		
 		$totOutStd=0;
-		while($rowesrunit=mysql_fetch_array($esrunit))
+		foreach ($esrunit as $rowesrunit) 
 		{			
 	
 				$excel->writeCol($i);	

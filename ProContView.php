@@ -66,7 +66,7 @@ $OpsCon_Id 	= isset( $_GET['OpsCon_Id'])?$_GET['OpsCon_Id']:$branch_id;
 						   
 							 <?php 
 							$esrunit = Projects::get_all_OpesController($branch_id);
-							while($rowesrunit=mysql_fetch_array($esrunit)){?>
+							foreach ($esrunit as $rowesrunit) {?>
                            
 						     <option value="<?php echo $rowesrunit[0];  ?>" <?php if( $rowesrunit[0] == $OpsCon_Id){ echo "selected=selected"; }?> > <?php echo $rowesrunit[1]; ?></option>
 						      <?php }?>
@@ -113,7 +113,7 @@ $OpsCon_Id 	= isset( $_GET['OpsCon_Id'])?$_GET['OpsCon_Id']:$branch_id;
                   <?php 
 								
 						$i = 1;
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{ 
 						 $val1 = $row[5]-($row[6]+$row[7])
 						 ?>
@@ -163,7 +163,7 @@ $OpsCon_Id 	= isset( $_GET['OpsCon_Id'])?$_GET['OpsCon_Id']:$branch_id;
                   <?php 
 								
 						$i = 1;
-						while($row2 = mysql_fetch_array($result2))
+						foreach ($result2 as $row2) 
 						{  
 						
 						  $val = $row2[5]-($row2[6]+$row2[7])

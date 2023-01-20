@@ -99,7 +99,7 @@ $log_year	    = $_SESSION['log_year'];
                             <td class="last"><select name="brach_id" class="ComboBoxcesSmall" id="brach_id"   style="width:100px;" onchange="showbranchvalueTonewmoneyallocation(this.value)" >
                         <?php $result = Projects::get_all_Operationalbranches(); ?>
                         <?php 
-						while($row3 = mysql_fetch_array($result))
+						foreach ($result as $row3)
 						{
 						?>
                        <option value='<?php echo $row3[0]; ?>' <?php if($row3[0] == $brach_id ){ echo "selected=selected"; }?> ><?php echo $row3[1]; ?></option>
@@ -116,7 +116,7 @@ $log_year	    = $_SESSION['log_year'];
                    <td class="last"><select name="vote"  id="vote"  class="ComboBoxcesSmall" style="width:300px;" >
                    <?php 
 							$esrunit = Common :: GetReleventVotesName($brach_id);
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" ><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>

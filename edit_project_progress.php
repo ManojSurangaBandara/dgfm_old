@@ -58,7 +58,7 @@ $ptype        = $_GET['ptype'];
                 <?php			
 		
                 	$result = ProjectsProgress :: GetprogressReport($progress_id);	
-					$row=mysql_fetch_array($result);	
+					$row=$result[0];	
 					
 					$Truncresult = ProjectsProgress :: Truncate_tembill();						
 					$Billresult = ProjectsProgress :: InsertIntoBillsToTempTable($progress_id);					

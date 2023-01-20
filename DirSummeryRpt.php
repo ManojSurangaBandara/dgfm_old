@@ -12,7 +12,7 @@ header("Location:index.php");
 
 $sfhq_id = $_SESSION['sfhqID'];	
 $sfname = Projects :: GetSFHQName($sfhq_id);
-while($sftitle=mysql_fetch_array($sfname))
+foreach ($sfname as $sftitle)
 {
 	$sfhq_name = $sftitle[0];
 }
@@ -122,7 +122,7 @@ ddaccordion.init({
 							{							 
 							$esrunit = Projects::get_all_branches_without_alloption();
 							}
-							while($rowesrunit=mysql_fetch_array($esrunit)){?>
+							foreach ($esrunit as $rowesrunit) {?>
 						     <option value="<?php echo $rowesrunit[0];  ?>" > <?php echo $rowesrunit[1]; ?></option>
 						      <?php }?>
 	          </select>

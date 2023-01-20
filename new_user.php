@@ -75,7 +75,7 @@ $gevisible = "hidden";
 					       
 						      <?php 
 							$usertype = Common :: UserTypeName();
-							while($rowusertype=mysql_fetch_array($usertype)){
+							foreach ($usertype as $rowusertype){
 							?>
                     
 						     
@@ -163,7 +163,8 @@ $gevisible = "hidden";
 							  <?php 
 							$unitname = Common :: GetSFHQName();
 							
-							while($rowunitname=mysql_fetch_array($unitname)){
+							foreach ($unitname as $rowunitname)
+							{
 							?>
 						      <option value="<?php echo $rowunitname[0]; ?>" <?php if($rowunitname[0] == $row[4] ){ echo 'selected=selected'; }?>  ><?php echo $rowunitname[1]; ?></option>
 						      <?php } ?>
@@ -180,7 +181,7 @@ $gevisible = "hidden";
 						    <option value=""></option>
 							<?php 
 							$gename = Common :: GetGEName();
-							while($rowgename=mysql_fetch_array($gename)){
+							foreach ($gename as $rowgename){
 							?>
 						      <option value="<?php echo $rowgename[0]; ?>" <?php if($rowgename[0] == $row[3] ){ echo 'selected=selected'; }?>  ><?php echo $rowgename[1]; ?></option>
 						      <?php } ?>

@@ -91,7 +91,7 @@ $user_id = $_GET['userid'];
 				{
                 	$result = Users :: getUserData($user_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 					
 				}
 				?>

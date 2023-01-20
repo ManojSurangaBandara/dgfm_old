@@ -53,8 +53,8 @@
 		
 		else {
 		$sfname = Projects :: GetSFHQName($sfhq_id);
-		while($sftitle=mysql_fetch_array($sfname))
-		{
+		
+		foreach ($sfname as $sftitle) {
 			$sfhq_name = $sftitle[0];
 		}
 					
@@ -104,8 +104,8 @@
 		$sup_type_id=1;   // thiis requirement is only for Chief acc rporting 5 suppliers have been made 0 for getting this report manualy 	
 			
 		$vttitle = Projects :: GetTypesofVotes($vttype);
-		while($title=mysql_fetch_array($vttitle))
-		{
+		
+		foreach ($vttitle as $title) {
 			$vt_title = $title[0];
 		}
 					
@@ -288,10 +288,8 @@
 		$total="";
 		//echo $esrunit;
 		//die();
-		
-	while($rowesrunit=mysql_fetch_array($esrunit))
-	{			
-	
+					
+	foreach ($esrunit as $rowesrunit) {
 				$excel->writeCol($i);	
 				$excel->writeCol($rowesrunit[1]);
 				$excel->writeCol($rowesrunit[2]);	

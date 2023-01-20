@@ -132,7 +132,7 @@ $progressdata = Common :: GetVtCode($vote_id);
 
 	 
 	$project = Common :: GetBillNoforPSOView($status,$branch_id,$vote_id,$log_year);
-	 while($rowproject=mysql_fetch_array($project)){
+	 foreach ($project as $rowproject){
 	 
 		 if($search_str == ""){
 			 $search_str = "'{$rowproject[0]}'";
@@ -281,7 +281,7 @@ ddaccordion.init({
 		else{	$result = Projects :: GetSFHQbilltoviewtoPSO($status,$search,$branch_id,$vote_id,$log_year);
 			if (!$result) return;
 		}
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -298,7 +298,7 @@ ddaccordion.init({
 				if (!$result) return;	
 				
 				}		
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -347,7 +347,7 @@ ddaccordion.init({
 						
 						$i = $page_id *1000 +1;		
 						$total=0;					
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 							 
 					?>

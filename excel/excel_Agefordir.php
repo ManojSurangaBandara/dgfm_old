@@ -108,8 +108,9 @@ $myArrtitle=array("<strong>SRI LANKA ARMY - VOTE AGE ANALYSIS REPORT - REGIONAL 
     //  $sfhq_result = Projects :: GetAllAgeAnalysisforSfhq($txt_as_at_date,$rtptype );
 	
             
-	while($rowesrunit=mysql_fetch_array($esrunit))
-	{			
+			
+	foreach ($esrunit as $rowesrunit) {
+		
 				if($id==''){
 				$i +=1;	
 				$excel->writeRow();

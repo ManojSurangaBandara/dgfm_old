@@ -89,7 +89,7 @@ $Branch = Vote :: GetBranchNametoPsoView($branch_id);
                   <?php 
 								
 						$i = 1;
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{ 
 						 $val1 = $row[5]-($row[6]+$row[7])
 						 ?>

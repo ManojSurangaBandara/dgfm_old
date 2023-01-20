@@ -52,7 +52,7 @@ $branch_id 		= isset( $_GET['branch_id'])?$_GET['branch_id']:6;
 
 	 
 	$project = Common :: GetDGFMBillDetailsToBigUser($status,$branch_id,$user_type_id);
-	 while($rowproject=mysql_fetch_array($project)){
+	 foreach ($project as $rowproject){
 	 
 		 if($search_str == ""){
 			 $search_str = "'{$rowproject[1]}'";
@@ -145,7 +145,7 @@ ddaccordion.init({
 						   
 							 <?php 
 							$esrunit = Projects::get_all_branches();
-							while($rowesrunit=mysql_fetch_array($esrunit)){?>
+							foreach ($esrunit as $rowesrunit) {?>
 						     <option value="<?php echo $rowesrunit[0];  ?>" <?php if( $rowesrunit[0] == $branch_id){ echo "selected=selected"; }?> > <?php echo $rowesrunit[1]; ?></option>
 						      <?php }?>
 	          </select>
@@ -204,7 +204,7 @@ Bill No or Sup. Name
 		else{	$result = Projects :: GetAllBillsDGFMToBigUser($branch_id,$status,$search,$user_type_id);
 			if (!$result) return;
 		}
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -221,7 +221,7 @@ Bill No or Sup. Name
 				if (!$result) return;	
 				
 				}		
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -323,7 +323,7 @@ Bill No or Sup. Name
                   <?php 
 						
 						$i = $page_id *100 +1;							
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 					?>
 					<tr>

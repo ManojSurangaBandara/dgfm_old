@@ -52,7 +52,7 @@ $ge_id = $_GET['geid'];
 				{
                 	$result = GEBranch :: SelectGEUnitDetailRow($ge_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 					
 				}
 				?>
@@ -86,7 +86,7 @@ $ge_id = $_GET['geid'];
 						    <option value=""></option>
 							<?php 
 							$unitname = Common :: GetUnitName();
-							while($rowunitname=mysql_fetch_array($unitname)){
+							foreach ($unitname as $rowunitname){
 							?>
 						      <option value="<?php echo $rowunitname[0]; ?>" <?php if($rowunitname[0] == $row[4] ){ echo 'selected=selected'; }?>  ><?php echo $rowunitname[1]; ?></option>
 						      <?php } ?>

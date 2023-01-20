@@ -67,7 +67,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 				{
                 	$result1 = Projects :: GetBillDataToSFHQ($sfhq_id ,$project_id,$user_type_id);
 					//echo $result;
-					$row=mysql_fetch_array($result1);
+					$row=$result1[0];
 					
 					
 				}		
@@ -153,7 +153,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
                      <td class="last"><select name="Payee_name" disabled="disabled" class="ComboBoxcesSmall"  id="Payee_name"   style="width:400px;" >
                         <?php $result = Projects::get_all_Suplier($sfhq_id ); ?>
                         <?php 
-						while($row1 = mysql_fetch_array($result))
+						foreach ($result as $row1) 
 						{
 						?>
                         <option value='<?php echo $row1[0]; ?>' <?php if($row1[0] == $row[2] ){ echo "selected=selected"; }?> ><?php echo $row1[1]; ?></option>
@@ -279,7 +279,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 				$result = ProjectsProgress :: GetBillAmountandVotesToSfhq($project_id,$row[1]);
 					 $total;	
 						$i=1;
-						while($row2 = mysql_fetch_array($result))
+						foreach ($result as $row2) 
 						{
 							
 							$total= $total+ $row2[2];	
@@ -369,7 +369,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
                     <td class="last"><select name="rtnreason" class="ComboBoxcesSmall"  id="rtnreason"   style="width:550px;" >
                         <?php $result = Projects::get_all_rtnreason(); ?>
                         <?php 
-						while($row1 = mysql_fetch_array($result))
+						foreach ($result as $row1) 
 						{
 						?>
                         <option value='<?php echo $row1[0]; ?>'><?php echo $row1[1]; ?></option>
@@ -397,7 +397,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
                     <td class="last"><select name="rtnreason" disabled="disabled" class="ComboBoxcesSmall"  id="rtnreason"   style="width:550px;" >
                         <?php $result = Projects::get_all_rtnreason(); ?>
                         <?php 
-						while($row1 = mysql_fetch_array($result))
+						foreach ($result as $row1) 
 						{
 						?>
                         <option value='<?php echo $row1[0]; ?>' <?php if($row1[0] == $row[12] ){ echo "selected=selected"; }?> ><?php echo $row1[1]; ?></option>

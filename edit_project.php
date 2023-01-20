@@ -62,7 +62,7 @@ $sfhq_id 	= $_SESSION['sfhqID'];
 				{
                 	$result = Projects :: GetBillDataToEdit($project_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 				}
 				
 				if($branch_id == ""){
@@ -83,7 +83,7 @@ $sfhq_id 	= $_SESSION['sfhqID'];
                       <td class="last"><select name="brach_id" class="ComboBoxcesSmall" id="brach_id"  onchange="getBranchIdToEdit(this.value,<?php echo $project_id; ?>)" style="width:100px;" >
                         <?php $result = Projects::get_all_branches(); ?>
                         <?php 
-						while($rowx = mysql_fetch_array($result))
+						foreach ($result as $rowx) 
 						{
 						?>
                         <option value='<?php echo $rowx[0]; ?>' <?php if($rowx[0] == $branch_id ){ echo "selected=selected"; }?> ><?php echo $rowx[1]; ?></option>
@@ -97,7 +97,7 @@ $sfhq_id 	= $_SESSION['sfhqID'];
                       <td class="last"><select name="allocated_regiment">
                         <?php $result = Projects::get_all_regiment_namesDGFM($sfhq_id,$branch_id); ?>
                         <?php 
-						while($rowy = mysql_fetch_array($result))
+						foreach ($result as $rowy) 
 						{
 						?>
                         <option value='<?php echo $rowy[0]; ?>' <?php if($rowy[0] == $row[8] ){ echo "selected=selected"; }?>><?php echo $rowy[5]; ?></option>

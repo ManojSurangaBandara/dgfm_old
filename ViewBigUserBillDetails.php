@@ -299,7 +299,7 @@ $status			=	isset( $_GET['status'])?$_GET['status']:$status;
 			 $result = ProjectsProgress :: GetBillAmountandVotes($billId,$progressdata['Bill_No']);
 					 $total;	
 						$i=1;
-						while($row2 = mysql_fetch_array($result))
+						foreach ($result as $row2) 
 						{
 							$total= $total+ $row2[2];	
 					?>

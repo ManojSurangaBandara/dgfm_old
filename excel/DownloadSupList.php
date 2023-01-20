@@ -29,8 +29,7 @@
 		
 		
 		/*$Vote= Projects :: GetVoteName($vote_id);
-		while($newsupname=mysql_fetch_array($Vote))
-		{
+		foreach ($Vote as $newsupname) {
 			$Vote_name = $newsupname[0];
 		}*/
 	
@@ -72,13 +71,9 @@ $esrunit = Projects :: Getsupplieralllist();
 		
 		$i=1;		
 		$tot="";
-		
-		
-	while($rowesrunit=mysql_fetch_array($esrunit))
-	{			
 	
-	
-	
+
+	foreach ($esrunit as $rowesrunit) {
 	
                 $excel->writeCol($i);	                
                 $excel->writeCol($rowesrunit[1]);				
@@ -91,9 +86,6 @@ $esrunit = Projects :: Getsupplieralllist();
 				$excel->writeCol($rowesrunit[19]);		
 				$excel->writeCol($rowesrunit[10]);
 				$excel->writeCol($rowesrunit[22]);
-                
-
-                
 
                 $i +=1;				
                 $excel->writeRow();

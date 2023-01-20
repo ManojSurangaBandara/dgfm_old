@@ -137,7 +137,7 @@ ddaccordion.init({
                   <td width="74%"><select name="user_type" class="ComboBoxcesSmall" style="width:100px;" 
            onchange="select_user_type('<?php echo $unit_id; ?>',this.value)">
                 <?php $user_types = login_details::get_user_types(); 
-			 while($row=mysql_fetch_array($user_types)){
+			 foreach ($user_types as $row) {
 			 
 			 ?>
                 <option value="<?php echo $row[0]; ?>"<?php if( $row[0] == $user_type){ echo "selected=selected"; }?>>
@@ -166,7 +166,7 @@ ddaccordion.init({
                   echo"<select name='esr_unit' class='ComboBoxcesSmall' style='width:100px;' id='esr_unit' onchange='unit_wise_user_name(this.value,"."$user_type)'"; if($disabled=='disabled'){echo 'disabled='.$disabled;} echo ">";
                  
 							$esrunit = Common :: GetUnitName();
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							
                  echo "<option value='"."$rowesrunit[0]'"; if( $rowesrunit[0] == $unit_id){ echo 'selected=selected'; }
 				 echo  ">";
@@ -199,7 +199,7 @@ ddaccordion.init({
 				 	$user_id_wise = login_details::unit_wise_user_names($user_type, $unit_id); 
 				 }
 				 echo "<option value =".'ALL'." >"."ALL"."</option>";
-			 		while($row=mysql_fetch_array($user_id_wise)){
+					foreach ($user_id_wise as $row) {
 			 
 			 ?>
                  <option value="<?php echo $row[1]; ?>"<?php if( $row[1] == $user_name){ echo "selected=selected"; }
@@ -276,7 +276,7 @@ ddaccordion.init({
 			
 			if (!$result) return;
 		
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -294,7 +294,7 @@ ddaccordion.init({
 				$result = login_details ::display_login_details_2_page($user_name, $from_date_two, $to_date_two, $start, 	                $limit, $unit_id, $user_type, $today);
 					
 					if (!$result) return;			 
-					$num_rows = mysql_num_rows($result);
+					$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -321,7 +321,7 @@ ddaccordion.init({
 						
 		  				
 						//print_r($row2);
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 					?>
 		        <tr>

@@ -30,7 +30,7 @@ class Money{
 	}
 
 
-	function GetMenu($logingID){
+	public static function GetMenu($logingID){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM menus WHERE login_type='$logingID' AND active =1";
 		$data = $db1->GetAll($sqlselect);
@@ -40,7 +40,7 @@ class Money{
 	
 	
 	
-	function GetUnitName(){
+	public static function GetUnitName(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM units";
 		$data = $db1->GetAll($sqlselect);
@@ -50,7 +50,7 @@ class Money{
 
 	
 	
-	function DeleteMoneyAllocation($allocationid)
+	public static function DeleteMoneyAllocation($allocationid)
 	{
 		$db1 = new db_con();
 		$sqldelete = "DELETE FROM m_money_allocation WHERE 	allocationid = $allocationid";
@@ -59,7 +59,7 @@ class Money{
 
 	}
 	
-	function getMoneyAllocationDetails($year,$branch_id){
+	public static function getMoneyAllocationDetails($year,$branch_id){
 		
 		$db1 = new db_con();
 		$sqlselect = "SELECT M.allocationid  FROM m_money_allocation M
@@ -73,7 +73,7 @@ class Money{
 	}
 	
 		
-	function getSFHQLevleAllocationDetails($year,$branch_id){
+	public static function getSFHQLevleAllocationDetails($year,$branch_id){
 		
 		$db1 = new db_con();
 		$sqlselect = "SELECT M.allocationid  FROM m_money_allocation M
@@ -86,7 +86,7 @@ class Money{
 		return $data;	
 	}
 	
-	function getBranchViewMoneyAllocation($year,$branch_id){
+	public static function getBranchViewMoneyAllocation($year,$branch_id){
 		
 		$db1 = new db_con();
 		$sqlselect = "SELECT M.year,SUM(M.amount),V.vote_id   
@@ -101,7 +101,7 @@ class Money{
 		return $data;	
 	}
 	
-	function getBranchViewMoneyAllocationPagination($year,$branch_id,$start, $length){
+	public static function getBranchViewMoneyAllocationPagination($year,$branch_id,$start, $length){
 		$db1 = new db_con();
 		$sqlselect = "SELECT
 	V.vote_id,
@@ -186,7 +186,7 @@ GROUP BY
 	
 	
 	
-	function getMoneyAllocationDetailsPagination($year,$branch_id,$start, $length){
+	public static function getMoneyAllocationDetailsPagination($year,$branch_id,$start, $length){
 		$db1 = new db_con();
 		$sqlselect = "SELECT M.allocationid,M.year,M.createdate,M.amount,M.description,V.vote_id,V.vote_number   
 		FROM m_money_allocation M
@@ -201,7 +201,7 @@ GROUP BY
 	}
 	
 		
-	function getSFHQLevelAllocationDetailsPagination($year,$branch_id,$start, $length){
+	public static function getSFHQLevelAllocationDetailsPagination($year,$branch_id,$start, $length){
 		$db1 = new db_con();
 		$sqlselect = "SELECT M.allocationid,M.year,M.createdate,M.amount,M.description,V.vote_id,V.vote_number,s.Name  
 		FROM m_money_allocation M
@@ -221,7 +221,7 @@ GROUP BY
 	
 	
 	
-		function getMoneyAllocationvtSummery($year){
+		public static function getMoneyAllocationvtSummery($year){
 		
 		$db1 = new db_con();
 		$sqlselect = "SELECT V.vote_number,V.description,
@@ -251,7 +251,7 @@ GROUP BY
 		return $data;	
 	}
 	
-	function getMoneyAllocationDetailsvtSummeryPagination($year,$start, $length){
+	public static function getMoneyAllocationDetailsvtSummeryPagination($year,$start, $length){
 		$db1 = new db_con();
 		$sqlselect = "SELECT V.vote_number,V.description,
 					IFNULL((SELECT SUM(MA.amount) FROM m_money_allocation AS MA WHERE year = '$year' AND Vot_Number = V.vote_id
@@ -281,7 +281,7 @@ GROUP BY
 	}
 	
 	
-	function SelectMoneyAllocationDetailRow($id)
+	public static function SelectMoneyAllocationDetailRow($id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT a.allocationid,a.`year`,a.amount,a.description,v.vote_id,v.vote_number,
@@ -299,7 +299,7 @@ GROUP BY
 	
 	
 	
-	function SaveMoneyAllocation($year,$vote,$amount,$description,$user_id,$today,$brach_id){
+	public static function SaveMoneyAllocation($year,$vote,$amount,$description,$user_id,$today,$brach_id){
 		
 		$db1 = new db_con();
 		$sqlinsert = "INSERT INTO  m_money_allocation (year,Vot_Number,amount,branch_id,description,createby,createdate) 
@@ -309,7 +309,7 @@ GROUP BY
 		return $data;	
 	}
 	
-	function SaveSFHQlevelAllocation($year,$brach_id,$vote,$sfhq_id,$amount,$description,$user_id,$today){
+	public static function SaveSFHQlevelAllocation($year,$brach_id,$vote,$sfhq_id,$amount,$description,$user_id,$today){
 		
 		$db1 = new db_con();
 		$sqlinsert = "INSERT INTO  m_money_allocation (year,Vot_Number,amount,branch_id,description,createby,createdate,from_branch,Sfhq_id) 
@@ -319,7 +319,7 @@ GROUP BY
 		return $data;	
 	}
 	
-	function ChecktheAllocationCondition($year,$brach_id,$vote,$sfhq_id,$amount){
+	public static function ChecktheAllocationCondition($year,$brach_id,$vote,$sfhq_id,$amount){
 		
 		$db1 = new db_con();
 		$sqlinsert = " Select (SELECT IFNULL(SUM(amount),0)  	
@@ -342,7 +342,7 @@ GROUP BY
 	
 	                          
 	
-	function MoneyAllocationUpdate($year,$vote,$brach_id,$amount,$description,$allocationid,$user_id,$today,$AccountOffice)
+	public static function MoneyAllocationUpdate($year,$vote,$brach_id,$amount,$description,$allocationid,$user_id,$today,$AccountOffice)
 	{
 		$db1 = new db_con();		
 		$sqlupdate = "UPDATE m_money_allocation SET 

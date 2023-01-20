@@ -13,7 +13,7 @@ $log_year	= $_SESSION['log_year'];
 
 $sfhq_id = $_SESSION['sfhqID'];	
 $sfname = Projects :: GetSFHQName($sfhq_id);
-while($sftitle=mysql_fetch_array($sfname))
+foreach ($sfname as $sftitle)
 {
 	$sfhq_name = $sftitle[0];
 }	

@@ -61,10 +61,8 @@ switch($mode)
 		
 		
 		$max = ProjectsProgress :: GetMaxID();
-		while($rowmax=mysql_fetch_array($max)){	
-		
-		$val = $rowmax[0];
-		 
+		foreach ($max as $rowmax) {
+			$val = $rowmax[0];
 		}       
 		
 		
@@ -114,8 +112,8 @@ switch($mode)
 			{	
 				
 			$max = ProjectsProgress :: GetMaxID();
-			while($rowmax=mysql_fetch_array($max)){				
-			$val = $rowmax[0];			 
+			foreach ($max as $rowmax) {				
+				$val = $rowmax[0];			 
 			}    
 						
 			
@@ -203,8 +201,8 @@ switch($mode)
 		
 		$resultcheck = ProjectsProgress :: CheckIsPrivilege($user_id);
 		$val="";
-		while($row = mysql_fetch_array($resultcheck))
-			{
+		foreach ($resultcheck as $row) {
+			
 				$val=$row[0];
 			}
 				if($val==1)

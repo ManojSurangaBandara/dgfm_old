@@ -46,7 +46,7 @@ switch($mode)
 		$today 			= 	date('Y-m-d');   
 		
 		$budget = Money :: ChecktheAllocationCondition($year,$brach_id,$vote,$sfhq_id,$amount);
-		while($value=mysql_fetch_array($budget)){
+		foreach ($budget as $value) {
 			
 						
 			if ($value[0]==0)

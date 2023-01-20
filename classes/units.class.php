@@ -12,7 +12,7 @@ class Units{
 		
 	}
 	
-	function SaveUnit($unit_name, $location, $force_type_id, $Description){
+	public static function SaveUnit($unit_name, $location, $force_type_id, $Description){
 		$db1 = new db_con();
 		$sqlinsert = "INSERT INTO  units (unit_name,location,force_type_id,Description) 
 						VALUES ('$unit_name','$location',  '$force_type_id', '$Description');";
@@ -21,7 +21,7 @@ class Units{
 		return $data;	
 	}
 	
-	function getUserType()
+	public static function getUserType()
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM user_type";
@@ -29,7 +29,7 @@ class Units{
 		return $data;		
 	}
 	
-	function GetUnitDetails()
+	public static function GetUnitDetails()
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT u.ID,u.Name,u.Description,
@@ -44,7 +44,7 @@ FROM m_sfhq as u ";
 		return $data;		
 	}
 	
-	function GetUnitDetailsPagination($start,$length)
+	public static function GetUnitDetailsPagination($start,$length)
 	{
 		$log_year	= $_SESSION['log_year'];	
 		
@@ -65,7 +65,7 @@ FROM m_sfhq as u limit $start, $length  ";
 	}
 	
 	
-	function GetVoucherDetailstodgfm()
+	public static function GetVoucherDetailstodgfm()
 	{
 		$log_year	= $_SESSION['log_year'];	
 		
@@ -87,7 +87,7 @@ FROM m_sfhq as u limit $start, $length  ";
 	
 	
 
-	function GetMaxidforGroupbySFHQ($id)
+	public static function GetMaxidforGroupbySFHQ($id)
 	{
 	
 		$db1 = new db_con();
@@ -101,14 +101,14 @@ FROM m_sfhq as u limit $start, $length  ";
 	
 	
 	
-	function SelectUnitDetailRow($id)
+	public static function SelectUnitDetailRow($id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT * FROM units WHERE  esr_unit_id =$id";
 		$data = $db1->GetAll($sqlselect);
 		return $data;
 	}
-	function UnitUpdate($unit_name, $location, $force_type, $description, $id)
+	public static function UnitUpdate($unit_name, $location, $force_type, $description, $id)
 	{
 		$db1 = new db_con();
 		//echo "from update";
@@ -124,7 +124,7 @@ FROM m_sfhq as u limit $start, $length  ";
 		return $data;
 	}
 
-	function UnitDelete($id)
+	public static function UnitDelete($id)
 	{
 		$db1 = new db_con();
 		$sqldelete = "DELETE FROM units WHERE esr_unit_id = $id";

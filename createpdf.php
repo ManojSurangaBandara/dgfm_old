@@ -59,7 +59,7 @@ function ImprovedTable($header,$data)
 	
 	$result2 = Projects ::Get_Branch_Id($dte);
 	
-	while($row = mysql_fetch_array($result2))
+    foreach ($result2 as $row) 
 	{
     	$dte_id = $row['branch_id'];
 		
@@ -72,7 +72,7 @@ function ImprovedTable($header,$data)
 	$result = Projects ::Genarate_Daily_Bill_Summary($dte_id,$status,$todate,$txt_as_at_date,$user_type_id );
 	}
 	
-    while($rowm = mysql_fetch_array($result))
+    foreach ($result as $rowm) 
 	{
 				
        	$this->SetFont('Times','',6);

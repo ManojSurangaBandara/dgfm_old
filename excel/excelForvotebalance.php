@@ -58,8 +58,7 @@
 		$totOutStd="";
 		
 		
-	while($rowesrunit=mysql_fetch_array($esrunit))
-	{			
+	foreach ($esrunit as $rowesrunit) {		
 	
 				$excel->writeCol($i);	
 				$excel->writeCol($rowesrunit[2]);	

@@ -65,7 +65,7 @@ $path="";
 			$result = Regiment :: GetRegimentDetails();
 			if (!$result) return;
 		
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -73,7 +73,7 @@ $path="";
 				
 				$result = Regiment :: GetRegimentDetails_pagination($current1,$limit);				
 				if (!$result) return;			
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -108,7 +108,7 @@ $path="";
 									
 						
 						$i = $page_id *10 +1;
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{						
 					?>
 					<tr>

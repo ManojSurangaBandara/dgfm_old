@@ -145,7 +145,7 @@ ddaccordion.init({
                  <td ><select name="vote"  id="vote"  onchange="getvotecodevotesummery(this.value,'<?php echo $year_r; ?>')" >
                    <?php 
 							$esrunit = Common :: GetVotesName();
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $voteCode){ echo "selected=selected"; }?> ><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>
@@ -185,7 +185,7 @@ ddaccordion.init({
 			$result = Money :: getMoneyAllocationvtSummery($year_r);
 			if (!$result) return;
 		
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -193,7 +193,7 @@ ddaccordion.init({
 				
 				$result = Money :: getMoneyAllocationDetailsvtSummeryPagination($year_r,$current1, $length);				
 				if (!$result) return;			
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -234,7 +234,7 @@ ddaccordion.init({
 					
 						
 						$i = $page_id *100 +1;
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 					?>
 					<tr>

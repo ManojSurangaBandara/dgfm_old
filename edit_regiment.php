@@ -56,7 +56,7 @@ $regiment_id = $_GET['regiment_id'];
 				{
                 	$result = Regiment::SelectRegimentDetailRow($regiment_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 					
 				}
 				?>

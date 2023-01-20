@@ -15,7 +15,7 @@ class Vote{
 		
 	}
 	
-	function SaveVote($vote_number, $description,$vttype,$user_id,$create_date){
+	public static function SaveVote($vote_number, $description,$vttype,$user_id,$create_date){
 		$db1 = new db_con();
 		
 		$sqlinsert = "INSERT INTO votes (vote_number,description,vt_type,create_user_id,Create_date) 
@@ -28,7 +28,7 @@ class Vote{
 	}
 	
 	
-	function SaveAssignVote($opcon_id,$vote_number,$user_id,$create_date){
+	public static function SaveAssignVote($opcon_id,$vote_number,$user_id,$create_date){
 		$db1 = new db_con();
 		$sqlinsert = "INSERT INTO pso_view_chart (Branch_ID,Vote_ID,User_ID,In_Date) 
 		VALUES 	($opcon_id,$vote_number,$user_id,'$create_date')";
@@ -39,7 +39,7 @@ class Vote{
 	}
 	
 	
-	function GetMaxsupid()
+	public static function GetMaxsupid()
 	{
 	
 		$db1 = new db_con();
@@ -51,7 +51,7 @@ class Vote{
 	
 	
 	
-	function SaveSupplier($description,$sfhq_id,$bank_id ,$txtacctNo,$bnk_branch_id
+	public static function SaveSupplier($description,$sfhq_id,$bank_id ,$txtacctNo,$bnk_branch_id
 		,$vatNo,$line1,$line2,$line3,$line4,$contactNo,$email,$user_id,$today,$fin_vehno,$isveh,$mobile,$nic,$vrp){
 		
 		//echo $mobile; die();
@@ -68,7 +68,7 @@ class Vote{
 		return $data;	
 	}
 	
-	function Supplier_Update($vote_number, $description, $sup_id,$bank_id ,$txtacctNo
+	public static function Supplier_Update($vote_number, $description, $sup_id,$bank_id ,$txtacctNo
 		,$bnk_branch_id,$vatNo,$contactNo,$line1,$line2,$line3,$line4,$user_id,$today,$mobile,$nic,$email,$vehno,$vrp)
 	{
 		$db1 = new db_con();		
@@ -101,7 +101,7 @@ class Vote{
 	
 
 	
-	function GetSupplierDetails($search,$veh_type)
+	public static function GetSupplierDetails($search,$veh_type)
 	{
 		$sfhq_id 	= $_SESSION['sfhqID'];
 		
@@ -129,7 +129,7 @@ class Vote{
 	
 	
 	
-	function GetSupplierDetailstoTripoli() // this is now same to all sfhq and dfin since supplier common to all
+	public static function GetSupplierDetailstoTripoli() // this is now same to all sfhq and dfin since supplier common to all
 	{
 		//$sfhq_id 	= $_SESSION['sfhqID'];
 //		$db1 = new db_con();
@@ -139,7 +139,7 @@ class Vote{
 //		$data = $db1->GetAll($sqlselect);
 //		return $data;
             
-                //Changed function to load all supppliers to supplier list for sfhq_id  0 user accounts
+                //Changed public static function to load all supppliers to supplier list for sfhq_id  0 user accounts
                 $db1 = new db_con();
 		$sqlselect = "select * from m_supplier_list 
 		ORDER BY m_supplier_list.Sup_Name ASC";
@@ -151,7 +151,7 @@ class Vote{
 	
 	
 	
-	function SelectVoteDetailRow($vote_id)
+	public static function SelectVoteDetailRow($vote_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT v.*,t.vt_type_name FROM votes as v
@@ -161,7 +161,7 @@ class Vote{
 		return $data;
 	}
 	
-	function SelectSupplierDetailRow($sup_id)
+	public static function SelectSupplierDetailRow($sup_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT s.Sup_id,
@@ -197,7 +197,7 @@ class Vote{
 	}
 	
 	
-	function SelectSupplierDetailForCorrection($sup_id)
+	public static function SelectSupplierDetailForCorrection($sup_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "select * from temp_all_modsupplier WHERE id =$sup_id ";
@@ -212,7 +212,7 @@ class Vote{
 	}
 	
 	
-	function Vote_Update($vote_number,$description,$vttype,$vote_id,$create_user_id,$Create_date)
+	public static function Vote_Update($vote_number,$description,$vttype,$vote_id,$create_user_id,$Create_date)
 	{
 		$db1 = new db_con();		
 		$sqlupdate = "UPDATE votes SET 
@@ -235,7 +235,7 @@ class Vote{
 		
 	
 
-	function Vote_Delete($vote_id)
+	public static function Vote_Delete($vote_id)
 	{
 		$db1 = new db_con();
 		$sqldelete = "DELETE  FROM votes WHERE vote_id = '$vote_id'";	
@@ -245,7 +245,7 @@ class Vote{
 
 	}
 	
-	function Suppplier_Delete($vote_id)
+	public static function Suppplier_Delete($vote_id)
 	{
 		$db1 = new db_con();
 		$sqldelete = "DELETE  FROM m_supplier_list WHERE Sup_id = '$vote_id'";	
@@ -256,7 +256,7 @@ class Vote{
 	}
 	
 	
-	function GetVoteDetails()
+	public static function GetVoteDetails()
 	{
 		$db1 = new db_con();
 		$sqlselect = "select v.*,t.vt_type_name from votes as v
@@ -268,7 +268,7 @@ class Vote{
 	
 	
 	
-	function VotesreltoBranch($branch_id)
+	public static function VotesreltoBranch($branch_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "select v.vote_id,v.vote_number from pso_view_chart as p 
@@ -279,7 +279,7 @@ class Vote{
 		return $data;		
 	}
 	
-	function GetVoteDetails_pagination($start, $length)
+	public static function GetVoteDetails_pagination($start, $length)
 	{
 		$db1 = new db_con();
 		$sqlselect = "select v.*,t.vt_type_name from votes as v
@@ -291,7 +291,7 @@ class Vote{
 	
 	
 	
-	function GetVoteDetailstoPsoViewRecurrent($branch_id,$log_year)
+	public static function GetVoteDetailstoPsoViewRecurrent($branch_id,$log_year)
 	{
 		$db1 = new db_con();
 		$sqlselect = "select b.branch_name,v.vote_number,v.description,v.vt_type,v.vote_id 
@@ -325,7 +325,7 @@ class Vote{
 		return $data;		
 	}
 	
-	function GetVoteDetailstoPsoViewCapital($branch_id,$log_year)
+	public static function GetVoteDetailstoPsoViewCapital($branch_id,$log_year)
 	{
 		$db1 = new db_con();
 		$sqlselect = "select b.branch_name,v.vote_number,v.description,v.vt_type,v.vote_id 
@@ -364,7 +364,7 @@ class Vote{
 		return $data;		
 	}
 	
-	function GetExpenditureDetailsReporttoPsoview($year,$branch_id,$status,$vote_id){
+	public static function GetExpenditureDetailsReporttoPsoview($year,$branch_id,$status,$vote_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT 0 AS Sfhq_Id ,SUM(b.Amount) as Exp
 		,(select SUM(amount) from m_money_allocation where sfhq_id=0 and year=$year and Vot_Number=$vote_id ) as Alloc
@@ -400,7 +400,7 @@ class Vote{
 	
 	
 	
-	function GetBranchNametoPsoView($branch_id)	
+	public static function GetBranchNametoPsoView($branch_id)	
 	{
 		$db1 = new db_con();
 		$sqlselect = "select branch_name from m_branches WHERE branch_id = $branch_id";			
@@ -412,7 +412,7 @@ class Vote{
 				
 	}
 	
-	function GetSupplierDetails_pagination($seatch,$veh_type,$start, $length)
+	public static function GetSupplierDetails_pagination($seatch,$veh_type,$start, $length)
 	{
 		$sfhq_id 	= $_SESSION['sfhqID'];
 		

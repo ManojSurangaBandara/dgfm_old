@@ -164,7 +164,7 @@ ddaccordion.init({
 							
 							$esrunit = Common :: GetTypeofVotes();
 							
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                             
                    <option value="<?php echo $rowesrunit[0]; ?>" ><?php echo $rowesrunit[1]; ?></option>

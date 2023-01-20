@@ -10,7 +10,7 @@ require_once('classes/Bills.php');
 	$vote_id = $_GET['q']; 
 	$arr = $_GET['ar'];
 	$resultproject 	= Bills :: GetVoteData($vote_id);
-	$rowproject	= mysql_fetch_array($resultproject);
+	$rowproject = $resultproject[0];
 	
 	 
 	

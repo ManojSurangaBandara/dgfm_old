@@ -61,7 +61,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 				{
                 	$result1 = Projects :: GetBillDataToBigUser($project_id,$user_type_id);
 					//echo $result;
-					$row=mysql_fetch_array($result1);
+					$row=$result1[0];
 					
 					
 				}		
@@ -111,7 +111,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
                      <td class="last"><select name="Payee_name" disabled="disabled" class="ComboBoxcesSmall"  id="Payee_name"   style="width:200px;" >
                         <?php $result = Projects::get_all_Suplier(); ?>
                         <?php 
-						while($row1 = mysql_fetch_array($result))
+						foreach ($result as $row1) 
 						{
 						?>
                         <option value='<?php echo $row1[0]; ?>' <?php if($row1[0] == $row[2] ){ echo "selected=selected"; }?> ><?php echo $row1[1]; ?></option>
@@ -167,7 +167,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 				$result = ProjectsProgress :: GetBillAmountandVotes($project_id);
 					 $total;	
 						$i=1;
-						while($row2 = mysql_fetch_array($result))
+						foreach ($result as $row2) 
 						{
 							
 							$total= $total+ $row2[2];	

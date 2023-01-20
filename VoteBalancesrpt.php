@@ -120,7 +120,7 @@ ddaccordion.init({
 						   
 							 <?php 
 							$esrunit = Vote:: GetSupplierDetails();
-							while($rowesrunit=mysql_fetch_array($esrunit)){?>
+							foreach ($esrunit as $rowesrunit) {?>
 						     <option value="<?php echo $rowesrunit[0];  ?>" <?php if( $rowesrunit[0] == $sup_id){ echo "selected=selected"; }?> > <?php echo $rowesrunit[1]; ?></option>
                
 						      <?php }?>

@@ -54,7 +54,7 @@ $unit_id = $_GET['unitid'];
 				{
                 	$result = Units::SelectUnitDetailRow($unit_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 					
 				}
 				?>
@@ -97,7 +97,7 @@ $unit_id = $_GET['unitid'];
 							
 							$esrunit = Common :: GetTypeofVotes();
 							
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" ><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>

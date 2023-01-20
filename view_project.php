@@ -7,7 +7,7 @@ require_once('classes/progress_report.class.php');
 
 	$project_id = $_GET['q']; 
 	$resultproject 	= ProjectsProgress :: GetProjectData($project_id);
-	$rowproject	= mysql_fetch_array($resultproject);
+	$rowproject = $resultproject[0];
 	
 	 
 	if($rowproject[9]==2)

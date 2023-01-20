@@ -55,7 +55,7 @@ $unit_id = $_GET['unitid'];
 				{
                 	$result = Units::SelectUnitDetailRow($unit_id);
 					//echo $result;
-					$row=mysql_fetch_array($result);
+					$row=$result[0];
 					
 				}
 				?>
@@ -89,7 +89,7 @@ $unit_id = $_GET['unitid'];
 						     <option value=""></option>
 							 <?php 
 							$fortype = Common :: GetForceType();
-							while($rowforcetype=mysql_fetch_array($fortype)){
+							foreach ($fortype as $rowforcetype) {
 							?>
 						      <option value="<?php echo $rowforcetype[0]; ?>" <?php if($rowforcetype[0] == $row[3] ){ echo 'selected=selected'; }?>  ><?php echo $rowforcetype[1]; ?></option>
 						      <?php } ?>

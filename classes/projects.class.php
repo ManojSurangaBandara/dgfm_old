@@ -38,7 +38,7 @@ class Projects{
 
 
 
-function convertNumber($num)
+public static function convertNumber($num)
 {
    list($num, $dec) = explode(".", $num);
 
@@ -89,7 +89,7 @@ function convertNumber($num)
    return $output;
 }
 
-function convertGroup($index)
+public static function convertGroup($index)
 {
    switch($index)
    {
@@ -108,7 +108,7 @@ function convertGroup($index)
    }
 }
 
-function convertThreeDigit($dig1, $dig2, $dig3)
+public static function convertThreeDigit($dig1, $dig2, $dig3)
 {
    $output = "";
 
@@ -126,7 +126,7 @@ function convertThreeDigit($dig1, $dig2, $dig3)
    return $output;
 }
 
-function convertTwoDigit($dig1, $dig2)
+public static function convertTwoDigit($dig1, $dig2)
 {
    if($dig2 == "0")
    {
@@ -175,7 +175,7 @@ function convertTwoDigit($dig1, $dig2)
    }
 }
       
-function convertDigit($digit)
+public static function convertDigit($digit)
 {
    switch($digit)
    {
@@ -193,7 +193,7 @@ function convertDigit($digit)
 }
 	
 	
-	function GetdataPDF(){
+	public static function GetdataPDF(){
 		$db1 = new db_con();
 		
 		$sqlselect = "SELECT d.Bill_Id,d.Bill_No,d.Bill_Name,d.Amount,c.Unit,d.Recieved_Date,d.Unit_Id 
@@ -207,7 +207,7 @@ function convertDigit($digit)
 		return $data;	
 	}
 	
-	function Genarate_Daily_Bill_Summary($dte_id,$status,$todate,$txt_as_at_date,$user_type_id ){
+	public static function Genarate_Daily_Bill_Summary($dte_id,$status,$todate,$txt_as_at_date,$user_type_id ){
 		$db1 = new db_con();
 		
 		$sqlselect = "	SELECT 
@@ -232,7 +232,7 @@ function convertDigit($digit)
 		return $data;		
 	}
 	
-	function Genarate_Daily_Bill_Summary_All_Branch($status,$todate,$txt_as_at_date,$user_type_id ){
+	public static function Genarate_Daily_Bill_Summary_All_Branch($status,$todate,$txt_as_at_date,$user_type_id ){
 		$db1 = new db_con();
 		
 		$sqlselect = "	SELECT b.Bill_No ,s.Sup_Name ,
@@ -249,7 +249,7 @@ function convertDigit($digit)
 		return $data;		
 	}
 	
-	function Get_Branch_Id($dte)
+	public static function Get_Branch_Id($dte)
 	{
 		$db1 = new db_con();
 		$sqlselect = "select branch_id from m_branches where branch_name= '$dte'";
@@ -261,7 +261,7 @@ function convertDigit($digit)
 		
 	//////////////////#####################################################################           DGFM
 	
-	function GetMaxIDandYear(){
+	public static function GetMaxIDandYear(){
 		$db1 = new db_con();
 		$sqlselect = "SELECT MAX(Bill_No) as maxbillno FROM txt_bill_details ";
 		//echo $sqlselect;
@@ -270,7 +270,7 @@ function convertDigit($digit)
 	}
 	
 	
-	function GetMaxIDandYearforsfhq($sfhq_id){
+	public static function GetMaxIDandYearforsfhq($sfhq_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT MAX(Bill_No) as maxbillno 
 					  FROM sfhq_bill_details WHERE Sfhq_Id = $sfhq_id ";
@@ -280,7 +280,7 @@ function convertDigit($digit)
 	}
 	
 	
-		function GetAllBillsDGFM($unitid,$projType,$txt,$user_id,$sfhq_id,$branch_id){
+		public static function GetAllBillsDGFM($unitid,$projType,$txt,$user_id,$sfhq_id,$branch_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT d.Bill_Id,d.Bill_No,d.Bill_Name,d.Amount,c.Unit,d.Recieved_Date,d.Unit_Id 
 		FROM txt_bill_details as d
@@ -295,7 +295,7 @@ function convertDigit($digit)
 		return $data;	
 	}
 	
-	function GetAllBillsDGFMPagination($unitid,$projType,$txt,$user_id,$sfhq_id,$branch_id,$start, $length){
+	public static function GetAllBillsDGFMPagination($unitid,$projType,$txt,$user_id,$sfhq_id,$branch_id,$start, $length){
 		$db1 = new db_con();
 		$sqlselect = "SELECT d.Bill_Id,d.Bill_No,d.Bill_Name,d.Amount,c.Unit,d.Recieved_Date,d.Unit_Id 
 		FROM txt_bill_details as d
@@ -310,7 +310,7 @@ function convertDigit($digit)
 		return $data;	
 	}
 
-	function GetAllBillsDGFMToBigUser($branch_id,$status,$search,$user_type_id)
+	public static function GetAllBillsDGFMToBigUser($branch_id,$status,$search,$user_type_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id	 	 	 	 
@@ -332,7 +332,7 @@ function convertDigit($digit)
 	}
 	
 	
-	function GetSFHQbillsNoIdea($branch_id,$status,$search,$user_type_id)
+	public static function GetSFHQbillsNoIdea($branch_id,$status,$search,$user_type_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id	 	 	 	 
@@ -354,7 +354,7 @@ function convertDigit($digit)
 	}
 	
 	
-	function GetAllBillsDGFMToBigestUser($sfhq_id,$status,$search,$unit_dis_id)
+	public static function GetAllBillsDGFMToBigestUser($sfhq_id,$status,$search,$unit_dis_id)
 	{
 		if($unit_dis_id == 0)
 		{
@@ -383,7 +383,7 @@ function convertDigit($digit)
 	}
 	
 	
-	function GetSFHQbilltoviewtoPSO($status,$search,$branch_id,$vote_id,$log_year)
+	public static function GetSFHQbilltoviewtoPSO($status,$search,$branch_id,$vote_id,$log_year)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT  b.Bill_Id,b.Bill_No,s.Sup_Name,b.Recieved_Date,v.Amount
@@ -424,7 +424,7 @@ function convertDigit($digit)
 		return $data;	
 	}
 	
-	function GetSFHQbilltoviewtoPSOPagination($status,$search,$branch_id,$vote_id,$log_year,$current1, $length)
+	public static function GetSFHQbilltoviewtoPSOPagination($status,$search,$branch_id,$vote_id,$log_year,$current1, $length)
 	{
 		
 		$db1 = new db_con();
@@ -463,7 +463,7 @@ function convertDigit($digit)
 		return $data;	
 	}
 	
-	function GetAllBillsDGFMToSFHQ($branch_id,$status,$search,$user_type_id,$sfhq_id)
+	public static function GetAllBillsDGFMToSFHQ($branch_id,$status,$search,$user_type_id,$sfhq_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id		 	 	 
@@ -486,7 +486,7 @@ function convertDigit($digit)
 	}
 	
 	
-	function GetAllBillsDGFMToBigUserAll($status,$search,$user_type_id){
+	public static function GetAllBillsDGFMToBigUserAll($status,$search,$user_type_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id	 	 
 									FROM txt_bill_details as b 
@@ -504,7 +504,7 @@ function convertDigit($digit)
 	}
 	
 	
-	function GetBillsofSFHQ($status,$search,$user_type_id){
+	public static function GetBillsofSFHQ($status,$search,$user_type_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id	 	 
 									FROM sfhq_bill_details as b 
@@ -523,7 +523,7 @@ function convertDigit($digit)
 	
 	
 	
-	function GetVoteOutStandingforSfhq($sup_id,$from,$to){
+	public static function GetVoteOutStandingforSfhq($sup_id,$from,$to){
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id
 		,b.Bill_No
@@ -558,7 +558,7 @@ function convertDigit($digit)
 	
 	
 	
-		function GetExpenditureDetailsReportdgfm($year){
+		public static function GetExpenditureDetailsReportdgfm($year){
 		$db1 = new db_con();
 		$sqlselect = "SELECT 0 AS Sfhq_Id ,SUM(Amount) as Exp
 		,(select SUM(amount) from m_money_allocation where sfhq_id=0 and year=$year) as Alloc 
@@ -583,7 +583,7 @@ function convertDigit($digit)
 		return $data;	
 	}
 	
-	function GetExpenditureDetailsReporttoPsoview($year,$branch_id,$status,$vote_id){
+	public static function GetExpenditureDetailsReporttoPsoview($year,$branch_id,$status,$vote_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT 0 AS Sfhq_Id ,SUM(b.Amount) as Exp
 		,(select SUM(amount) from m_money_allocation where sfhq_id=0 and year=$year and 
@@ -621,7 +621,7 @@ function convertDigit($digit)
 	
 	
 	
-	//function GetBudgetReporttoPsoview($new_year,$branch_id,$status,$vote_id){
+	//public static function GetBudgetReporttoPsoview($new_year,$branch_id,$status,$vote_id){
 		//$db1 = new db_con();
 		//$sqlselect = "select Sfhq_id,sum(amount) as Amnt FROM m_money_allocation 				
 							//	WHERE year=$new_year and Vot_Number=$vote_id
@@ -633,7 +633,7 @@ function convertDigit($digit)
 	//}
 	
 	
-		function GetAllocationRecurrent($year){
+		public static function GetAllocationRecurrent($year){
 		$db1 = new db_con();
 		$sqlselect = "select m.Sfhq_id,sum(m.amount) as Amnt FROM m_money_allocation as m 	
 						Inner join votes as v on v.vote_id = m.Vot_Number 
@@ -645,7 +645,7 @@ function convertDigit($digit)
 		return $data;	
 	}
 	
-		function GetAllocationCapital($year){
+		public static function GetAllocationCapital($year){
 		$db1 = new db_con();
 		$sqlselect =  "select m.Sfhq_id,sum(m.amount) as Amnt FROM m_money_allocation as m 	
 						Inner join votes as v on v.vote_id = m.Vot_Number 
@@ -657,7 +657,7 @@ function convertDigit($digit)
 		return $data;	
 	}	
 	
-		function GetAllocationOther($year){
+		public static function GetAllocationOther($year){
 		$db1 = new db_con();
 		$sqlselect =  "select m.Sfhq_id,sum(m.amount) as Amnt FROM m_money_allocation as m 	
 						Inner join votes as v on v.vote_id = m.Vot_Number 
@@ -674,7 +674,7 @@ function convertDigit($digit)
 	
 	
 	
-	function GetExpenditureDetailsLy($year){
+	public static function GetExpenditureDetailsLy($year){
 		$db1 = new db_con();
 		$sqlselect = "SELECT 0 AS Sfhq_Id,SUM(Amount) FROM vote_bill_amount
 						WHERE Current_Year ='$year' AND Bill_Staus=1
@@ -693,7 +693,7 @@ function convertDigit($digit)
 	
 	
 	
-		function GetSupplierAgeAnalysisforSfhq($date_as_at,$sfhq_id){
+		public static function GetSupplierAgeAnalysisforSfhq($date_as_at,$sfhq_id){
 				
 		$lstyear= ($date_as_at - 1);
 		$thisyear= $date_as_at ;
@@ -713,7 +713,7 @@ function convertDigit($digit)
 	}
 	
 	
-	function GetSFHQsupplieragereport($received_asat,$rtptype,$group){
+	public static function GetSFHQsupplieragereport($received_asat,$rtptype,$group){
 		
 		if($rtptype==4)
 		{
@@ -734,8 +734,8 @@ function convertDigit($digit)
 	}
 	
         
-        //12-12-2015 added function for get all sfhq suppliers age data to SFHQ type 0 login
-        function GetAllSupplierAgeAnalysisforSfhq($date_as_at){
+        //12-12-2015 added public static function for get all sfhq suppliers age data to SFHQ type 0 login
+        public static function GetAllSupplierAgeAnalysisforSfhq($date_as_at){
 		
 		//$lstyear= (date("Y", strtotime($date_as_at)) - 1);
 		//$thisyear= date("Y", strtotime($date_as_at)) ;
@@ -757,9 +757,9 @@ function convertDigit($digit)
 		$data = $db1->GetAll($sqlselect);
 		return $data;	
 	}
-        //12-12-2015 end of function
+        //12-12-2015 end of public static function
 	
-	function GetAgeAnalysisforSfhq($received_asat,$sfhq_id,$rtptype){
+	public static function GetAgeAnalysisforSfhq($received_asat,$sfhq_id,$rtptype){
 		
 		if($rtptype==4)
 		{
@@ -793,7 +793,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	   
-	    function GetAllAgeAna_DFin($received_asat,$rtptype,$group){
+	    public static function GetAllAgeAna_DFin($received_asat,$rtptype,$group){
 		
 		if($rtptype==4)
 		{
@@ -840,7 +840,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	 function GetAllSupAgeof_DFin($received_asat,$rtptype,$group){
+	 public static function GetAllSupAgeof_DFin($received_asat,$rtptype,$group){
 		
 		if($rtptype==4)
 		{
@@ -868,7 +868,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	   
 	   
-	   function GetDteAgeAna_DFin($received_asat,$rtptype,$group){
+	   public static function GetDteAgeAna_DFin($received_asat,$rtptype,$group){
 		
 		if($rtptype==4)
 		{
@@ -900,7 +900,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	} 
 	
 	
-	function GetAccAgeAna_DFin($received_asat,$rtptype,$group){
+	public static function GetAccAgeAna_DFin($received_asat,$rtptype,$group){
 		
 		if($rtptype==4)
 		{
@@ -933,7 +933,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
        
 	   	
-	function GetAgeAnalysisfortRIPOLI($date_as_at,$rtptype){
+	public static function GetAgeAnalysisfortRIPOLI($date_as_at,$rtptype){
 		
 		if($rtptype==0)
 		{
@@ -966,8 +966,8 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
         
         
-        //11-12-2015 added function for get all sfhq related vote age data to sfhq 0 type login
-        function GetAllAgeAnalysisforSfhq($date_as_at,$rtptype){
+        //11-12-2015 added public static function for get all sfhq related vote age data to sfhq 0 type login
+        public static function GetAllAgeAnalysisforSfhq($date_as_at,$rtptype){
 		
 		if($rtptype==0)
 		{
@@ -995,9 +995,9 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$data = $db1->GetAll($sqlselect);
 		return $data;	
 	}
-        //11-12-2015 end function
+        //11-12-2015 end public static function
 	
-	function GetSupplierAgefordtefin($received_asat,$rtptype,$group){
+	public static function GetSupplierAgefordtefin($received_asat,$rtptype,$group){
 	if($rtptype==4)
 		{
 			$rtptype = '0  OR  vb.Bill_Staus=3' ; 
@@ -1015,7 +1015,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-		function GetSupplierAgeAnalysisfortRIPOLI($date_as_at){
+		public static function GetSupplierAgeAnalysisfortRIPOLI($date_as_at){
 		
 		$lstyear= ($date_as_at - 1);
 		$thisyear= $date_as_at ;
@@ -1036,7 +1036,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 
-	function GetSupplierOutstandforSfhq($date_as_at,$sfhq_id,$rtptype ){
+	public static function GetSupplierOutstandforSfhq($date_as_at,$sfhq_id,$rtptype ){
 		
 	//	$lstyear= (date("Y", strtotime($date_as_at)) - 1);
 	//	$thisyear= date("Y", strtotime($date_as_at)) ;
@@ -1062,7 +1062,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function GetSupOutsForTripoli($date_as_at,$rtptype){
+	public static function GetSupOutsForTripoli($date_as_at,$rtptype){
 		
 		//$lstyear = (date("Y", strtotime($date_as_at)) - 1);
 		//$thisyear = date("Y", strtotime($date_as_at)) ;
@@ -1088,8 +1088,8 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
         
-        //12-12-2015 added function for get all sfhq supplier outstanding to sfhq type 0 login
-        function GetAllSupplierOutstandforSfhq($date_as_at,$rtptype ){
+        //12-12-2015 added public static function for get all sfhq supplier outstanding to sfhq type 0 login
+        public static function GetAllSupplierOutstandforSfhq($date_as_at,$rtptype ){
 		
 		$lstyear= (date("Y", strtotime($date_as_at)) - 1);
 		$thisyear= date("Y", strtotime($date_as_at)) ;
@@ -1118,11 +1118,11 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$data = $db1->GetAll($sqlselect);
 		return $data;	
 	}
-	//12-12-2015 end function
+	//12-12-2015 end public static function
 	
 	
 	
-	function GetVoteBalanceforSfhq($sup_id,$from,$to){
+	public static function GetVoteBalanceforSfhq($sup_id,$from,$to){
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id
 		,b.Bill_No
@@ -1152,7 +1152,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function GetSupplierOUtstandingTripoliG34($sup_id,$from,$to){
+	public static function GetSupplierOUtstandingTripoliG34($sup_id,$from,$to){
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id
 		,b.Bill_No	
@@ -1176,7 +1176,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-//	function GetSupplierStatementforTripoli($sup_id,$from,$to){
+//	public static function GetSupplierStatementforTripoli($sup_id,$from,$to){
 //		$db1 = new db_con();
 //		$sqlselect = "SELECT b.Bill_Id
 //		,b.Bill_No
@@ -1209,8 +1209,8 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 //		return $data;	
 //	}
 	
-        //hanged function get all supplier's supplier statements for 0 user accounts
-        function GetSupplierStatementforTripoli($sfhq_id,$sup_id,$from,$to){
+        //hanged public static function get all supplier's supplier statements for 0 user accounts
+        public static function GetSupplierStatementforTripoli($sfhq_id,$sup_id,$from,$to){
 		$db1 = new db_con();
                 
                 if($sfhq_id == 0){
@@ -1300,7 +1300,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-	function GetSupplierStatementforSfhq($sup_id,$from,$to,$sfhq_id){
+	public static function GetSupplierStatementforSfhq($sup_id,$from,$to,$sfhq_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id
 		,b.Bill_No
@@ -1344,7 +1344,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-	function GetDailyReportforSfhq($bilstatus,$from,$to,$sfhq_id,$dtrange,$veh_val,$vt_type,$sup_type_id){
+	public static function GetDailyReportforSfhq($bilstatus,$from,$to,$sfhq_id,$dtrange,$veh_val,$vt_type,$sup_type_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id
 		,b.Bill_No
@@ -1408,7 +1408,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-	function GetDailyReportforTripoli($bilstatus,$from,$to,$dtrange,$veh_val,$vt_type,$sup_type_id){
+	public static function GetDailyReportforTripoli($bilstatus,$from,$to,$dtrange,$veh_val,$vt_type,$sup_type_id){
 		
 			
 		$db1 = new db_con();
@@ -1476,7 +1476,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		
 	}
 	
-	function GetRtnReportforDte($rtnin_from,$rtnin_to,$received_asat){
+	public static function GetRtnReportforDte($rtnin_from,$rtnin_to,$received_asat){
 		$db1 = new db_con();
 		$sqlselect = "SELECT    
 						DISTINCT b.Bill_Id,
@@ -1525,7 +1525,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-	function GetVoteStatementforTripoli($vote_id,$rtptype,$from,$to,$dtrange){
+	public static function GetVoteStatementforTripoli($vote_id,$rtptype,$from,$to,$dtrange){
 		$db1 = new db_con();
 		
 		if($rtptype==0)
@@ -1573,8 +1573,8 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
         
-        //12-12-2015 added function for get all sfhq vote statement data to sfhq tyoe 0 login
-        function GetVoteStatementforAllSfhq($vote_id,$rtptype,$from,$to){
+        //12-12-2015 added public static function for get all sfhq vote statement data to sfhq tyoe 0 login
+        public static function GetVoteStatementforAllSfhq($vote_id,$rtptype,$from,$to){
 		$db1 = new db_con();
 		
 		if($rtptype==0)
@@ -1626,7 +1626,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function Psoviewfromallstation($vote_id,$rtptype,$from,$to,$dtrange){
+	public static function Psoviewfromallstation($vote_id,$rtptype,$from,$to,$dtrange){
 		$db1 = new db_con();
 		
 		if($rtptype==0)
@@ -1726,12 +1726,12 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-        //12-12-2012 end function		
+        //12-12-2012 end public static function		
 		
 		
 		
 	
-	function GetDirectorateSummeryforTripoli($branch_id,$billstatus,$txt_as_at_date,$txt_to_date){
+	public static function GetDirectorateSummeryforTripoli($branch_id,$billstatus,$txt_as_at_date,$txt_to_date){
 		$db1 = new db_con();
 		$sqlselect = "  SELECT b.Bill_Id
 								,b.Bill_No
@@ -1771,7 +1771,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-	function GetSupplierOutstandingInLieu34forSfhq($sup_id,$from,$to,$sfhq_id){
+	public static function GetSupplierOutstandingInLieu34forSfhq($sup_id,$from,$to,$sfhq_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id
 		,b.Bill_No
@@ -1793,7 +1793,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-	function GetVotewiseSumforG34forSfhq($sup_id,$from,$to,$sfhq_id){
+	public static function GetVotewiseSumforG34forSfhq($sup_id,$from,$to,$sfhq_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT V.vote_number,SUM(VB.Amount)
 						FROM sfhq_bill_details AS b
@@ -1808,7 +1808,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-		function GetVotewiseSumforG34forTripoli($sup_id,$from,$to){
+		public static function GetVotewiseSumforG34forTripoli($sup_id,$from,$to){
 		$db1 = new db_con();
 		$sqlselect = "SELECT V.vote_number,SUM(VB.Amount)
 						FROM txt_bill_details AS b
@@ -1825,7 +1825,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function GetDirSummeryforSfhq($branch_id,$billstatus,$sfhq_id,$txt_as_at_date,$txt_to_date ){
+	public static function GetDirSummeryforSfhq($branch_id,$billstatus,$sfhq_id,$txt_as_at_date,$txt_to_date ){
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id
 								,b.Bill_No
@@ -1864,7 +1864,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$data = $db1->GetAll($sqlselect);
 		return $data;	
 	}
-	function GetVoteStatementforSfhq($vote_id,$rtptype,$from,$to,$sfhq_id,$dtrange){
+	public static function GetVoteStatementforSfhq($vote_id,$rtptype,$from,$to,$sfhq_id,$dtrange){
 		$db1 = new db_con();
 		
 		if($rtptype==0)
@@ -1911,7 +1911,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-	function Getsupplieralllist(){
+	public static function Getsupplieralllist(){
 		$db1 = new db_con();
 		
 				
@@ -1928,7 +1928,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function GetAllBillsDGFMToSFHQAll($status,$search,$user_type_id,$sfhq_id){
+	public static function GetAllBillsDGFMToSFHQAll($status,$search,$user_type_id,$sfhq_id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id	 	 	 
 									FROM sfhq_bill_details as b 
@@ -1948,7 +1948,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-	function GetDirecterateData($dte,$status,$todate,$txt_as_at_date)
+	public static function GetDirecterateData($dte,$status,$todate,$txt_as_at_date)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT m_branches.branch_id,m_branches.branch_name FROM m_branches";
@@ -1956,7 +1956,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;		
 	}	
 	
-	function GetSupplierName($sup_id)
+	public static function GetSupplierName($sup_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT Sup_Name,Related_sfhq_id FROM m_supplier_list where Sup_id = $sup_id ";
@@ -1966,7 +1966,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-	function GetTypesofVotes($vt_id)
+	public static function GetTypesofVotes($vt_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT vt_type_name FROM vote_type where vt_type_id =$vt_id";
@@ -1975,7 +1975,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;		
 	}
 	
-	function GetSFHQName($sfhq_id)
+	public static function GetSFHQName($sfhq_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT Name FROM m_sfhq where ID =$sfhq_id";
@@ -1985,8 +1985,8 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-        //11-12-2015 added function
-        	function GetSupplierSfhq($sup_id)
+        //11-12-2015 added public static function
+        	public static function GetSupplierSfhq($sup_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT Related_sfhq_id FROM  m_supplier_list where Sup_id = $sup_id ";
@@ -1995,14 +1995,14 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;		
 	}
         //11-12-2015 End of adding
-		function GetVoteName($vote_id)
+		public static function GetVoteName($vote_id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT description FROM  votes where vote_id 	 = $vote_id ";
 		$data = $db1->GetAll($sqlselect);
 		return $data;		
 	}	
-	function GetAllBillsDGFMPaginationToBigUser($branch_id,$status,$search,$user_type_id,$start, $length)
+	public static function GetAllBillsDGFMPaginationToBigUser($branch_id,$status,$search,$user_type_id,$start, $length)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id,b.Bill_No,b.Bill_Name,b.Recieved_Date,
@@ -2027,7 +2027,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-	function GetAllBillsDGFMPaginationToBigestUser($sfhq_id,$status,$search,$unit_dis_id,$start, $length)
+	public static function GetAllBillsDGFMPaginationToBigestUser($sfhq_id,$status,$search,$unit_dis_id,$start, $length)
 	{
 		if($unit_dis_id == 0)
 		{
@@ -2057,7 +2057,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-	function GetAllBillsDGFMPaginationToSFHQ($branch_id,$status,$search,$user_type_id,$sfhq_id,$start, $length)
+	public static function GetAllBillsDGFMPaginationToSFHQ($branch_id,$status,$search,$user_type_id,$sfhq_id,$start, $length)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id,b.Bill_No,b.Sup_Code,b.Recieved_Date,
@@ -2085,7 +2085,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-	function GetAllBillsDGFMPaginationToBigUserAll($status,$search,$user_type_id,$start, $length)
+	public static function GetAllBillsDGFMPaginationToBigUserAll($status,$search,$user_type_id,$start, $length)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id,b.Bill_No,b.Bill_Name,b.Recieved_Date,
@@ -2109,7 +2109,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-	function SFHQBilltoPrint($status,$search,$user_type_id,$sfhq_id,$start, $length)
+	public static function SFHQBilltoPrint($status,$search,$user_type_id,$sfhq_id,$start, $length)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id,b.Bill_No,b.Sup_Code,b.Recieved_Date,
@@ -2137,7 +2137,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-	function SFHQPrintingBills($branch_id,$status,$search,$user_type_id,$sfhq_id,$start, $length)
+	public static function SFHQPrintingBills($branch_id,$status,$search,$user_type_id,$sfhq_id,$start, $length)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id,b.Bill_No,b.Sup_Code,b.Recieved_Date,
@@ -2164,7 +2164,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;	
 	}
 	
-	function GetUserAccountCount($status,$branch_id){
+	public static function GetUserAccountCount($status,$branch_id){
 		$db1 = new db_con();
 		$sqlselect = "select user_name from users where sfhq_id=$branch_id and isactive=$status
 						 ORDER BY user_name ";
@@ -2177,7 +2177,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-	function GetAllUserDetails($status,$branch_id,$start, $length)
+	public static function GetAllUserDetails($status,$branch_id,$start, $length)
 	{
 		$db1 = new db_con();
 		
@@ -2209,7 +2209,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function GetAllBillsDGFMPaginationToSFHQAll($status,$search,$user_type_id,$sfhq_id,$start, $length)
+	public static function GetAllBillsDGFMPaginationToSFHQAll($status,$search,$user_type_id,$sfhq_id,$start, $length)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT b.Bill_Id,b.Bill_No,b.Sup_Code,b.Recieved_Date,
@@ -2238,7 +2238,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 		
-	function get_all_regiment_namesDGFM($sfhq_id,$branch_id)
+	public static function get_all_regiment_namesDGFM($sfhq_id,$branch_id)
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_unit_distribution_chart WHERE Sfhq_Id = $sfhq_id AND branch_id 	= $branch_id";
@@ -2249,7 +2249,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-		function get_MatchedSupplier($sfhq_id,$str1,$str2,$str3,$str4)
+		public static function get_MatchedSupplier($sfhq_id,$str1,$str2,$str3,$str4)
 	{
 		$db1 = new db_con();
 		//$sql = "select * from m_supplier_list WHERE Related_sfhq_id='$sfhq_id' AND Sup_Name like '%$branch_id%'";
@@ -2268,7 +2268,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function get_all_regiment_namesDGFM1($branch_id,$sfhq_id)
+	public static function get_all_regiment_namesDGFM1($branch_id,$sfhq_id)
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_unit_distribution_chart WHERE branch_id = $branch_id and  Sfhq_Id = $sfhq_id";
@@ -2279,7 +2279,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function get_all_PayeeListforDGFM()
+	public static function get_all_PayeeListforDGFM()
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_unit_distribution_chart ";
@@ -2289,7 +2289,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;
 	}
 	
-	function GetBranchName($branch_id)
+	public static function GetBranchName($branch_id)
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_branches  where branch_id = $branch_id";
@@ -2301,7 +2301,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function get_all_branches()
+	public static function get_all_branches()
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_branches ORDER BY  branch_name";
@@ -2313,7 +2313,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	
-	function get_all_Operationalbranches()
+	public static function get_all_Operationalbranches()
 	{
 		$db1 = new db_con();
 		$sql = "SELECT 	* FROM 	m_branches WHERE IsController=1 ORDER BY branch_name";
@@ -2325,7 +2325,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-	function get_all_OpstoProcController($pro_id)
+	public static function get_all_OpstoProcController($pro_id)
 	{
 		$db1 = new db_con();
 		$sql = "SELECT 	o.Ope_Con_Id,m.branch_name FROM pro_ope_controllerchart as o
@@ -2338,7 +2338,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 		
-	function get_all_ProController()
+	public static function get_all_ProController()
 	{
 		$db1 = new db_con();
 		$sql = "SELECT branch_id,branch_name FROM 	m_branches WHERE IsPosCon=1 ORDER BY branch_name";
@@ -2349,7 +2349,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;
 	}
 	
-	function get_all_branchestosfhq()
+	public static function get_all_branchestosfhq()
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_branches WHERE Related_to_sfhq =1 ORDER BY  branch_name";		
@@ -2363,7 +2363,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		
 	
 	
-	function get_all_OpesController($pro_Con_Id)
+	public static function get_all_OpesController($pro_Con_Id)
 	{
 		$db1 = new db_con();
 		
@@ -2382,7 +2382,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	
 	
-	function get_all_branchestosfhqnotall($sfhq_id)
+	public static function get_all_branchestosfhqnotall($sfhq_id)
 	{
 		$db1 = new db_con();
 		$sql = "select DISTINCT(p.Branch_ID),b.branch_name from pso_view_chart as p
@@ -2401,7 +2401,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	
 	
 	// Get bank names
-	function get_all_BankDetails()
+	public static function get_all_BankDetails()
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_bank order by Bnk_Code ASC ";
@@ -2411,7 +2411,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;
 	}
     
-    function get_VehRunPlace($Sfhq_Id)
+    public static function get_VehRunPlace($Sfhq_Id)
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_veh_run_place where Rel_RAO_Id=$Sfhq_Id";
@@ -2423,7 +2423,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	//
 	
 	// Get bank location details
-	function get_all_Banklocation()
+	public static function get_all_Banklocation()
 	{
 		$db1 = new db_con();
 		$sql = "select * from tbllocation order by location ASC ";
@@ -2434,7 +2434,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	}
 	//
 	
-	function get_all_Sfhq()
+	public static function get_all_Sfhq()
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_sfhq ORDER BY  ID";
@@ -2444,7 +2444,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;
 	}
 	
-	function get_all_Unit_related_Sfhq($sfhq_id)
+	public static function get_all_Unit_related_Sfhq($sfhq_id)
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_unit_distribution_chart WHERE Sfhq_Id = $sfhq_id";
@@ -2454,7 +2454,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;
 	}
 	
-	function get_all_branches_without_alloption()
+	public static function get_all_branches_without_alloption()
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_branches 
@@ -2466,7 +2466,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		return $data;
 	}
 	
-	function get_all_OpsController()
+	public static function get_all_OpsController()
 	{
 		$db1 = new db_con();
 		$sql = "select DISTINCT(p.Branch_ID),b.branch_name from pso_view_chart as p
@@ -2479,7 +2479,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 	
 
 	
-	function GetBillAmountandVotes($id){
+	public static function GetBillAmountandVotes($id){
 		$db1 = new db_con();
 		$sqlselect = "SELECT Bill_No,Vote_ID, Amount FROM vote_bill_amount WHERE Bill_No = $id";
 		
@@ -2489,7 +2489,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 	}
 	
 	
-	function GetBillDataToBigUser($id,$user_type)
+	public static function GetBillDataToBigUser($id,$user_type)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT  d.Bill_Id
@@ -2537,7 +2537,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 	}
 	
 	
-	function GetBillDataToSFHQ($sfhq_id,$id,$user_type)
+	public static function GetBillDataToSFHQ($sfhq_id,$id,$user_type)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT  d.Bill_Id   
@@ -2588,7 +2588,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 		return $data;
 	}
 	
-		function GetBillDataToEdit($id)
+		public static function GetBillDataToEdit($id)
 	{
 		$db1 = new db_con();
 		$sqlselect = "SELECT 	d.Bill_Id,
@@ -2616,7 +2616,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 	//////////////############################################################################## DGFM
 
 	
-	function DeleteProject($id,$bill_no)
+	public static function DeleteProject($id,$bill_no)
 	{
 		$user_id=$_SESSION['userID'];
 		$today=date('Y-m-d');
@@ -2652,7 +2652,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 
 	}
 	
-	function DeleteBillDetailsSfhq($id,$bill_no,$sfhqid)
+	public static function DeleteBillDetailsSfhq($id,$bill_no,$sfhqid)
 	{
 		$user_id=$_SESSION['userID'];
 		$today=date('Y-m-d');
@@ -2697,7 +2697,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 		//die ();
 	}
 	
-	function CancelProject($id,$status,$com_status)
+	public static function CancelProject($id,$status,$com_status)
 	{
 		$db1 = new db_con();
 		$sqlcancel = "UPDATE  txt_bill_details T  
@@ -2711,7 +2711,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 
 	}
 	
-		function CancelSfhqBills($id,$status,$com_status)
+		public static function CancelSfhqBills($id,$status,$com_status)
 	{
 		$db1 = new db_con();
 		$sqlcancel = "UPDATE  sfhq_bill_details T
@@ -2725,7 +2725,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 
 	}
 	
-	function SettleThisbill($id,$com_status,$vote_id,$today)
+	public static function SettleThisbill($id,$com_status,$vote_id,$today)
 	{
 		$db1 = new db_con();
 		$sqlsettle = "UPDATE txt_bill_details T
@@ -2746,7 +2746,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	}
 	
 	
-	function SettleThisbillBigUser($id,$com_status,$today)
+	public static function SettleThisbillBigUser($id,$com_status,$today)
 	{
 		$db1 = new db_con();
 		$sqlsettle = "UPDATE txt_bill_details T
@@ -2773,7 +2773,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 
 	}
 	
-	function setcheckdetails($id,$today,$cheque_no,$chequeDate,$file_ref)
+	public static function setcheckdetails($id,$today,$cheque_no,$chequeDate,$file_ref)
 	{
 		$db1 = new db_con();
 		$sqlsettle = "UPDATE txt_bill_details SET 
@@ -2791,7 +2791,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	
 	// UnSettle DF Bills
 	
-	function UnSettleThisbillBigUser($id,$com_status,$today)
+	public static function UnSettleThisbillBigUser($id,$com_status,$today)
 	{
 		$db1 = new db_con();
 		$sqlsettle = "UPDATE txt_bill_details T
@@ -2814,7 +2814,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	
 	//
 	
-	function SettleThisbillSfhq($id,$com_status,$today,$cheque_no,$chequeDate)
+	public static function SettleThisbillSfhq($id,$com_status,$today,$cheque_no,$chequeDate)
 	{
 		$db1 = new db_con();
 		$sqlsettle = "UPDATE sfhq_bill_details SET Bill_Status = $com_status , 
@@ -2835,7 +2835,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	
 	
 	////Un Settle
-	function UnSettleThisbillSfhq($id,$today,$sfhq_id)
+	public static function UnSettleThisbillSfhq($id,$today,$sfhq_id)
 	{
 		$db1 = new db_con();
 		
@@ -2876,7 +2876,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	
 	
 	
-	function ReturnThisbillBigUser($id,$com_status,$today,$rtnreason,$user_id,$auto_id)
+	public static function ReturnThisbillBigUser($id,$com_status,$today,$rtnreason,$user_id,$auto_id)
 	{
 		$db1 = new db_con();		
 		
@@ -2929,7 +2929,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	}
 	
 	
-	function ReturnThisbillSfhq($id,$com_status,$today,$rtnreason,$user_id,$auto_id)
+	public static function ReturnThisbillSfhq($id,$com_status,$today,$rtnreason,$user_id,$auto_id)
 	{
 		$db1 = new db_con();		
 		
@@ -2982,7 +2982,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	}
 	
 	
-	function EnterChequeDetail($Bill_id,$cheque_no,$chequeDate,$today,$user_id,$file_ref)
+	public static function EnterChequeDetail($Bill_id,$cheque_no,$chequeDate,$today,$user_id,$file_ref)
 	{
 		$db1 = new db_con();	
 		
@@ -3001,7 +3001,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	
 	
 	
-	function get_all_regiment_names()
+	public static function get_all_regiment_names()
 	{
 		$db1 = new db_con();
 		$sql = "select * from all_army_regiments";
@@ -3012,7 +3012,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	}
 	
 		
-	function get_all_Suplier($sfhq_id)
+	public static function get_all_Suplier($sfhq_id)
 	{
 		$db1 = new db_con();
 	//	$sql = "select * from m_supplier_list WHERE Related_sfhq_id=$sfhq_id ORDER BY Sup_Name ASC";
@@ -3028,7 +3028,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	
 	
 			
-	function get_all_rtnreason()
+	public static function get_all_rtnreason()
 	{
 		$db1 = new db_con();
 		$sql = "select * from m_return ORDER BY rtn_reason_detail ASC";
@@ -3040,7 +3040,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 	
 	
 
-	function get_all_vote_names()
+	public static function get_all_vote_names()
 	{
 		$db1 = new db_con();
 		$sql = "select * from votes";
@@ -3049,7 +3049,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 		
 		return $data;
 	}
-	function get_ess_name($unit__id)
+	public static function get_ess_name($unit__id)
 	{
 		//$unit_id = $_SESSION['unitID'];
 		$db2 = new db_con();

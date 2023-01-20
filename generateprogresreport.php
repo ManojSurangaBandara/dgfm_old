@@ -144,7 +144,7 @@ ddaccordion.init({
 					        <select name="cmbproject" id="cmbproject" onchange="getProjTypepr(this.value)"   >                       
 					      <?php 
 							$projecttype = Projects :: GetProjectType();
-							while($rowprojecttype = mysql_fetch_array($projecttype)){
+							foreach ($projecttype as $rowprojecttype) {
 							?>
 					      <option value="<?php echo $rowprojecttype[0]; ?>" <?php if($rowprojecttype[0]==$projType){?> selected="selected" <?php } ?> ><?php echo $rowprojecttype[1]; ?></option>
 					      <?php } ?>
@@ -168,7 +168,7 @@ ddaccordion.init({
 			  echo $projType;
 			  
 							$esrunit = Common :: GetUnitName();
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                <option value="<?php echo $rowesrunit[0]; ?>"><?php echo $rowesrunit[1]; ?></option>
                <?php } ?>

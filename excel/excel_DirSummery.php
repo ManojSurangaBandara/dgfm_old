@@ -31,8 +31,8 @@
 		
 		
 		$Vote= Projects :: GetBranchName($branch_id);
-		while($newsupname=mysql_fetch_array($Vote))
-		{
+		
+		foreach ($Vote as $newsupname) {
 			$Br_name = $newsupname[1];
 		}
 		
@@ -136,8 +136,7 @@
 		
 		
 		
-	while($rowesrunit=mysql_fetch_array($esrunit))
-	{			
+	foreach ($esrunit as $rowesrunit) {		
 	
 				$excel->writeCol($i);				
 				$excel->writeCol($rowesrunit[1]);

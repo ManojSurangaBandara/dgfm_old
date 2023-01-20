@@ -230,7 +230,7 @@ xmlhttp.send();
                             <td width="23%"><select name="brach_id" class="ComboBoxcesSmall" id="brach_id"   style="width:100px;" onchange="showbranchestochiefacc(this.value)" >
                         <?php $result = Projects::get_all_OpsController(); ?>
                         <?php 
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 						?>
                         <option value='<?php echo $row[0]; ?>' <?php if($row[0] == $brach_id ){ echo "selected=selected"; }?> ><?php echo $row[1]; ?></option>
@@ -310,7 +310,7 @@ xmlhttp.send();
                       <td width="596"><select name="Payee_name" id="Payee_name" style="width:500px;">
                         <?php $result = Projects::get_all_Suplier($sfhq_id); ?>
                         <?php 
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 						?>
                         <option value='<?php echo $row[0]; ?>' <?php if($row[0] == $sup_id ){ echo "selected=selected"; }?> ><?php echo $row[1]; ?></option>
@@ -423,7 +423,7 @@ xmlhttp.send();
                    <?php 
 							$esrunit = Common :: GetReleventVotesName($brach_id);
 							//$esrunit = Common :: GetVotesName();
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $vote_id1){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>
@@ -464,7 +464,7 @@ xmlhttp.send();
                    <?php 
 							//$esrunit = Common :: GetVotesName();
 							$esrunit = Common :: GetReleventVotesName($brach_id);
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $vote_id2){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>
@@ -503,7 +503,7 @@ xmlhttp.send();
                    <?php 
 							//$esrunit = Common :: GetVotesName();
 							$esrunit = Common :: GetReleventVotesName($brach_id);
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $vote_id3){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>

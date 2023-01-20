@@ -142,7 +142,8 @@ ddaccordion.init({
                              <option value="0" > OTHER ACCOUNT  </option>
 							 <?php 
 							$esrunit = Common::GetAllUserAccount();
-							while($rowesrunit=mysql_fetch_array($esrunit)){?>
+							foreach ($esrunit as $rowesrunit) {
+								?>
 						     <option value="<?php echo $rowesrunit[0];  ?>" <?php if( $rowesrunit[0] == $branch_id){ echo "selected=selected"; }?> > <?php echo $rowesrunit[1]; ?></option>
 						      <?php }?>
 	          </select>
@@ -196,7 +197,7 @@ ddaccordion.init({
 		
 			$result = Projects :: GetUserAccountCount($status,$branch_id);
 			if (!$result) return;		
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	   }
 		       
 			$current1 = $page_id * $limit;
@@ -206,7 +207,7 @@ ddaccordion.init({
 			$result = Projects :: GetAllUserDetails($status,$branch_id,$current1, $length);	
 			if (!$result) return;
 				
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
 			?>	
@@ -246,7 +247,7 @@ ddaccordion.init({
                        <?php 
 						
 						$i = $page_id *100 +1;							
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 					?>
 					<tr>

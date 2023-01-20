@@ -37,7 +37,7 @@ require_once('classes/projects.class.php');
     <select name="allocated_regiment">
                         <?php $result = Projects::get_all_regiment_namesDGFM1($brach_id,$sfhq_id); ?>
                         <?php 
-						while($row1 = mysql_fetch_array($result))
+						foreach ($result as $row1) 
 						{
 						?>
                       
@@ -57,7 +57,7 @@ require_once('classes/projects.class.php');
 	
 					 <?php $result = Projects::get_all_regiment_namesDGFM($sfhq_id,$brach_id); ?>
                         <?php 
-						while($row2 = mysql_fetch_array($result))
+						foreach ($result as $row2) 
 						{
 						$unit = $row2[0];
 						   

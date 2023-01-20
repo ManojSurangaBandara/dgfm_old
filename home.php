@@ -37,7 +37,7 @@ $search = $_POST[tags];
 	<link type="text/css" href="demos.css" rel="stylesheet" />
     <?php	 
 	$project = Common :: GetProjectNames($unit_id,$projType);
-	 while($rowproject=mysql_fetch_array($project)){
+	 foreach ($project as $rowproject){
 	 
 		 if($search_str == ""){
 			 $search_str = "'{$rowproject[1]}'";
@@ -90,7 +90,7 @@ $search = $_POST[tags];
              <select name="esr_unit" class="ComboBoxcesSmall" style="width:70px;" id="esr_unit" onchange="getProjTypeDES(this.value,'<?php echo $projType; ?>')">
                <?php 
 							$esrunit = Common :: GetUnitName();
-							while($rowesrunit=mysql_fetch_array($esrunit)){
+							foreach ($esrunit as $rowesrunit) {
 							?>
                <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $unit_id){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                <?php } ?>
@@ -152,7 +152,7 @@ Project Name or Job Number:
 			$result = Common :: GetDesHomePage($unit_id,$search,$projType);		
 			if (!$result) return;
 		
-			$max_rec = mysql_num_rows($result);
+			$max_rec = count($result);
 	     }
 		           
 				$current1 = $page_id * $limit;
@@ -160,7 +160,7 @@ Project Name or Job Number:
 				
 				$result = Common :: GetDesHomePagePagination($unit_id,$search,$projType,$current1, $length);				
 				if (!$result) return;			
-				$num_rows = mysql_num_rows($result);
+				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");
 				$row_count = ($page_id * $limit) + 1;
@@ -187,7 +187,7 @@ Project Name or Job Number:
 						 <?php 
 						
 						$i = $page_id *10 +1;
-						while($row = mysql_fetch_array($result))
+						foreach ($result as $row)
 						{
 					?>
 		        <tr>
