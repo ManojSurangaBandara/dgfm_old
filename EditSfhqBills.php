@@ -446,7 +446,8 @@ xmlhttp.send();
                       <?php
 					  
 					  $billdetails = Common :: getallbilldetailstosfhq($row[1],$row[0]);
-					  while($rowbilldata = mysql_fetch_assoc($billdetails)){
+					  // while($rowbilldata = mysql_fetch_assoc($billdetails)){
+            foreach ($billdetails as $rowbilldata) {
 						$billamountarr[] =  $rowbilldata['Amount']; 
 						$voteidarr[] =  $rowbilldata['Vote_ID']; 
 						$votenamearr[] =  $rowbilldata['description']; 

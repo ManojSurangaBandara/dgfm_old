@@ -432,7 +432,9 @@ xmlhttp.send();
                       <?php
 					  
 					  $billdetails = Common :: getallbilldetails($row[1]);
-					  while($rowbilldata = mysql_fetch_assoc($billdetails)){
+					  // while($rowbilldata = mysql_fetch_assoc($billdetails)){
+					  // while($rowbilldata = $billdetails->fetch(PDO::FETCH_ASSOC)){
+            foreach ($billdetails as $rowbilldata) {
 						$billamountarr[] =  $rowbilldata['Amount']; 
 						$voteidarr[] =  $rowbilldata['Vote_ID']; 
 						$votenamearr[] =  $rowbilldata['description']; 

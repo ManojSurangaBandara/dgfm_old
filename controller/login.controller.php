@@ -151,7 +151,7 @@ switch($mode)
 			}
 			elseif($authorised==false)
 			{
-				session_unset($_SESSION['log_year']);
+				unset($_SESSION['log_year']);
 				//session_destroy($_SESSION['log_year']);
 				header("Location:../index.php?msg=2");	
 			}

@@ -228,9 +228,9 @@ class Users{
 		$sqldelete = "update users set isactive=0,deactive_date='$today' WHERE user_id = $id";
 	//	echo $sqldelete;
 		//die();
-		
-		$data = $db1->Execute($sqldelete);
-		return $data;
+
+		$result = $db1->Execute($sqldelete);
+		return $result;
 
 	}
 	

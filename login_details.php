@@ -9,10 +9,10 @@ if(!isset($_SESSION['userID'])){
 header("Location:index.php");
 }
 //$_GET['unitid'] = 3;
-$unit_id	      =	isset( $_GET['unitid'])?$_GET['unitid']:$unit_id;
+$unit_id	      =	isset( $_GET['unitid'])?$_GET['unitid']:'';
 $projType         =	isset( $_GET['projType'])?$_GET['projType']:0;
 $user_type_select = isset( $_GET['user_type_select'])?$_GET['user_type_select']:false;
-$user_type        = isset( $_GET['user_type'])?$_GET['user_type']:1;
+$user_type        = isset( $_GET['user_type'])?$_GET['user_type']:1;	
 $disabled  		  = isset( $_GET['disabled'])?$_GET['disabled']:'';
 $unit_wise		  = isset( $_GET['unit_wise'])?$_GET['unit_wise']:'';
 $select_submit	  = isset( $_GET['select_submit'])?$_GET['select_submit']:'';
@@ -27,7 +27,7 @@ if($_SESSION['userType'] != 1 )
 }
 else
 {
-	if(($disabled=='') && (($user_type =='1')||($user_type ==''))&&($_GET['disabled'] ==''))
+	if(($disabled=='') && (($user_type =='1')||($user_type =='')))
 	{
 		$disabled = 'disabled';
 	}
@@ -36,7 +36,7 @@ else
 
 
 $search_str = "";
-$search = $_POST[tags];
+$search = $_POST['tags'] ?? '';
 
 //login_details::insert_logouttime();
 ?>
@@ -256,14 +256,12 @@ ddaccordion.init({
           
           
 	<?php //-----------------First part-----------------------------------------------------?>	
-		      
+
 <?php 
-	
-	@$max_rec = $_GET["max"];
-	@$limit = $_GET["limit"];
-	@$page_id = $_GET["page"];	
-	$id = trim(@$_GET['id']);
-		
+	@$max_rec = $_GET["max"] ?? "";
+	@$limit = $_GET["limit"] ?? 10;
+	@$page_id = $_GET["page"] ?? 0;
+	$id = isset($_GET['id'])?trim(@$_GET['id']):'';
 	if (!$page_id) $page_id = 0;
 	if (!$limit) $limit = 10;		
 	

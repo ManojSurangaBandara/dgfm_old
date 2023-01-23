@@ -47,8 +47,7 @@ class db_con{
 		$result=false;
 		try {
 			$statement = $this->conn->prepare($sql);
-			$statement->execute();
-			$result = $statement->fetchAll();
+			$result = $statement->execute();
 			$statement->closeCursor();
         } catch (PDOException $e) {
             echo 'Error: ' . $e->getMessage();
