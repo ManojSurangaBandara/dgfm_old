@@ -65,7 +65,7 @@ $user_type_id = $_SESSION['userType'];
 	@$max_rec = $_GET["max"];
 	@$limit = $_GET["limit"];
 	@$page_id = $_GET["page"];	
-	$id = trim(@$_GET['id']);
+	$id = isset($_GET['id'])?trim(@$_GET['id']) : '';
 		
 	if (!$page_id) $page_id = 0;
 	if (!$limit) $limit = 400;		

@@ -9,7 +9,8 @@ header("Location:index.php");
 }
 
 //$unit_id		  =	isset( $_GET['unitid'])?$_GET['unitid']:1;
-$typeid		  =	isset( $_GET['typeid'])?$_GET['typeid']:$typeid;
+// $typeid		  =	isset( $_GET['typeid'])?$_GET['typeid']:$typeid;
+$typeid		  =	isset( $_GET['typeid'])?$_GET['typeid']:1;
 //$user_id = $_GET['userid'];
 //$unitvisible = "hidden";
 //$gevisible = "hidden";	

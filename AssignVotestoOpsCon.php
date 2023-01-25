@@ -9,7 +9,7 @@ require_once('classes/projects.class.php');
 if(!isset($_SESSION['userID'])){
 header("Location:index.php");
 }
-$unit_id = $_GET['unitid'];
+$unit_id = $_GET['unitid'] ?? "";
 $pro_id	=	isset( $_GET['pro_id'])?$_GET['pro_id']:18;
 
 ?>
@@ -27,7 +27,7 @@ $pro_id	=	isset( $_GET['pro_id'])?$_GET['pro_id']:18;
 
 <script type="text/javascript">
 function showUser1(str)
-{
+{	
 	
   
 if (str=="")
@@ -162,6 +162,9 @@ xmlhttp.send();
 							
 							$esrunit = Common :: GetVotesName();
 							
+							//added by Lt. Manoj Bandara to prevent error in PHP 8
+							$vote_id1=0;
+
 							foreach ($esrunit as $rowesrunit) {
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $vote_id1){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
@@ -172,13 +175,15 @@ xmlhttp.send();
                     
                     <tr>
                     <td></td>
-					  <td id="txtHint1">    <?php 
+					  <td id="txtHint1">  
+						
+						<?php 
 					  if($vote_id1 !=0){ ?>
                       
                 
                     <td class="last">
                     <label>
-                    <input type="text" name="vote_name1"  id="vote_name1" style="width:430px" value="<?php echo $_GET['votename']; ?>" />
+                    <input type="text" name="vote_name1"  id="vote_name1" style="width:430px" value="<?php echo $_GET['votename'] ?? ""; ?>" />
                     </label>
                     </td>
                   

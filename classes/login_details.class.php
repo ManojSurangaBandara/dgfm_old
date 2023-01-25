@@ -13,7 +13,7 @@ $today= date("y-m-d");
 						'', '$user_id', '1', '$username', '$user_type', NOW(),'','$today'
 						)
 						";
-		$data = $db1->GetAll($sqlselect);
+		$data = $db1->Execute($sqlselect);
 		//echo $sqlselect;
 		return $data;	
 }
@@ -43,7 +43,7 @@ foreach ($last_id as $row) {
 //echo "</br>";
 $db1 = new db_con();
 		$sqlselect = "UPDATE login_details SET log_out_time = NOW() WHERE id =$final_id";
-		$data = $db1->GetAll($sqlselect);
+		$data = $db1->Execute($sqlselect);
 	//	echo $sqlselect;
 		return $data;
 

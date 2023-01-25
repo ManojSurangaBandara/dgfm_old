@@ -334,7 +334,7 @@ GROUP BY
 			
 	//	echo $sqlinsert; exit;
 		
-		$data = $db1->Execute($sqlinsert);
+		$data = $db1->GetAll($sqlinsert);
 		return $data;	
 	}
 	

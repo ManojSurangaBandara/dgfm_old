@@ -162,8 +162,8 @@ ddaccordion.init({
             
             <b>Status </b> </span>  <select name="status" class="ComboBoxcesSmall" id="status"  onchange="getstatus(this.value,'<?php echo $branch_id; ?>')" style="width:100px;" >
              
-              <option value="1" <?php if( $_GET['status'] == "1"){ echo "selected=selected"; }?>>Active</option>
-               <option value="0" <?php if( $_GET['status'] == "0"){ echo "selected=selected"; }?>>Deactive</option>
+              <option value="1" <?php if( $status == "1"){ echo "selected=selected"; }?>>Active</option>
+               <option value="0" <?php if( $status == "0"){ echo "selected=selected"; }?>>Deactive</option>
               
         
             </select>

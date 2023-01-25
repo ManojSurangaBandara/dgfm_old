@@ -182,16 +182,16 @@ ddaccordion.init({
 		      
 <?php 
 	
-	@$max_rec = $_GET["max"];
-	@$limit = $_GET["limit"];
-	@$page_id = $_GET["page"];	
-	$id = trim(@$_GET['id']);
+	@$max_rec = $_GET["max"] ?? 0;
+	@$limit = $_GET["limit"] ?? 100;
+	@$page_id = $_GET["page"] ?? 0;	
+	$id = isset($_GET['id'])?trim(@$_GET['id']):"";
 		
 	if (!$page_id) $page_id = 0;
-	if (!$limit) $limit = 100;		
+	if (!$limit) $limit = 100;	
 	
 	if (!$max_rec) 
-		{					
+		{		
 			$result = Money :: getMoneyAllocationDetails($year_r,$branch_id);
 			if (!$result) return;
 		

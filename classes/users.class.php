@@ -62,7 +62,7 @@ class Users{
 		,'$nic','$tele','$email',1,'$today',$user_id)";
 		}
 		
-		$data = $db1->GetAll($sqlselect);
+		$data = $db1->Execute($sqlselect);
 	
 		//echo $sqlselect;
 		//die();
@@ -106,7 +106,7 @@ class Users{
 				VALUES ('$username','$password','$location','$usertype','$sfhq_id','$geid','$Authousername',$Is_Privilege,'$Pers_name','$nic','$Tele','$emailadd')";
 				
 				
-				$data = $db1->GetAll($sqlselect);
+				$data = $db1->Execute($sqlselect);
 				return $data;		
 	}
 	
@@ -123,7 +123,7 @@ class Users{
 								user_type = '$usertype',
 								unit_id = '$unitId',
 								ge_id = '$geid' WHERE user_id = '$userid'";
-		$data = $db1->GetAll($sqlupdate);
+		$data = $db1->Execute($sqlupdate);
 		//echo $sqlupdate;
 		return $data;		
 	}
@@ -143,7 +143,7 @@ class Users{
 								Isprivilege_user = '$privilege'
 								
 								WHERE user_id = $userid";
-		$data = $db1->GetAll($sqlupdate);
+		$data = $db1->Execute($sqlupdate);
 		//echo $sqlupdate;
 		return $data;		
 	}
@@ -154,7 +154,7 @@ class Users{
 		$db1 = new db_con();
 		$sqlupdate = "UPDATE users SET 	pass = '$password'
 								WHERE user_id = $userid";
-		$data = $db1->GetAll($sqlupdate);
+		$data = $db1->Execute($sqlupdate);
 		//echo $sqlupdate ; die();
 		return $data;		
 	}

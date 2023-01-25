@@ -2244,7 +2244,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$sql = "select * from m_unit_distribution_chart WHERE Sfhq_Id = $sfhq_id AND branch_id 	= $branch_id";
 		//echo $sql ;
 		//die ();
-		$data = $db1->Execute($sql);		
+		$data = $db1->GetAll($sql);		
 		return $data;
 	}
 	
@@ -2260,7 +2260,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 								
 		//echo $sql ; ASC
 		//die ();
-		$data = $db1->Execute($sql);		
+		$data = $db1->GetAll($sql);		
 		return $data;
 		//return $sql;
 		
@@ -2273,7 +2273,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$db1 = new db_con();
 		$sql = "select * from m_unit_distribution_chart WHERE branch_id = $branch_id and  Sfhq_Id = $sfhq_id";
 		//echo $sql ;
-		$data = $db1->Execute($sql);		
+		$data = $db1->GetAll($sql);		
 		return $data;
 	}
 	
@@ -2284,7 +2284,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$db1 = new db_con();
 		$sql = "select * from m_unit_distribution_chart ";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2294,7 +2294,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$db1 = new db_con();
 		$sql = "select * from m_branches  where branch_id = $branch_id";
 	//	echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2306,7 +2306,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$db1 = new db_con();
 		$sql = "select * from m_branches ORDER BY  branch_name";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2317,11 +2317,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 	{
 		$db1 = new db_con();
 		$sql = "SELECT 	* FROM 	m_branches WHERE IsController=1 ORDER BY branch_name";
-	//	echo $sql ;
-		//die();
-		$data = $db1->Execute($sql);
-		
-		return $data;
+		return $db1->GetAll($sql);
 	}
 	
 	
@@ -2332,7 +2328,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		INNER JOIN m_branches as m on m.branch_id=o.Ope_Con_Id WHERE Proc_Con_Id=$pro_id";
 		//echo $sql ;
 		//die();
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2344,7 +2340,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$sql = "SELECT branch_id,branch_name FROM 	m_branches WHERE IsPosCon=1 ORDER BY branch_name";
 	//	echo $sql ;
 		//die();
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2355,7 +2351,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$sql = "select * from m_branches WHERE Related_to_sfhq =1 ORDER BY  branch_name";		
 			
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2374,7 +2370,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		WHERE pc.Proc_Con_Id=$pro_Con_Id";		
 			
 		
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		//echo $data ;
 	//	die();
 		
@@ -2394,7 +2390,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		//		where u.Sfhq_Id = $sfhq_id and b.Related_to_sfhq = 1 ORDER BY b.branch_name ASC";
 		
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2406,7 +2402,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$db1 = new db_con();
 		$sql = "select * from m_bank order by Bnk_Code ASC ";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2416,7 +2412,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$db1 = new db_con();
 		$sql = "select * from m_veh_run_place where Rel_RAO_Id=$Sfhq_Id";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2428,7 +2424,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$db1 = new db_con();
 		$sql = "select * from tbllocation order by location ASC ";
 		
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		//echo $sql ;
 		return $data;
 	}
@@ -2439,7 +2435,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$db1 = new db_con();
 		$sql = "select * from m_sfhq ORDER BY  ID";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2449,7 +2445,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$db1 = new db_con();
 		$sql = "select * from m_unit_distribution_chart WHERE Sfhq_Id = $sfhq_id";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2461,7 +2457,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 				where branch_id != '6'
 				ORDER BY  branch_name";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2472,7 +2468,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		$sql = "select DISTINCT(p.Branch_ID),b.branch_name from pso_view_chart as p
 INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 ORDER BY b.branch_name";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -2484,7 +2480,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 		$sqlselect = "SELECT Bill_No,Vote_ID, Amount FROM vote_bill_amount WHERE Bill_No = $id";
 		
 	///	echo $sqlselect;
-		$data = $db1->Execute($sqlselect);		
+		$data = $db1->GetAll($sqlselect);		
 		return $data;
 	}
 	
@@ -2532,7 +2528,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 		//echo $sqlselect;
 	//die();
 		
-		$data = $db1->Execute($sqlselect);			
+		$data = $db1->GetAll($sqlselect);			
 		return $data;
 	}
 	
@@ -2584,7 +2580,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 		where d.Bill_Id = $id and d.Sfhq_Id = $sfhq_id   ";
 	//	echo $sqlselect; die();
 		
-		$data = $db1->Execute($sqlselect);		
+		$data = $db1->GetAll($sqlselect);		
 		return $data;
 	}
 	
@@ -2607,7 +2603,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 							  INNER JOIN m_branches as b on d.branch_id=b.branch_id
 							  WHERE d.Bill_Id =$id";
 	//	echo $sqlselect;
-		$data = $db1->Execute($sqlselect);		
+		$data = $db1->GetAll($sqlselect);		
 		return $data;
 	}
 	
@@ -3006,7 +3002,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 		$db1 = new db_con();
 		$sql = "select * from all_army_regiments";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -3019,7 +3015,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 		$sql = "select * from m_supplier_list ORDER BY Sup_Name ASC";
 		//echo $sql ;
 	//die();
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -3033,7 +3029,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 		$db1 = new db_con();
 		$sql = "select * from m_return ORDER BY rtn_reason_detail ASC";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -3045,7 +3041,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 		$db1 = new db_con();
 		$sql = "select * from votes";
 		//echo $sql ;
-		$data = $db1->Execute($sql);
+		$data = $db1->GetAll($sql);
 		
 		return $data;
 	}
@@ -3054,7 +3050,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 		//$unit_id = $_SESSION['unitID'];
 		$db2 = new db_con();
 		 $sql = "select * from ge where Esr_unit_id = '$unit__id'";
-		$data = $db2->Execute($sql);
+		$data = $db2->GetAll($sql);
 		return $data;
 	}
 	

@@ -44,7 +44,7 @@ class Vote{
 	
 		$db1 = new db_con();
 		$sqlselect = "SELECT max(Sup_id) as id FROM m_supplier_list ";
-		$data = $db1->Execute($sqlselect);
+		$data = $db1->GetAll($sqlselect);
 	//	echo $sqlselect;
 		return $data;
 	}
