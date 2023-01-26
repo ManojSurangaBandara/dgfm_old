@@ -131,9 +131,9 @@ $sfhq_id 	= $_SESSION['sfhqID'];
 						<td class="first"><strong>Recieved Date</strong></td>
 						<td class="last"><span id="sprytextfield4">
                         <label>
-                          <input name="txtstart_date" type="text" class="textBoxces" value="<?php echo $row[6]; ?>"  id="txtstart_date"  />
+                          <input name="txtstart_date" type="date" required="" class="textBoxces" value="<?php echo $row[6]; ?>"  id="txtstart_date"  />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.txtstart_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                       </td>
 					</tr>			
                                
           

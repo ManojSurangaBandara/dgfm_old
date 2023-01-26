@@ -212,15 +212,15 @@ ddaccordion.init({
               <tr>
               <td><?php echo "From:";?></td>
                <td><span id="sprytextfield1">
-                 <input type="text" name="from_date" id="from_date" value="<?php echo $from_date_two;?>"/>
-                <span class="textfieldRequiredMsg">*</span></span><a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.from_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt="" /></a>               </td>
+                 <input type="date" required="" name="from_date" id="from_date" value="<?php echo $from_date_two;?>"/>
+                </td>
                <tr>
                <td>
 			   			  <?php echo "To:";?>	
                </td>
                <td><span id="sprytextfield2">
-                 <input type="text" name="to_date" id="to_date"  value="<?php echo $to_date_two;?>"/>
-                 <span class="textfieldRequiredMsg">*</span></span><a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.to_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt="" /></a>              </td>
+                 <input type="date" required="" name="to_date" id="to_date"  value="<?php echo $to_date_two;?>"/>
+                 </td>
               </tr>
               <tr>
               <td>

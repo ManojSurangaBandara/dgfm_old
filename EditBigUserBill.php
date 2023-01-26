@@ -269,9 +269,9 @@ xmlhttp.send();
                     <td> <strong> Date </strong> </td>
                           <td> <span id="sprytextfield2">
                         <label>
-                          <input value="<?php echo $row[4]; ?>" name="invoice_date" type="text" class="textBoxces" id="invoice_date"  />
+                          <input value="<?php echo $row[4]; ?>" name="invoice_date" type="date" required="" class="textBoxces" id="invoice_date"  />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.invoice_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                        </td>
               </table>
               
               </td>
@@ -295,9 +295,9 @@ xmlhttp.send();
                     <td> <strong> Date </strong> </td>
                           <td> <span id="sprytextfield7">
                         <label>
-                       <input name="g35_date" type="text" class="textBoxces" id="g35_date" value="<?php echo $row[16]; ?>" />
+                       <input name="g35_date" type="date" required="" class="textBoxces" id="g35_date" value="<?php echo $row[16]; ?>" />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.g35_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                        </td>
               </table>
               
               </td>
@@ -339,9 +339,9 @@ xmlhttp.send();
 						<td class="first"><strong>Ledgered Date</strong></td>
 						<td class="last">
                         <label>
-                          <input name="ledger_date" value="<?php echo $row[32]; ?>"  type="text" class="textBoxces" id="ledger_date"  />
+                          <input name="ledger_date" value="<?php echo $row[32]; ?>"  type="date" required="" class="textBoxces" id="ledger_date"  />
                         </label>
-                       <span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.ledger_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                       </td>
 					</tr>	
                     
              <tr>
@@ -355,9 +355,9 @@ xmlhttp.send();
 						<td class="first"><strong>Received Date</strong></td>
 						<td class="last"><span id="sprytextfield4">
                         <label>
-                          <input  value="<?php echo $row[3]; ?>" name="txtstart_date" type="text" class="textBoxces" id="txtstart_date"  />
+                          <input  value="<?php echo $row[3]; ?>" name="txtstart_date" type="date" required="" class="textBoxces" id="txtstart_date"  />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.txtstart_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                        </td>
 					</tr>			
                               
                        
@@ -368,16 +368,16 @@ xmlhttp.send();
                         
                         
                         <label>
-                          <input name="from_period" value="<?php echo $row[25]; ?>" type="text" class="textBoxces" id="from_period"   />
+                          <input name="from_period" value="<?php echo $row[25]; ?>" type="date" required="" class="textBoxces" id="from_period"   />
                         </label>
-                       <a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.from_period);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a>
+                       
                         
                         
                        
                         <label>
-                          <input name="to_period" value="<?php echo $row[26]; ?>"  type="text" class="textBoxces" id="to_period"  />
+                          <input name="to_period" value="<?php echo $row[26]; ?>"  type="date" required="" class="textBoxces" id="to_period"  />
                         </label>
-                        <a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.to_period);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a>
+                        
                         
                         
                         
@@ -406,9 +406,9 @@ xmlhttp.send();
                         
                         <span id="sprytextfield2">
                         <label>
-                          <input value="<?php echo $row[4]; ?>" name="invoice_date" type="text" class="textBoxces" id="invoice_date"  />
+                          <input value="<?php echo $row[4]; ?>" name="invoice_date" type="date" required="" class="textBoxces" id="invoice_date"  />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.invoice_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a>
+                        
                         
                         
                         </td>

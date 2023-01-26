@@ -96,9 +96,9 @@ $ptype        = $_GET['ptype'];
 					  <td valign="top" class="first"><strong>Report Date as at</strong></td>
 	    <td class="last"><span id="sprytextfield1">
 					    <label>
-					      <input type="text" name="txt_as_at_date" id="txt_as_at_date" value="<?php echo $row[2]; ?>" />
+					      <input type="date" required="" name="txt_as_at_date" id="txt_as_at_date" value="<?php echo $row[2]; ?>" />
 				      </label>                    
-				      <span class="textfieldRequiredMsg">*</span></span><a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.txt_as_at_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt="" /></a></td>
+				      </td>
 		    </tr>
             
             

@@ -306,9 +306,9 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
                          <td class="first"><strong>Cheque Date</strong></td>
                         <td> 
                         <label>
-                          <input name="chequeDate" type="text" class="textBoxces" style="width:130px" id="chequeDate" value="<?php echo $row[20]; ?> " />
+                          <input name="chequeDate" type="date" required="" class="textBoxces" style="width:130px" id="chequeDate" value="<?php echo $row[20]; ?> " />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.chequeDate);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                        </td>
                         
                          </tr>
                         

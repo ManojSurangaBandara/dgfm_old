@@ -103,9 +103,9 @@ ddaccordion.init({
 					  <td valign="top" class="first"><strong>Return In From </strong></td>
 					  <td ><span id="sprytextfield1">
 					    <label>
-					      <input type="text" style="width:115px;"  name="rtnin_from" id="rtnin_from"  />
+					      <input type="date" required="" style="width:115px;"  name="rtnin_from" id="rtnin_from"  />
 				      </label>
-				      <span class="textfieldRequiredMsg">*</span></span><a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.rtnin_from);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt="" /></a></td>
+				      </td>
 		    </tr>
 					
                     <tr>
@@ -113,18 +113,18 @@ ddaccordion.init({
 					  <td >
 					   <span id="sprytextfield2">
 					   <label>
-					     <input type="text" style="width:115px;"  name="rtnin_to" id="rtnin_to"  />
+					     <input type="date" required="" style="width:115px;"  name="rtnin_to" id="rtnin_to"  />
 				       </label>
-				     <span class="textfieldRequiredMsg">*</span></span> <a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.rtnin_to);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt="" /></a></td>
+				     </td>
 		    </tr>
             
              <tr class="bg" >
 					  <td valign="top" class="first"><strong>Received as at </strong></td>
 					  <td ><span id="sprytextfield3">
 					    <label>
-					      <input type="text" style="width:115px;"  name="received_asat" id="received_asat"  />
+					      <input type="date" required="" style="width:115px;"  name="received_asat" id="received_asat"  />
 				      </label>
-				      <span class="textfieldRequiredMsg">*</span></span><a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.received_asat);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt="" /></a></td>
+				      </td>
 		    </tr>
             
             

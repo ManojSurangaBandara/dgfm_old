@@ -113,9 +113,9 @@ ddaccordion.init({
 					  <td valign="top" class="first"><strong>Date as at </strong></td>
 					  <td ><span id="sprytextfield1">
 					    <label>
-					      <input type="text" style="width:115px;"  name="received_asat" id="received_asat"  />
+					      <input type="date" style="width:115px;"  name="received_asat" id="received_asat"  />
 				      </label>
-				      <span class="textfieldRequiredMsg">*</span></span><a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.received_asat);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt="" /></a></td>
+				      </td>
 		    </tr>
 				
 					<tr class="bg">

@@ -331,9 +331,9 @@ To</b><label>
                          <td class="first"><strong>Cheque Date</strong></td>
                         <td> <span id="sprytextfield1">
                         <label>
-                          <input name="chequeDate" type="text" class="textBoxces" id="chequeDate" value="<?php echo $row[25]; ?> " />
+                          <input name="chequeDate" type="date" required="" class="textBoxces" id="chequeDate" value="<?php echo $row[25]; ?> " />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.chequeDate);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                        </td>
                         
                          </tr>
                         

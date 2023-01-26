@@ -265,9 +265,9 @@ xmlhttp.send();
                     <td> <strong> Date </strong> </td>
                           <td> <span id="sprytextfield2">
                         <label>
-                          <input name="invoice_date" type="text" class="textBoxces" id="invoice_date" value="<?php echo $_GET['in_date'];  ?>"  />
+                          <input name="invoice_date" type="date" required="" class="textBoxces" id="invoice_date" value="<?php echo $_GET['in_date'];  ?>"  />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.invoice_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                        </td>
               </table>
               
               </td>
@@ -291,9 +291,9 @@ xmlhttp.send();
                     <td> <strong> Date </strong> </td>
                           <td> <span id="sprytextfield7">
                         <label>
-                          <input name="g35_date" type="text" class="textBoxces" id="g35_date" value="<?php echo $_GET['in_date'];  ?>"  />
+                          <input name="g35_date" type="date" required="" class="textBoxces" id="g35_date" value="<?php echo $_GET['in_date'];  ?>"  />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.g35_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                        </td>
               </table>
               
               </td>
@@ -336,9 +336,9 @@ xmlhttp.send();
 						<td class="first"><strong>Ledgered Date</strong></td>
 						<td class="last">
                         <label>
-                          <input name="ledger_date"  type="text" class="textBoxces" id="ledger_date"  />
+                          <input name="ledger_date"  type="date" required="" class="textBoxces" id="ledger_date"  />
                         </label>
-                       <span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.ledger_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                       </td>
 					</tr>	
                     
              <tr>
@@ -350,9 +350,9 @@ xmlhttp.send();
 						<td class="first"><strong>Received Date</strong></td>
 						<td class="last"><span id="sprytextfield4">
                         <label>
-                          <input name="txtstart_date"  type="text" class="textBoxces" id="txtstart_date" value="<?php echo $_GET['re_date'];  ?>"  />
+                          <input name="txtstart_date"  type="date" required="" class="textBoxces" id="txtstart_date" value="<?php echo $_GET['re_date'];  ?>"  />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.txtstart_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                        </td>
 					</tr>	
                     
                     
@@ -370,16 +370,16 @@ xmlhttp.send();
                         
                         
                         <label>
-                          <input name="from_period" type="text" class="textBoxces" id="from_period"   />
+                          <input name="from_period" type="date" required="" class="textBoxces" id="from_period"   />
                         </label>
-                       <a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.from_period);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a>
+                       
                         
                         
                        
                         <label>
-                          <input name="to_period"  type="text" class="textBoxces" id="to_period"  />
+                          <input name="to_period"  type="date" required="" class="textBoxces" id="to_period"  />
                         </label>
-                        <a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.to_period);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a>
+                        
                         
                         
                         

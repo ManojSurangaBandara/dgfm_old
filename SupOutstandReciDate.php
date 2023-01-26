@@ -136,9 +136,9 @@ ddaccordion.init({
 					  <td valign="top" class="first"><strong>Date as at</strong></td>
 					  <td ><span id="sprytextfield1">
 					    <label>
-					      <input type="text" style="width:115px;"  name="txt_as_at_date" id="txt_as_at_date"  />
+					      <input type="date" required=""style="width:115px;"  name="txt_as_at_date" id="txt_as_at_date"  />
 				      </label>
-				      <span class="textfieldRequiredMsg">*</span></span><a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.txt_as_at_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt="" /></a></td>
+				      </td>
 		    </tr>
             
            <tr class="bg">
@@ -159,9 +159,9 @@ ddaccordion.init({
 					  <td >
 					   <span id="sprytextfield2">
 					   <label>
-					     <input type="text" style="width:115px;"  name="txt_to_date" id="txt_to_date"  />
+					     <input type="date" required="" style="width:115px;"  name="txt_to_date" id="txt_to_date"  />
 				       </label>
-				     <span class="textfieldRequiredMsg">*</span></span> <a href="javascript:void(0)" onclick="if(self.gfPop)gfPop.fPopCalendar(document.form1.txt_to_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt="" /></a></td>
+				     </td>
 		    </tr><?php */?>
 					<tr class="bg">
 

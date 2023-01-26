@@ -125,9 +125,9 @@ $project_id 	= $_GET['billID'];
 						<td class="first"><strong>Recieved Date</strong></td>
 						<td class="last"><span id="sprytextfield4">
                         <label>
-                          <input disabled="disabled" value="<?php echo $row[6]; ?> " name="txtstart_date" type="text" class="textBoxces" id="txtstart_date"  />
+                          <input disabled="disabled" value="<?php echo $row[6]; ?> " name="txtstart_date" type="date" required="" class="textBoxces" id="txtstart_date"  />
                         </label>
-                        <span class="textfieldRequiredMsg">*</span><span class="textfieldInvalidFormatMsg">Invalid format.</span></span><a href="javascript:void(0)" onClick="if(self.gfPop)gfPop.fPopCalendar(document.form1.txtstart_date);return false;" ><img class="PopcalTrigger" align="absmiddle" src="date_calander/calbtn.gif" width="34" height="22" border="0" alt=""></a></td>
+                        </td>
 					</tr>			
                                
           
