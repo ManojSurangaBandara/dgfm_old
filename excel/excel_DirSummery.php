@@ -132,7 +132,7 @@
 			$esrunit = Projects :: GetDirectorateSummeryforTripoli($branch_id,$billstatus,$txt_as_at_date,$txt_to_date );	
 		}
 		$i=1;		
-		$tot="";
+		$tot=0;
 		
 		
 		

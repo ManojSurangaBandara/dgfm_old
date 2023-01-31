@@ -39,15 +39,15 @@
 		switch($sfhq_id)
 		{
 			case 0:
-			$sfhqname=="DIRECTORATE OF FINANCE";
+			$sfhqname="DIRECTORATE OF FINANCE";
 			break;
 			
 			case 1:
-			$sfhqname=="SFHQ (WEST)";
+			$sfhqname="SFHQ (WEST)";
 			break;
 			
 			case 2:
-			$sfhqname=="SFHQ (W)";
+			$sfhqname="SFHQ (W)";
 			break;
 			
 			case 3:
@@ -157,18 +157,20 @@
 		$esrunit = Projects :: GetVoteStatementforSfhq($vote_id,$rtptype,$txt_as_at_date,$txt_to_date,$sfhq_id,$dtrange );	
 		}
 		
-		else 
+		else
 		{
 			
 			$esrunit = Projects :: GetVoteStatementforTripoli($vote_id,$rtptype,$txt_as_at_date,$txt_to_date,$dtrange);
-                        
+            
                         //Get all sfhq vote statement data to sfhq 0type login
 			$sfhqesrunit = Projects :: GetVoteStatementforAllSfhq($vote_id,$rtptype,$txt_as_at_date,$txt_to_date);	
 		}
 		$i=1;		
 		
-		$tot="";
+		$tot=0;
 		
+		if (count($esrunit)>0) {
+
 		
 	foreach ($esrunit as $rowesrunit) {		
 	
@@ -177,7 +179,7 @@
                 $excel->writeCol($rowesrunit[0]);
                 $excel->writeCol($rowesrunit[1]);
 				
-				$excel->writeCol($rowesrunit[10]);	
+				$excel->writeCol($rowesrunit[10]);
                 $excel->writeCol($rowesrunit[11]);
 				
                 $excel->writeCol(number_format($rowesrunit[2],'2','.',','));	
@@ -198,6 +200,7 @@
                 $i +=1;				
                 $excel->writeRow();
         }
+	}
 				
 		if(!$sfhq_id >0){
                     //Print all SFHQ supplier age data to excel sheet for sfhq type 0 login

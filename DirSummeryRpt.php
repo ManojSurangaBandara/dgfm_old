@@ -86,7 +86,7 @@ ddaccordion.init({
 			<div class="top-bar">
 
          
-	      <h1 style="text-transform:uppercase"><?php echo $sfhq_name ; ?> - Directorate Summary Report - <?php echo $_SESSION['log_year']; ?></h1>
+	      <h1 style="text-transform:uppercase"><?php echo $sfhq_name ?? "" ; ?> - Directorate Summary Report - <?php echo $_SESSION['log_year']; ?></h1>
 				<div class="breadcrumbs">
                 
                      
@@ -135,9 +135,9 @@ ddaccordion.init({
 
 					  <td ><strong>Report Status</strong></td>
 					  <td > <select name="billstatus" class="ComboBoxcesSmall" id="billstatus"   style="width:100px;" >
-              <option value="0" <?php if( $_GET['status'] == 0){ echo "selected=selected"; }?>>Not Settled</option>
-              <option value="1" <?php if( $_GET['status'] == 1){ echo "selected=selected"; }?>>Settled</option>          
-              <option value="3" <?php if( $_GET['status'] == 3){ echo "selected=selected"; }?>>Returened</option>
+              <option value="0" <?php if( isset($_GET['status']) && $_GET['status'] == 0){ echo "selected=selected"; }?>>Not Settled</option>
+              <option value="1" <?php if( isset($_GET['status']) && $_GET['status'] == 1){ echo "selected=selected"; }?>>Settled</option>          
+              <option value="3" <?php if( isset($_GET['status']) && $_GET['status'] == 3){ echo "selected=selected"; }?>>Returened</option>
             </select></td>
                       
                       

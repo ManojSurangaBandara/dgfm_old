@@ -140,7 +140,7 @@
 		
 		
 		
-		$myArrtitle=array("<strong>".$trns_title." ".$sfhq_name." - ".$vt_title." VOTES DAILY REPORT OF ".$veh_type." ".$type." BILLS FROM  ".$txt_as_at_date."  TO ".$txt_to_date." </strong>");
+		$myArrtitle=array("<strong>".($trns_title ?? "")." ".$sfhq_name." - ".$vt_title." VOTES DAILY REPORT OF ".$veh_type." ".$type." BILLS FROM  ".$txt_as_at_date."  TO ".$txt_to_date." </strong>");
 		$excel->writeLine($myArrtitle);
 		$excel->writeRow();	
 		
@@ -285,7 +285,7 @@
 		}
 		$i=1;		
 		
-		$total="";
+		$total=0;
 		//echo $esrunit;
 		//die();
 					

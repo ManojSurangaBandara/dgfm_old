@@ -13,7 +13,7 @@ $sfhq_id = $_SESSION['sfhqID'];
 $sfname = Projects :: GetSFHQName($sfhq_id);
 foreach ($sfname as $sftitle)
 {
-	$sfhq_name = $sftitle[0];
+	$sfhq_name = $sftitle[0] ?? "";
 }
 
 ?>
@@ -83,7 +83,7 @@ ddaccordion.init({
 			<div class="top-bar">
 
          
-	      <h1 style="text-transform:uppercase"><?php echo $sfhq_name ; ?> - Vote Statement Report - <?php echo $_SESSION['log_year']; ?>  </h1>
+	      <h1 style="text-transform:uppercase"><?php echo $sfhq_name ?? "" ; ?> - Vote Statement Report - <?php echo $_SESSION['log_year']; ?>  </h1>
 				<div class="breadcrumbs">
                 
                      
@@ -113,6 +113,7 @@ ddaccordion.init({
 <select name="vote_id"  id="vote_id" style="width:200px;">
 						   
 							 <?php 
+							if(!isset($vote_id)) $vote_id = 0;
 							$esrunit = Vote:: GetVoteDetails();
 							foreach ($esrunit as $rowesrunit) {?>
 						     <option value="<?php echo $rowesrunit[0];  ?>" <?php if( $rowesrunit[0] == $vote_id){ echo "selected=selected"; }?> > <?php echo $rowesrunit[1]; ?></option>
@@ -131,7 +132,7 @@ ddaccordion.init({
               <option value="1" >Settled</option>  
               <option value="2" >Not Settled</option>              
             </select></td>
-                      
+								
                       
 		    		</tr>    
 					

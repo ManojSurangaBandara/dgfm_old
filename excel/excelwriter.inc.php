@@ -18,11 +18,11 @@
 	 */
 
 
-	Class ExcelWriter
+	class ExcelWriter
 	{
 			
 		var $fp=null;
-		var $error;
+		var $error="no error";
 		var $state="CLOSED";
 		var $newRow=false;
 		
@@ -32,7 +32,7 @@
 		* 			On Failure return false	 
 		*/
 		 
-		function ExcelWriter($file="")
+		public function __construct($file="")
 		{
 			return $this->open($file);
 		}
@@ -69,7 +69,7 @@
 			}
 			$this->state="OPENED";
 			fwrite($this->fp,$this->GetHeader());
-			return $this->fp;
+			return $this->fp;	
 		}
 		
 		function close()
@@ -84,7 +84,6 @@
 				fwrite($this->fp,"</tr>");
 				$this->newRow=false;
 			}
-			
 			fwrite($this->fp,$this->GetFooter());
 			fclose($this->fp);
 			$this->state="CLOSED";

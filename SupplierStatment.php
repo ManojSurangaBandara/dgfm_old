@@ -115,6 +115,9 @@ ddaccordion.init({
 						   
 							 <?php 
 							$esrunit = Vote:: GetSupplierDetailstoTripoli();
+							if (!isset($sup_id)){
+								$sup_id = 0;  
+							}
 							foreach ($esrunit as $rowesrunit) {?>
 						     <option value="<?php echo $rowesrunit[0];  ?>" <?php if( $rowesrunit[0] == $sup_id){ echo "selected=selected"; }?> > <?php echo $rowesrunit[1]; ?></option>
                

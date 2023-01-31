@@ -18,7 +18,6 @@
 	}
 	else {
 			
-	
 		$sup_id				=	isset( $_POST['sup_id'])?$_POST['sup_id']:$sup_id;
 		$sup_name;
         $Supplier_sfhq_id;
@@ -29,7 +28,7 @@
 		
 		foreach ($supname as $newsupname) {
 			$sup_name = $newsupname[0];
-            $Supplier_sfhq_id = $newsupsfhq[1];
+            $Supplier_sfhq_id = $newsupname[1];
             
 		}
      
@@ -41,19 +40,19 @@
 		//	$Supplier_sfhq_id = $newsupsfhq[0]; 
 		//}
 		
-		$sfhqname;		
+		$sfhqname = "";		
 		switch($sfhq_id)
 		{
 			case 0:
-			$sfhqname=="DIRECTORATE OF FINANCE";
+			$sfhqname="DIRECTORATE OF FINANCE";
 			break;
 			
 			case 1:
-			$sfhqname=="SFHQ (WEST)";
+			$sfhqname="SFHQ (WEST)";
 			break;
 			
 			case 2:
-			$sfhqname=="SFHQ (W)";
+			$sfhqname="SFHQ (W)";
 			break;
 			
 			case 3:
@@ -118,12 +117,12 @@
 			$esrunit = Projects :: GetSupplierStatementforTripoli($Supplier_sfhq_id,$sup_id,$txt_as_at_date,$txt_to_date);	
 		}
 		$i=1;		
-		$totPaid="";
-		$totOutStd="";
-		$totrtn="";
+		$totPaid=0;
+		$totOutStd=0;
+		$totrtn=0;
 		
 		
-	foreach ($esrunit as $rowesrunit) {
+
 		
 	foreach ($esrunit as $rowesrunit) {
 				$excel->writeCol($i);	
