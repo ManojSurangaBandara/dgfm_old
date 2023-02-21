@@ -17,7 +17,7 @@ $projType         =	isset( $_GET['projType'])?$_GET['projType']:0;
 
 
 $search_str = "";
-$search = $_POST[tags];
+$search = $_POST['tags'];
 
 
 ?>

@@ -16,7 +16,7 @@ $user_type_id = $_SESSION['userType'];
 $veh_type 	= isset( $_GET['veh_type'])?$_GET['veh_type']:2;
 
 $search_str = "";
-$search = $_POST[tags];
+$search = $_POST['tags'];
 
 $path="";
 ?>

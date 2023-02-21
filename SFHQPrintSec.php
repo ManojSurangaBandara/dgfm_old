@@ -12,7 +12,7 @@ header("Location:index.php");
 }
 
 $search_str = "";
-$search = $_POST[tags];
+$search = $_POST['tags'];
 
 $user_id 	= $_SESSION['userID'];
 $sfhq_id 	= $_SESSION['sfhqID'];
