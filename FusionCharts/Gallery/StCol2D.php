@@ -1,3 +1,9 @@
+<?php 
+require_once('../../classes/db_con.php');
+require_once('../../includes/config.php');
+require_once('../../classes/projects.class.php');
+$db1 = new db_con();
+ ?>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
@@ -9,11 +15,6 @@
 
 <body>
 <?php 
-
-require_once('../../includes/config.php');
-require_once('../../classes/db_con.php');
-require_once('../../classes/projects.class.php');
-
 $new_year = $_GET['years'];	
 
 		 	 	 	 	 	
@@ -21,13 +22,17 @@ $graph_data_Rec = Projects :: GetAllocationRecurrent($new_year);
 $graph_data_Cap = Projects :: GetAllocationCapital($new_year);
 $graph_data_Othe = Projects :: GetAllocationOther($new_year);
   
-  
+
 $string= "<graph xAxisName='Vote Types' yAxisName='Allocation' caption='Annual Money Allocation Chart' subCaption='For the Year of ".$new_year."' 
  decimalPrecision='0' rotateNames='1' numDivLines='3' numberPrefix='Rs:' showValues='0' formatNumberScale='0'>
  
  
  <categories font='Arial' fontSize='11' fontColor='000000'>";
-	$string .="<category name='TRIPOLI' /><br/>";
+
+
+
+
+ $string .="<category name='TRIPOLI' /><br/>";
 	$string .="<category name='SFHQ(WEST)' /><br/>";
 	$string .="<category name='SFHQ(Wanni)' /><br/>";
 	$string .="<category name='SFHQ(E)' /><br/>";
@@ -41,15 +46,23 @@ $string .= "</categories>".
 
 
 "<dataset seriesName='Recurrent' color='AFD8F8' showValues='0' >";
-while($speed_row=mysql_fetch_array($graph_data_Rec))
+
+
+
+// while($speed_row=mysql_fetch_array($graph_data_Rec))
+// while($speed_row=$db1->fetch($graph_data_Rec))
+foreach ($graph_data_Rec as $speed_row) 
 {
+
 	$string .="<set value='".$speed_row[1]."' /><br/>";	
+
 }
 $string .= "</dataset>".
 
 
 "<dataset seriesName='Capital' color='F6BD0F' showValues='0' >";
-while($row=mysql_fetch_array($graph_data_Cap))
+// while($row=$db1->fetch($graph_data_Cap))
+foreach ($graph_data_Cap as $speed_row) 
 {
 	$string .="<set value='".$row[1]."' /><br/>";	
 }
@@ -57,16 +70,16 @@ $string .= "</dataset>".
 
 
 "<dataset seriesName='Others' color='8BBA00' showValues='0' >";
-while($end_row=mysql_fetch_array($graph_data_Othe))
+// while($end_row=$db1->fetch($graph_data_Othe))
+foreach ($graph_data_Othe as $speed_row) 
 {
 	$string .="<set value='".$end_row[1]."' /><br/>";	
 }
 
-
 $string .="</dataset>";
-
-
 $string .="</graph>";  
+
+
 $myFile ="StCol2D.xml";                
 $fh = fopen($myFile, 'w');
 
