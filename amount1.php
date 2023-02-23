@@ -4,10 +4,10 @@ require_once('classes/db_con.php');
 require_once('classes/progress_report.class.php');
 require_once('classes/Bills.php');
 
-$vote_id = $_GET['q'] ?? ""; 
+$vote_id = $_GET['q'] ?? 0; 
 $arr = $_GET['ar'] ?? "";
 $resultproject 	= Bills :: GetVoteData($vote_id);
-$rowproject = $resultproject[0];
+$rowproject = $resultproject[0] ?? array();
 ?>
 
 <script src="SpryAssets/SpryValidationTextField.js" type="text/javascript"></script>
@@ -17,7 +17,7 @@ $rowproject = $resultproject[0];
 	<tr class="bg">
 		<td class="last">
 			<label>
-				<input type="text" name="vote_name1"  id="vote_name1" style="width:430px" value="<?php echo $rowproject[0]." : Rs: ".number_format($rowproject[1],'2','.',''); ?>" />
+				<input type="text" name="vote_name1"  id="vote_name1" style="width:430px" value="<?php if(isset($rowproject[0])) echo $rowproject[0]." : Rs: ".number_format($rowproject[1],'2','.',''); ?>" />
 			</label>
 			</td>           
 		<td class="last">

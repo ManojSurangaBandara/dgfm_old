@@ -7,10 +7,10 @@ require_once('classes/Bills.php');
 
 
 
-	$vote_id = $_GET['q'] ?? ""; 
+	$vote_id = $_GET['q'] ?? 0; 
 	$arr = $_GET['ar']  ?? "";
 	$resultproject 	= Bills :: GetVoteData($vote_id);
-	$rowproject = $resultproject[0];
+	$rowproject = $resultproject[0] ?? array();
 	
 	 
 	
@@ -29,7 +29,7 @@ require_once('classes/Bills.php');
 
 	<td class="last">
     <label>
-	<input type="text" name="vote_name2"  id="vote_name2" style="width:430px" value="<?php echo $rowproject[0]." : Rs:  ".number_format($rowproject[1],'2','.',''); ?>" />
+	<input type="text" name="vote_name2"  id="vote_name2" style="width:430px" value="<?php if(isset($rowproject[0])) echo $rowproject[0]." : Rs:  ".number_format($rowproject[1],'2','.',''); ?>" />
 	</label>
     </td>
                         
