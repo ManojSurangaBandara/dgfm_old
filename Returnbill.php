@@ -266,7 +266,7 @@ $user_type_id = $_SESSION['userType'];
             
              <?php 
 				$result = ProjectsProgress :: GetBillAmountandVotes($project_id,$row[1]);
-					 $total;	
+					 $total=0;	
 						$i=1;
 						foreach ($result as $row2) 
 						{

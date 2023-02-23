@@ -7,8 +7,8 @@ require_once('classes/Bills.php');
 
 
 
-	$vote_id = $_GET['q']; 
-	$arr = $_GET['ar'];
+	$vote_id = $_GET['q'] ?? ""; 
+	$arr = $_GET['ar'] ?? "";
 	$resultproject 	= Bills :: GetVoteData($vote_id);
 	$rowproject = $resultproject[0];
 	

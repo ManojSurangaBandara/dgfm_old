@@ -180,7 +180,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
             
              <?php 
 				$result = ProjectsProgress :: GetBillAmountandVotesToSfhq($project_id);
-					 $total;	
+					 $total=0;	
 						$i=1;
 						foreach ($result as $row2) 
 						{

@@ -12,7 +12,7 @@ header("Location:index.php");
 }
 
 $search_str = "";
-$search = $_POST['tags'];
+$search = $_POST['tags'] ?? "";
 
 $user_id 		= $_SESSION['userID'];
 $Isprivilege_user = $_SESSION['Isprivilege_user'];
@@ -172,9 +172,9 @@ Reg No or Sup Name
             <td>&nbsp;&nbsp; </td> 
             
             Status </span>  <select name="billstatus" class="ComboBoxcesSmall" id="billstatus"  onchange="getBillStatusToChiefAcc(this.value,'<?php echo $branch_id; ?>')" style="width:100px;" >
-              <option value="0" <?php if( $_GET['status'] == 0){ echo "selected=selected"; }?>>Not Settled</option>
-              <option value="1" <?php if( $_GET['status'] == 1){ echo "selected=selected"; }?>>Settled</option>           
-              <option value="3" <?php if( $_GET['status'] == 3){ echo "selected=selected"; }?>>Returned</option>
+              <option value="0" <?php if( $status == 0){ echo "selected=selected"; }?>>Not Settled</option>
+              <option value="1" <?php if( $status == 1){ echo "selected=selected"; }?>>Settled</option>           
+              <option value="3" <?php if( $status == 3){ echo "selected=selected"; }?>>Returned</option>
             </select>
 <div class="demo">
   <div class="ui-widget"></div>
@@ -194,8 +194,8 @@ Reg No or Sup Name
 	@$max_rec 	= $_GET["max"];
 	@$limit 	= $_GET["limit"];
 	@$page_id 	= $_GET["page"];	
-	$id 		= trim(@$_GET['id']);
-	$tag 		= $_POST['tags'];
+	$id 		= $_GET['id'] ?? "";
+	$tag 		= $_POST['tags'] ?? "";
 		
 	if (!$page_id) $page_id = 0;
 	if (!$limit) $limit = 15;		

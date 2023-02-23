@@ -2009,7 +2009,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		(select sum(a.Amount) from vote_bill_amount as a where a.Bill_Id=b.Bill_Id and a.Bill_No = b.Bill_No group by a.Bill_Id ) as Ammount 
 		,s.Sup_Name	 ,
 		(select vote_number from votes as v where v.vote_id=b.Settled_Vote_ID group by  v.vote_id ) as vote_name,
-(select branch_name from m_branches as mb where mb.branch_id=b.branch_id group by  mb.branch_id) as branch_name ,b.Bill_Settled_Date,b.Modified_Date,b.Bill_ref_no	 
+(select branch_name from m_branches as mb where mb.branch_id=b.branch_id group by  mb.branch_id) as branch_name ,b.Bill_Settled_Date,b.Modified_Date,b.Bill_ref_no,b.branch_id	 
 									FROM txt_bill_details as b 
 									INNER JOIN m_supplier_list as s on b.Bill_Name =s.Sup_id 
 									where b.Bill_Status = $status 									
@@ -2517,6 +2517,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 		,d.bill_period_to
 		,s.Act_No,k.Bnk_Code,s.bnk_loc_id
 		,s.nic,s.mobile
+		,d.ledger_date
 		
 		FROM txt_bill_details as d
 		INNER JOIN m_supplier_list as s on s.Sup_id =d.Bill_Name

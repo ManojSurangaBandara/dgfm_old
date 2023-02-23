@@ -16,7 +16,7 @@ $user_type_id = $_SESSION['userType'];
 $veh_type 	= isset( $_GET['veh_type'])?$_GET['veh_type']:2;
 
 $search_str = "";
-$search = $_POST['tags'];
+$search = $_POST['tags'] ?? "";
 
 $path="";
 ?>
@@ -156,9 +156,9 @@ Supplier Name
                <td>&nbsp;&nbsp; Type</td> 
             
              <select name="billstatus" class="ComboBoxcesSmall" id="billstatus"  onchange="getvehtype(this.value)" style="width:120px;" >
-        <option value="2" <?php if( $_GET['veh_type'] == "2"){ echo "selected=selected"; }?>>All</option>    
-        <option value="1" <?php if( $_GET['veh_type'] == "1"){ echo "selected=selected"; }?>>Vehicle</option>  
-       <option value="0" <?php if( $_GET['veh_type'] == "0"){ echo "selected=selected"; }?>>Not a vehicle</option>            
+        <option value="2" <?php if( $veh_type == "2"){ echo "selected=selected"; }?>>All</option>    
+        <option value="1" <?php if( $veh_type == "1"){ echo "selected=selected"; }?>>Vehicle</option>  
+       <option value="0" <?php if( $veh_type == "0"){ echo "selected=selected"; }?>>Not a vehicle</option>            
             </select>
             
             
@@ -181,7 +181,7 @@ Supplier Name
 	@$max_rec = $_GET["max"];
 	@$limit = $_GET["limit"];
 	@$page_id = $_GET["page"];	
-	$id = trim(@$_GET['id']);
+	$id = $_GET['id'] ?? "";
 		
 	if (!$page_id) $page_id = 0;
 	if (!$limit) $limit = 25;		

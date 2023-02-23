@@ -277,7 +277,7 @@ $progressdata = Common :: GetSFHQBillDetailsToPSOView($billId,$user_type_id);
             
              <?php 
 			 $result = ProjectsProgress :: GetBillAmountandVotesToSfhq($billId,$progressdata['Bill_No']);
-					 $total;	
+					 $total=0;	
 						$i=1;
 						foreach ($result as $row2) 
 						{

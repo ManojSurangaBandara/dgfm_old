@@ -297,7 +297,7 @@ $status			=	isset( $_GET['status'])?$_GET['status']:$status;
             
              <?php 
 			 $result = ProjectsProgress :: GetBillAmountandVotes($billId,$progressdata['Bill_No']);
-					 $total;	
+					 $total=0;	
 						$i=1;
 						foreach ($result as $row2) 
 						{

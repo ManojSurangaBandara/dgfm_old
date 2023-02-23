@@ -434,11 +434,15 @@ xmlhttp.send();
 					  $billdetails = Common :: getallbilldetails($row[1]);
 					  // while($rowbilldata = mysql_fetch_assoc($billdetails)){
 					  // while($rowbilldata = $billdetails->fetch(PDO::FETCH_ASSOC)){
+            $billamountarr =  array(); 
+						$voteidarr =  array(); 
+						$votenamearr =  array();
+						$idarr =  array(); 
             foreach ($billdetails as $rowbilldata) {
-						$billamountarr[] =  $rowbilldata['Amount']; 
-						$voteidarr[] =  $rowbilldata['Vote_ID']; 
-						$votenamearr[] =  $rowbilldata['description']; 
-						$idarr[] =  $rowbilldata['id']; 
+              $billamountarr[] =  $rowbilldata['Amount']; 
+              $voteidarr[] =  $rowbilldata['Vote_ID']; 
+              $votenamearr[] =  $rowbilldata['description']; 
+              $idarr[] =  $rowbilldata['id']; 
 					  }
 					  //echo $voteidarr[0];
 					  ?>
@@ -455,7 +459,7 @@ xmlhttp.send();
 							$esrunit = Common :: GetReleventVotesName($branch_id);
 							foreach ($esrunit as $rowesrunit) {
 							?>
-                   <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $voteidarr[0]){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
+                   <option value="<?php echo $rowesrunit[0]; ?>" <?php if(isset($voteidarr[0]) && $rowesrunit[0] == $voteidarr[0]){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>
                  </select><input name="hdnbill_id1" type="hidden" value="<?php echo $idarr[0] ?>" /></td>
                 
@@ -467,13 +471,13 @@ xmlhttp.send();
                     
                         <td class="last">
                         <label>
-                        <input type="text" name="vote_name1"  id="vote_name1" style="width:430px" value="<?php echo $votenamearr[0]; ?>" />
+                        <input type="text" name="vote_name1"  id="vote_name1" style="width:430px" value="<?php echo $votenamearr[0] ?? ""; ?>" />
                         </label>
                         </td>
                                             
                         <td class="last">
                         <label>
-                        <input type="text" name="amount1" style="width:80px"  id="amount1" value="<?php echo $billamountarr[0]; ?>" />
+                        <input type="text" name="amount1" style="width:80px"  id="amount1" value="<?php echo $billamountarr[0] ?? ""; ?>" />
                         </label>
                         </td>
                                             
@@ -491,7 +495,7 @@ xmlhttp.send();
 							$esrunit = Common :: GetReleventVotesName($branch_id);
 							foreach ($esrunit as $rowesrunit) {
 							?>
-                   <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $voteidarr[1]){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
+                   <option value="<?php echo $rowesrunit[0]; ?>" <?php if(isset($voteidarr[1]) && $rowesrunit[0] == $voteidarr[1]){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>
                  </select><input name="hdnbill_id2" type="hidden" value="<?php echo $idarr[1] ?>" /></td>
                 
@@ -502,13 +506,13 @@ xmlhttp.send();
                     
                         <td class="last">
                         <label>
-                        <input type="text" name="vote_name2"  id="vote_name2" style="width:430px" value="<?php echo $votenamearr[1]; ?>" />
+                        <input type="text" name="vote_name2"  id="vote_name2" style="width:430px" value="<?php echo $votenamearr[1] ?? ""; ?>" />
                         </label>
                         </td>
                                             
                         <td class="last">
                         <label>
-                        <input type="text" name="amount2"  id="amount2" style="width:80px" value="<?php echo $billamountarr[1]; ?>" />
+                        <input type="text" name="amount2"  id="amount2" style="width:80px" value="<?php echo $billamountarr[1] ?? ""; ?>" />
                         </label>
                         </td>
                                             
@@ -524,7 +528,7 @@ xmlhttp.send();
 							$esrunit = Common :: GetReleventVotesName($branch_id);
 							foreach ($esrunit as $rowesrunit) {
 							?>
-                   <option value="<?php echo $rowesrunit[0]; ?>" <?php if( $rowesrunit[0] == $voteidarr[2]){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
+                   <option value="<?php echo $rowesrunit[0]; ?>" <?php if(isset($voteidarr[2]) && $rowesrunit[0] == $voteidarr[2]){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>
                  </select><input name="hdnbill_id3" type="hidden" value="<?php echo $idarr[2] ?>" /></td>
                 
@@ -535,13 +539,13 @@ xmlhttp.send();
                     
                         <td class="last">
                         <label>
-                        <input type="text" name="vote_name3"  id="vote_name3" style="width:430px" value="<?php echo $votenamearr[2]; ?>" />
+                        <input type="text" name="vote_name3"  id="vote_name3" style="width:430px" value="<?php echo $votenamearr[2] ?? ""; ?>" />
                         </label>
                         </td>
                                             
                         <td class="last">
                         <label>
-                        <input type="text" name="amount3"  id="amount3" style="width:80px" value="<?php echo $billamountarr[2]; ?>" />
+                        <input type="text" name="amount3"  id="amount3" style="width:80px" value="<?php echo $billamountarr[2] ?? ""; ?>" />
                         </label>
                         </td>
                                             
