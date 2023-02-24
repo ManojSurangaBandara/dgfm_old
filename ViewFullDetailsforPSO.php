@@ -50,7 +50,7 @@ $Branch 			= Common :: GetBranchNametoPsoView($branch_id);
 //echo $branch_id;
 
 $status   		= isset( $_GET['status'])?$_GET['status']:0;	
-$vote_id 		= isset( $_GET['vote_id'])?$_GET['vote_id']:vote_id;
+$vote_id 		= isset( $_GET['vote_id'])?$_GET['vote_id']:$vote_id;
 $alloc   		= isset( $_GET['alloc'])?$_GET['alloc']:$alloc;
 
 
@@ -239,9 +239,9 @@ ddaccordion.init({
           
           
             <select name="billstatus" class="ComboBoxcesSmall" id="billstatus" onchange="getbillstatustopso(this.value,'<?php echo $vote_id; ?>','<?php echo $branch_id; ?>','<?php echo $alloc; ?>')" style="width:100px;"> 
-              <option value="0" <?php if( $_GET['status'] == 0){ echo "selected=selected"; }?>>Not Settled</option>
-              <option value="1" <?php if( $_GET['status'] == 1){ echo "selected=selected"; }?>>Settled</option>
- 			  <option value="3" <?php if( $_GET['status'] == 3){ echo "selected=selected"; }?>>Returned</option>
+              <option value="0" <?php if( $status == 0){ echo "selected=selected"; }?>>Not Settled</option>
+              <option value="1" <?php if( $status == 1){ echo "selected=selected"; }?>>Settled</option>
+ 			  <option value="3" <?php if( $status == 3){ echo "selected=selected"; }?>>Returned</option>
             </select>
         
             

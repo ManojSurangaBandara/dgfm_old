@@ -154,7 +154,7 @@
 		
 		$i=1;		
 		
-		$tot="";
+		$tot=0;
 		
 		
 	foreach ($esrunit as $rowesrunit) {		

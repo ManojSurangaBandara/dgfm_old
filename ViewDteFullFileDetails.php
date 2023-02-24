@@ -9,11 +9,11 @@ header("Location:index.php");
 }
 
 
-$billId	=	isset( $_GET['billId'])?$_GET['billId']:billId;
+$billId	=	isset( $_GET['billId'])?$_GET['billId']:$billId;
 $user_type_id = $_SESSION['userType'];
 $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 $status			=	isset( $_GET['status'])?$_GET['status']:$status;
-$vote_id =  isset( $_GET['vote_id'])?$_GET['vote_id']:vote_id;
+$vote_id =  isset( $_GET['vote_id'])?$_GET['vote_id']:$vote_id;
 $alloc   = isset( $_GET['alloc'])?$_GET['alloc']:0;
 
 

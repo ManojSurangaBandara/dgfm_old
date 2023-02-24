@@ -169,7 +169,7 @@ Reg No or Sup Name
             
             Status </span>  <select name="billstatus" class="ComboBoxcesSmall" id="billstatus"  onchange="getBillStatusToChiefAcc(this.value,'<?php echo $branch_id; ?>')" style="width:100px;" >
               
-              <option value="1" <?php if( $_GET['status'] == 1){ echo "selected=selected"; }?>>Settled</option>           
+              <option value="1" <?php if( $status == 1){ echo "selected=selected"; }?>>Settled</option>           
               
             </select>
 <div class="demo">

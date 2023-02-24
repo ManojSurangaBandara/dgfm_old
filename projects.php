@@ -173,8 +173,8 @@ Reg No or Sup Name
             <td>&nbsp;&nbsp; Status</td> 
             
             </span>  <select name="billstatus" class="ComboBoxcesSmall" id="billstatus"  onchange="getBillStatusToSFHQ(this.value,'<?php echo $branch_id; ?>')" style="width:100px;" >
-              <option value="0" <?php if( $_GET['status'] == 0){ echo "selected=selected"; }?>>Not Settled</option>
-              <option value="1" <?php if( $_GET['status'] == 1){ echo "selected=selected"; }?>>Settled</option>              <option value="3" <?php if( $_GET['status'] == 3){ echo "selected=selected"; }?>>Returned</option>
+              <option value="0" <?php if( $status == 0){ echo "selected=selected"; }?>>Not Settled</option>
+              <option value="1" <?php if( $status == 1){ echo "selected=selected"; }?>>Settled</option>              <option value="3" <?php if( $status == 3){ echo "selected=selected"; }?>>Returned</option>
             </select>
 <div class="demo">
   <div class="ui-widget"></div>
@@ -467,10 +467,10 @@ if ($num_rows > 0) {
 
                 	  
 				?>
-				<a href="projects.php?&page=<?php echo($page_id - 1); ?>&branch_id=<?php echo $branch_id; ?>&status=<?php echo $status; ?>&projectID=<?php echo $project_id; ?>&max=<?php echo($max_rec); ?>">&laquo; Previous</a> | <?php } ?>
+				<a href="projects.php?&page=<?php echo($page_id - 1); ?>&branch_id=<?php echo $branch_id; ?>&status=<?php echo $status; ?>&projectID=<?php echo $project_id ?? ""; ?>&max=<?php echo($max_rec); ?>">&laquo; Previous</a> | <?php } ?>
 				<?php echo((($page_id * $limit) + 1));?> - <?php echo((($page_id * $limit) + $num_rows)); ?> of <?php echo($max_rec); ?>
 				<?php if ((($page_id * $limit) + $limit) < $max_rec) { ?>
-				| <a href="projects.php?page=<?php echo($page_id + 1); ?>&branch_id=<?php echo $branch_id; ?>&status=<?php echo $status; ?>&max=<?php echo($max_rec)?>&unitid=<?php echo "$unit_id"; ?>">Next &raquo</a>
+				| <a href="projects.php?page=<?php echo($page_id + 1); ?>&branch_id=<?php echo $branch_id; ?>&status=<?php echo $status; ?>&max=<?php echo($max_rec)?>&unitid=<?php echo $unit_id ?? ""; ?>">Next &raquo</a>
 	
     			
 <?php

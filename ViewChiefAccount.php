@@ -163,10 +163,10 @@ Bill No or Sup. Name
             <td>&nbsp;&nbsp;&nbsp;&nbsp; </td> 
             
             Status </span>  <select name="billstatus" class="ComboBoxcesSmall" id="billstatus"  onchange="getBillStatusToChiefAccviewpage(this.value,'<?php echo $branch_id; ?>')" style="width:100px;" >
-              <option value="0" <?php if( $_GET['status'] == 0){ echo "selected=selected"; }?>>Not Settled</option>
-              <option value="1" <?php if( $_GET['status'] == 1){ echo "selected=selected"; }?>>Settled</option>
-              <option value="2" <?php if( $_GET['status'] == 2){ echo "selected=selected"; }?>>Canceled</option>
-              <option value="3" <?php if( $_GET['status'] == 3){ echo "selected=selected"; }?>>RTN</option>
+              <option value="0" <?php if( $status == 0){ echo "selected=selected"; }?>>Not Settled</option>
+              <option value="1" <?php if( $status == 1){ echo "selected=selected"; }?>>Settled</option>
+              <option value="2" <?php if( $status == 2){ echo "selected=selected"; }?>>Canceled</option>
+              <option value="3" <?php if( $status == 3){ echo "selected=selected"; }?>>RTN</option>
             </select>
 <div class="demo">
   <div class="ui-widget"></div>

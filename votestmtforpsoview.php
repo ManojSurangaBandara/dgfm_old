@@ -13,6 +13,7 @@ header("Location:index.php");
 
 $branch_id  	= $_SESSION['branchID'];
 $Branch = Vote :: GetBranchNametoPsoView($branch_id);
+$vote_id = $_POST['vote_id'] ?? 0;
 
 //$sfname = Projects :: GetSFHQName($sfhq_id);
 //foreach ($sfname as $sftitle)

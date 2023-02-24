@@ -9,8 +9,8 @@ header("Location:index.php");
 }
 
 
-$billId	 =	isset( $_GET['billId'])?$_GET['billId']:billId;
-$vote_id =  isset( $_GET['vote_id'])?$_GET['vote_id']:vote_id;
+$billId	 =	isset( $_GET['billId'])?$_GET['billId']:$billId;
+$vote_id =  isset( $_GET['vote_id'])?$_GET['vote_id']:$vote_id;
 $status   		= isset( $_GET['status'])?$_GET['status']:0;
 $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 //$branch_id  = $_SESSION['branchID'];

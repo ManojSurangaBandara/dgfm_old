@@ -172,11 +172,11 @@ Bill No or Sup. Name
             <p>&nbsp;</p></td> 
              </br>
               Status <select name="billstatus" class="ComboBoxcesSmall" id="billstatus"   style="width:100px;" >
-			 <option value="4" <?php if( $_GET['status'] == 4){ echo "selected=selected"; }?>>All</option>
-              <option value="0" <?php if( $_GET['status'] == 0){ echo "selected=selected"; }?>>Not Settled</option>
-              <option value="1" <?php if( $_GET['status'] == 1){ echo "selected=selected"; }?>>Settled</option>
-              <option value="2" <?php if( $_GET['status'] == 2){ echo "selected=selected"; }?>>Canceled</option>
-              <option value="3" <?php if( $_GET['status'] == 3){ echo "selected=selected"; }?>>RTN</option>
+			 <option value="4" <?php if( $status == 4){ echo "selected=selected"; }?>>All</option>
+              <option value="0" <?php if( $status == 0){ echo "selected=selected"; }?>>Not Settled</option>
+              <option value="1" <?php if( $status == 1){ echo "selected=selected"; }?>>Settled</option>
+              <option value="2" <?php if( $status == 2){ echo "selected=selected"; }?>>Canceled</option>
+              <option value="3" <?php if( $status == 3){ echo "selected=selected"; }?>>RTN</option>
             </select>
 			
 			

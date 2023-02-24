@@ -38,7 +38,7 @@ $Sessionbranch_id = $_SESSION['branchID'];
 
 $new_year  = $_GET['years'];	
 $status    = isset( $_GET['status'])?$_GET['status']:0;	
-$vote_id   = isset( $_GET['vote_id'])?$_GET['vote_id']:vote_id;
+$vote_id   = isset( $_GET['vote_id'])?$_GET['vote_id']:$vote_id;
 $alloc   = isset( $_GET['alloc'])?$_GET['alloc']:0;
 
 

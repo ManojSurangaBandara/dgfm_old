@@ -9,7 +9,7 @@ header("Location:index.php");
 }
 
 
-$billId	=	isset( $_GET['billId'])?$_GET['billId']:billId;
+$billId	=	isset( $_GET['billId'])?$_GET['billId']:$billId;
 $user_type_id = $_SESSION['userType'];
 //$progressID =  $_GET['progressID'];
 //$ptype =  $_GET['ptype'];

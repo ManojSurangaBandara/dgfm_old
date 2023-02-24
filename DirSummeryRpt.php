@@ -17,7 +17,7 @@ foreach ($sfname as $sftitle)
 	$sfhq_name = $sftitle[0];
 }
 
-
+$status = isset($_GET['status']) ? $_GET['status'] : 0; 
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -135,9 +135,9 @@ ddaccordion.init({
 
 					  <td ><strong>Report Status</strong></td>
 					  <td > <select name="billstatus" class="ComboBoxcesSmall" id="billstatus"   style="width:100px;" >
-              <option value="0" <?php if( isset($_GET['status']) && $_GET['status'] == 0){ echo "selected=selected"; }?>>Not Settled</option>
-              <option value="1" <?php if( isset($_GET['status']) && $_GET['status'] == 1){ echo "selected=selected"; }?>>Settled</option>          
-              <option value="3" <?php if( isset($_GET['status']) && $_GET['status'] == 3){ echo "selected=selected"; }?>>Returened</option>
+              <option value="0" <?php if( $status == 0){ echo "selected=selected"; }?>>Not Settled</option>
+              <option value="1" <?php if( $status == 1){ echo "selected=selected"; }?>>Settled</option>          
+              <option value="3" <?php if( $status == 3){ echo "selected=selected"; }?>>Returened</option>
             </select></td>
                       
                       

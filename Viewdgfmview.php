@@ -9,7 +9,7 @@ header("Location:index.php");
 }
 
 
-$billId	=	isset( $_GET['billId'])?$_GET['billId']:billId;
+$billId	=	isset( $_GET['billId'])?$_GET['billId']:$billId;
 
 
 $user_type_id = $_SESSION['userType'];
@@ -17,7 +17,7 @@ $user_type_id = $_SESSION['userType'];
 //$ptype =  $_GET['ptype'];
 //if this is des should have see all sent and not send progress report
 $status   		= isset( $_GET['status'])?$_GET['status']:0;	
-$sfhq_id 		= isset( $_GET['sfhq_id'])?$_GET['sfhq_id']:sfhq_id;
+$sfhq_id 		= isset( $_GET['sfhq_id'])?$_GET['sfhq_id']:$sfhq_id;
 $unit_dis_id	= isset( $_GET['unit_dis_id'])?$_GET['unit_dis_id']:0;
 
 $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);

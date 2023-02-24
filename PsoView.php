@@ -87,7 +87,7 @@ $Branch = Vote :: GetBranchNametoPsoView($branch_id);
                   
                   
                   <?php 
-								
+
 						$i = 1;
 						foreach ($result as $row)
 						{ 
@@ -99,7 +99,7 @@ $Branch = Vote :: GetBranchNametoPsoView($branch_id);
 						<td align="left"><a href="ViewFullDetailsforPSO.php?status=1&vote_id=<?php echo $row[4];?>&alloc=<?php echo $row[5];?>&bName=<?php echo $Branch['branch_name']; ?>&branch_id=<?php echo $branch_id; ?>"><?php echo $row[1]; ?></td>
                         <td><?php echo $row[2]; ?></td>  
                         
-                        <td align="right" class=""><?php echo  number_format($row[5],'2','.',','); ?></td>  
+                        <td align="right" class=""><?php echo  number_format($row[5] ?? 0,'2','.',','); ?></td>  
                         <td><?php echo  number_format($row[6] +$row[7],'2','.',','); ?></td>  
                         <td><?php echo  number_format($val1,'2','.',','); ?></td>  
                         <?php /*?><td><?php echo $row[3]; ?></td> <?php */?>                   

@@ -9,7 +9,7 @@ header("Location:index.php");
 }
 
 
-$billId	=	isset( $_GET['billId'])?$_GET['billId']:billId;
+$billId	=	isset( $_GET['billId'])?$_GET['billId']:$billId;
 
 
 $user_type_id = $_SESSION['userType'];
@@ -17,7 +17,7 @@ $user_type_id = $_SESSION['userType'];
 //$ptype =  $_GET['ptype'];
 //if this is des should have see all sent and not send progress report
 $status   		= isset( $_GET['status'])?$_GET['status']:0;	
-$branch_id 		= isset( $_GET['branch_id'])?$_GET['branch_id']:branch_id;
+$branch_id 		= isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 //$unit_dis_id	= isset( $_GET['unit_dis_id'])?$_GET['unit_dis_id']:0;
 
 $progressdata = Common :: GetBiguserBillDetailsToView($billId,$user_type_id);

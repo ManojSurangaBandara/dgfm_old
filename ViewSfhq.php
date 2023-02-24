@@ -22,7 +22,7 @@ $Isprivilege_user = $_SESSION['Isprivilege_user'];
 //$user_type_id 	= $_SESSION['userType'];
 $user_type_id 	= 3;
 $status   		= isset( $_GET['status'])?$_GET['status']:0;	
-$sfhq_id 		= isset( $_GET['sfhq_id'])?$_GET['sfhq_id']:sfhq_id;
+$sfhq_id 		= isset( $_GET['sfhq_id'])?$_GET['sfhq_id']:$sfhq_id;
 $unit_dis_id	= isset( $_GET['unit_dis_id'])?$_GET['unit_dis_id']:0;
 
 
@@ -238,10 +238,10 @@ Reg No or Sup Name
             <td>&nbsp;&nbsp;&nbsp;&nbsp; </td> 
             
             Status </span>  <select name="billstatus" class="ComboBoxcesSmall" id="billstatus"  onchange="getBillStatusTodgfmviewpagerelasfhq(this.value,'<?php echo $unit_dis_id; ?>','<?php echo $sfhq_id; ?>')" style="width:100px;" >
-              <option value="0" <?php if( $_GET['status'] == 0){ echo "selected=selected"; }?>>Not Settled</option>
-              <option value="1" <?php if( $_GET['status'] == 1){ echo "selected=selected"; }?>>Settled</option>
+              <option value="0" <?php if( $status == 0){ echo "selected=selected"; }?>>Not Settled</option>
+              <option value="1" <?php if( $status == 1){ echo "selected=selected"; }?>>Settled</option>
  <?php /*?>             <option value="2" <?php if( $_GET['status'] == 2){ echo "selected=selected"; }?>>Canceled</option><?php */?>
-              <option value="3" <?php if( $_GET['status'] == 3){ echo "selected=selected"; }?>>Returned</option>
+              <option value="3" <?php if( $status == 3){ echo "selected=selected"; }?>>Returned</option>
             </select>
 <div class="demo">
   <div class="ui-widget"></div>
