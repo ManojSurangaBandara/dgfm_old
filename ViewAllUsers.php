@@ -185,7 +185,7 @@ ddaccordion.init({
 	@$max_rec 	= $_GET["max"];
 	@$limit 	= $_GET["limit"];
 	@$page_id 	= $_GET["page"];	
-	$id 		= isset($_GET['id']) ? trim(@$_GET['id']) : "";
+	$id 		= $_GET['id'] ?? 0;
 	$tag 		= $_POST['tags'] ?? "";
 		
 	if (!$page_id) $page_id = 0;

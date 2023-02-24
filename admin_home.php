@@ -17,7 +17,7 @@ $projType         =	isset( $_GET['projType'])?$_GET['projType']:0;
 
 
 $search_str = "";
-$search = $_POST['tags'];
+$search = $_POST['tags'] ?? "";
 
 
 ?>
@@ -169,8 +169,8 @@ Project Name or Job Number :
 	@$max_rec = $_GET["max"];
 	@$limit = $_GET["limit"];
 	@$page_id = $_GET["page"];	
-	$id = trim(@$_GET['id']);
-	$tag = $_POST['tags'];
+	$id = $_GET['id'] ?? 0;
+	$tag = $_POST['tags'] ?? "";
 		
 	if (!$page_id) $page_id = 0;
 	if (!$limit) $limit = 10;		

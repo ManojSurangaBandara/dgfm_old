@@ -15,7 +15,7 @@ $unit_id		  =	isset( $_GET['unitid'])?$_GET['unitid']:1;
 $projType         =	isset( $_GET['projType'])?$_GET['projType']:0;
 
 $search_str = "";
-$search = $_POST['tags'];
+$search = $_POST['tags'] ?? "";
 
 
 ?>

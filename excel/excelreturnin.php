@@ -57,7 +57,7 @@
 	//	}
 		$i=1;		
 		
-		$total="";
+		$total=0;
 		//echo $esrunit;
 		//die();
 		

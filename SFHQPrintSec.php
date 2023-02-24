@@ -12,7 +12,7 @@ header("Location:index.php");
 }
 
 $search_str = "";
-$search = $_POST['tags'];
+$search = $_POST['tags'] ?? "";
 
 $user_id 	= $_SESSION['userID'];
 $sfhq_id 	= $_SESSION['sfhqID'];
@@ -190,8 +190,8 @@ Reg No or Sup Name
 	@$max_rec 	= $_GET["max"];
 	@$limit 	= $_GET["limit"];
 	@$page_id 	= $_GET["page"];	
-	$id 		= trim(@$_GET['id']);
-	$tag 		= $_POST['tags'];
+	$id 		= $_GET['id'];
+	$tag 		= $_POST['tags'] ?? "";
 		
 	if (!$page_id) $page_id = 0;
 	if (!$limit) $limit = 10;		
