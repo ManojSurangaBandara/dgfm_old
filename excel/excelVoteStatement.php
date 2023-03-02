@@ -154,7 +154,7 @@
 		$excel->writeLine($myArr);	
 		
 		if($sfhq_id>0){
-		$esrunit = Projects :: GetVoteStatementforSfhq($vote_id,$rtptype,$txt_as_at_date,$txt_to_date,$sfhq_id,$dtrange );	
+			$esrunit = Projects :: GetVoteStatementforSfhq($vote_id,$rtptype,$txt_as_at_date,$txt_to_date,$sfhq_id,$dtrange );	
 		}
 		
 		else
@@ -217,14 +217,14 @@
 					       	$excel->writeCol($i);							
                             $excel->writeCol($sfhqrowesrunit[0]);
                             $excel->writeCol($sfhqrowesrunit[1]);							
-							$excel->writeCol($rowesrunit[10]);	
-                			$excel->writeCol($rowesrunit[11]);							
+							$excel->writeCol($rowesrunit[10] ?? "");	
+                			$excel->writeCol($rowesrunit[11] ?? "");							
                             $excel->writeCol(number_format($sfhqrowesrunit[2],'2','.',','));	
                             $tot=$tot+$sfhqrowesrunit[2];
                             $excel->writeCol($sfhqrowesrunit[3]);
-							$excel->writeCol($rowesrunit[7]);
-							$excel->writeCol($rowesrunit[9]);
-							$excel->writeCol($rowesrunit[8]);	
+							$excel->writeCol($rowesrunit[7] ?? "");
+							$excel->writeCol($rowesrunit[9] ?? "");
+							$excel->writeCol($rowesrunit[8] ?? "");	
                             $excel->writeCol($sfhqrowesrunit[5]);
                             $excel->writeCol($sfhqrowesrunit[6]);
                             if($rtptype=='1'){

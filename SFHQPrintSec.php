@@ -190,7 +190,7 @@ Reg No or Sup Name
 	@$max_rec 	= $_GET["max"];
 	@$limit 	= $_GET["limit"];
 	@$page_id 	= $_GET["page"];	
-	$id 		= $_GET['id'];
+	$id 		= $_GET['id'] ?? "";
 	$tag 		= $_POST['tags'] ?? "";
 		
 	if (!$page_id) $page_id = 0;

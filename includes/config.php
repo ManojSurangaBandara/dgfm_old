@@ -26,8 +26,9 @@ $mydb1 			= $log_year.'dgfm';
 
 /* Database configuration */
 
-define('DB_HOST','localhost');
+define('DB_HOST','localhost'); /*local developmet machine*/
 // define('DB_HOST','172.16.60.12');
+// define('DB_HOST','172.16.60.29'); /*php 8 testing server*/
 
 //define('DB_HOST','172.16.0.29');
 //define('DB_HOST','220.247.214.182');
@@ -42,10 +43,14 @@ define('DB_HOST','localhost');
 // define('DB_USER','dgfm');
 // define('DB_PWD','Dgfm@1234');
 
-define('DB_USER','root');
+define('DB_USER','root'); /*localhost credentials*/
 define('DB_PWD','');
 
-//define('DB_DB',$mydb1);
+// define('DB_USER','dgfm'); /*php 8 development server credentials*/
+// define('DB_PWD','Dgfm@1234');
+
+
+//define('DB_DB',$mydb1); /*uncomment when putting to live server*/
 define('DB_DB', '2022dgfm');
 define('DB_TYPE','mysql');
 

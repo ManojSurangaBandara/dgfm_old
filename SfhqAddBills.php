@@ -13,10 +13,10 @@ $user_type_id 	= $_SESSION['userType'];
 $sfhq_id 		= $_SESSION['sfhqID'];
 
 $brach_id  		= isset( $_GET['brach_id'])?$_GET['brach_id']:$brach_id ;
-$sup_id   		= isset( $_GET['sup_id'])?$_GET['sup_id']:$sup_id ;
+$sup_id   		= isset( $_GET['sup_id'])?$_GET['sup_id']:0 ;
 $vote_id1  		= isset( $_GET['vote_id1'])?$_GET['vote_id1']:0 ;
-$vote_id2   	= isset( $_GET['vote_id2'])?$_GET['vote_id2']:$vote_id2 ;
-$vote_id3   	= isset( $_GET['vote_id3'])?$_GET['vote_id3']:$vote_id3 ;
+$vote_id2   	= isset( $_GET['vote_id2'])?$_GET['vote_id2']:0 ;
+$vote_id3   	= isset( $_GET['vote_id3'])?$_GET['vote_id3']:0 ;
 
 $maxresult  	= isset( $_GET['maxresult'])?$_GET['maxresult']:0 ;
 
@@ -312,7 +312,7 @@ xmlhttp.send();
                     <td> <strong> Date </strong> </td>
                           <td> <span id="sprytextfield2">
                         <label>
-                          <input name="invoice_date" type="date" required="" class="textBoxces" id="invoice_date" value="<?php echo $_GET['in_date'];  ?>"  />
+                          <input name="invoice_date" type="date" required="" class="textBoxces" id="invoice_date" value="<?php echo $_GET['in_date'] ?? "";  ?>"  />
                         </label>
                         </td>
               </table>
@@ -338,7 +338,7 @@ xmlhttp.send();
                     <td> <strong> Date </strong> </td>
                           <td> <span id="sprytextfield7">
                         <label>
-                          <input name="g35_date" type="date" required="" class="textBoxces" id="g35_date" value="<?php echo $_GET['in_date'];  ?>"  />
+                          <input name="g35_date" type="date" required="" class="textBoxces" id="g35_date" value="<?php echo $_GET['in_date'] ?? "";  ?>"  />
                         </label>
                         </td>
               </table>
@@ -398,7 +398,7 @@ xmlhttp.send();
 						<td class="first"><strong>Received Date</strong></td>
 						<td class="last"><span id="sprytextfield4">
                         <label>
-                          <input name="txtstart_date" type="date" required="" class="textBoxces" id="txtstart_date" value="<?php echo $_GET['re_date'];  ?>"   />
+                          <input name="txtstart_date" type="date" required="" class="textBoxces" id="txtstart_date" value="<?php echo $_GET['re_date'] ?? "";  ?>"   />
                         </label>
                        </td>
 					</tr>

@@ -115,7 +115,8 @@ $OpsCon_Id 	= isset( $_GET['OpsCon_Id'])?$_GET['OpsCon_Id']:$branch_id;
 						$i = 1;
 						foreach ($result as $row)
 						{ 
-						 $val1 = $row[5]-($row[6]+$row[7])
+							$row[5] = $row[5] ? $row[5] : 0;  
+							$val1 = $row[5]-($row[6]+$row[7])
 						 ?>
 					<tr>
                     <tr align="right" >
@@ -165,8 +166,8 @@ $OpsCon_Id 	= isset( $_GET['OpsCon_Id'])?$_GET['OpsCon_Id']:$branch_id;
 						$i = 1;
 						foreach ($result2 as $row2) 
 						{  
-						
-						  $val = $row2[5]-($row2[6]+$row2[7])
+							$row2[5] = $row2[5] ? $row2[5] : 0;
+							$val = $row2[5]-($row2[6]+$row2[7])
 						?>
 					<tr>
                     <tr>
