@@ -272,11 +272,11 @@ ddaccordion.init({
 				$today_one = date("y-m-d", $str_today_one);
 		     $result = login_details ::display_login_details_2($user_name, $from_date_two, $to_date_two, $unit_id, $user_type,             $today_one);	
 			
-			if (!$result) return;
+			//if (!$result) return;
 		
 			$max_rec = count($result);
 	     }
-		           
+		 
 				$current1 = $page_id * $limit;
 				//echo "length".$length = $limit;
 			echo '<br>';
@@ -288,10 +288,10 @@ ddaccordion.init({
 				$start = ($page_id * $limit);
 				$str_today = strtotime($from_date_two);
 				$today = date("y-m-d", $str_today);
-				
+	
 				$result = login_details ::display_login_details_2_page($user_name, $from_date_two, $to_date_two, $start, 	                $limit, $unit_id, $user_type, $today);
 					
-					if (!$result) return;			 
+					//if (!$result) return;			 
 					$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");

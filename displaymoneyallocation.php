@@ -193,7 +193,7 @@ ddaccordion.init({
 	if (!$max_rec) 
 		{		
 			$result = Money :: getMoneyAllocationDetails($year_r,$branch_id);
-			if (!$result) return;
+			// if (!$result) return;
 		
 			$max_rec = count($result);
 	     }
@@ -202,7 +202,7 @@ ddaccordion.init({
 				$length = $limit;
 				
 				$result = Money :: getMoneyAllocationDetailsPagination($year_r,$branch_id,$current1, $length);				
-				if (!$result) return;			
+				// if (!$result) return;			
 				$num_rows = count($result);
 				
 				$color_arr = array("#F6F6F6", "#EBEBEB");

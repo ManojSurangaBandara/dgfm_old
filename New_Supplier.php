@@ -299,9 +299,10 @@ document.location.href="New_Supplier.php?isveh="+isveh;
 						<td class="first"><strong>Mobile No </strong></td>
 						<td class="last"><span id="sprytextfield6">
 						  <label>
-						   <b> +94 </b><input type="number"  max="999999999" min="700000000" name="mobile" id="mobile" /> <span class="textfieldRequiredMsg">*</span>
+						   <b> +94 </b><input type="text" pattern="^7[0|1|2|4|5|6|7|8]\d{7}$" title="Nine numbers with leading 7. No zero at the beginning. Mbile numbers only." max="999999999" min="700000000" name="mobile" id="mobile" /> <span class="textfieldRequiredMsg">*</span>
 					    </label>
 					   </span>
+					   <b>Ex :- 711231234</b>
 					   </td>
 					</tr>
                     
@@ -309,9 +310,9 @@ document.location.href="New_Supplier.php?isveh="+isveh;
 						<td class="first"><strong>Land Phone No</strong></td>
 						<td class="last">
 						  <label>
-						    <b> +94 </b><input type="number" max="999999999"  min="100000000"   name="contactNo" id="contactNo" /> 
+						    <b> +94 </b><input type="text" pattern="^((11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}$" title="Nine numbers. No zero at the beginning. Mobile or landline numbers" max="999999999"  min="100000000"   name="contactNo" id="contactNo" /> 
 					    </label>
-					 
+					 <b>Ex :- 114012345 or 711231234</b>
 					   </td>
 					</tr>
                     
@@ -325,7 +326,7 @@ document.location.href="New_Supplier.php?isveh="+isveh;
 						<td class="first"><strong>Email Address</strong></td>
 						<td class="last">
 						  <label>
-						    <input type="text"  size="30" name="email" id="email" /> 
+						    <input type="text" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"  size="30" name="email" id="email" /> 
 					    </label>
 					   </td>
 					</tr>

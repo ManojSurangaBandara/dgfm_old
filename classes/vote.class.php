@@ -61,8 +61,8 @@ class Vote{
 		$sqlinsert = "INSERT INTO  m_supplier_list (Sup_Name,Sup_Code,Related_sfhq_id,Bank_id, Act_No
 		, bnk_loc_id,vat_no, address_line1,address_line2,address_line3,address_line4
 		, Contact_no,Email_Add,create_userid,create_date,is_vehicle,civil_veh_no,mobile,nic,veh_run_pl) 
-		VALUES ('$description','m',$sfhq_id,$bank_id,'$txtacctNo','$bnk_branch_id','$vatNo','line1'
-		,'line2','line3','line4','$contactNo','$email',$user_id,'$today',$isveh,'$fin_vehno','$mobile','$nic',$vrp)";
+		VALUES ('$description','m',$sfhq_id,$bank_id,'$txtacctNo','$bnk_branch_id','$vatNo','$line1'
+		,'$line2','$line3','$line4','$contactNo','$email',$user_id,'$today',$isveh,'$fin_vehno','$mobile','$nic',$vrp)";
 		//echo $sqlinsert; die(); 
 		$data = $db1->Execute($sqlinsert);
 		return $data;	

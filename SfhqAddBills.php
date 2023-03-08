@@ -414,20 +414,21 @@ xmlhttp.send();
 						<td class="first"><strong>Bill Period</strong></td>
 						<td class="last">
                         
-                        
-                        
+                         <table>                 
+                 <td> <strong> From </strong> </td>
+                          <td> <span id="sprytextfield2">
                         <label>
                           <input name="from_period" type="date" required="" class="textBoxces" id="from_period"   />
                         </label>
-                       
-                        
-                        
-                       
+                        </td>
+                      
+                    <td> <strong> To </strong> </td>
+                          <td> <span id="sprytextfield2">
                         <label>
                           <input name="to_period"  type="date" required="" class="textBoxces" id="to_period"  />
                         </label>
-                        </a>
-                        
+                        </td>
+              </table>
                         
                         </td>
                         
