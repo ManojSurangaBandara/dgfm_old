@@ -184,7 +184,7 @@ class Common{
 					LEFT OUTER JOIN return_details as t on t.Bill_Id = b.Bill_Id
 					INNER JOIN m_supplier_list as s on b.Bill_Name =s.Sup_id 
 					where b.Bill_Status=$billstatus 									
-					and ( b.Bill_No like '%$search%' ||  s.Sup_Name like '%$search%' )
+					
 					and b.branch_Id=$branch_id
 					and v.Vote_ID=$vote_id	
 					AND EXTRACT(YEAR FROM b.Recieved_Date)=$log_year							
@@ -198,7 +198,7 @@ class Common{
 					LEFT OUTER JOIN sfhq_return_details as t on t.Bill_Id=b.Bill_Id	
 					INNER JOIN m_supplier_list as s on b.Sup_Code =s.Sup_id 				  
 					where b.Bill_Status=$billstatus 									
-					and ( b.Bill_No like '%$search%'||s.Sup_Name like '%$search%' )
+					
 					and b.branch_Id=$branch_id
 					and v.vote_id=$vote_id
 					AND EXTRACT(YEAR FROM b.Recieved_Date)=$log_year";		

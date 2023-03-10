@@ -153,7 +153,7 @@ $progressdata = Common :: GetBiguserBillDetailsToView($billId,$user_type_id);
         <tr>
         <td style="font-size:14px" height="20"><strong>Supplier Address</strong></td>
         <td><strong>:</strong></td>
-        <td style="font-size:14px"><?php echo $progressdata['Hm_address']; ?></td>
+        <td style="font-size:14px"><?php echo $progressdata['Hm_address'] ?? ""; ?></td>
       </tr>
          
          <tr>

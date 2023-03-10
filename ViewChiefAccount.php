@@ -16,6 +16,7 @@ $search = $_POST['tags'] ?? "";
 
 $user_id 		= $_SESSION['userID'];
 $Isprivilege_user = $_SESSION['Isprivilege_user'];
+$log_year	= $_SESSION['log_year'];
 
 
 $user_type_id 	= 5;
@@ -51,7 +52,7 @@ $branch_id 		= isset( $_GET['branch_id'])?$_GET['branch_id']:6;
     <?php	
 
 	 
-	$project = Common :: GetDGFMBillDetailsToBigUser($status,$branch_id,$user_type_id);
+	$project = Common :: GetDGFMBillDetailsToBigUser($status,$branch_id,$user_type_id,$log_year);
 	 foreach ($project as $rowproject){
 	 
 		 if($search_str == ""){

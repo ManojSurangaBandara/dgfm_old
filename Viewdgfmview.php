@@ -108,33 +108,33 @@ $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);
       <tr>
         <td style="font-size:14px" height="20"><strong>Bill No</strong></td>
         <td><strong>:</strong></td>
-        <td style="font-size:14px"><?php echo $progressdata['Bill_No']; ?></td>
+        <td style="font-size:14px"><?php echo $progressdata['Bill_No'] ?? ""; ?></td>
       </tr>
       
       
         <tr>
         <td style="font-size:14px" height="20"><strong>Invoice No</strong></td>
         <td><strong>:</strong></td>
-        <td style="font-size:14px"><?php echo $progressdata['Invoice_No']; ?></td>
+        <td style="font-size:14px"><?php echo $progressdata['Invoice_No'] ?? ""; ?></td>
       </tr>
       
        <tr>
         <td style="font-size:14px" height="20"><strong>Invoice Date</strong></td>
         <td><strong>:</strong></td>
-         <td style="font-size:14px"><?php echo $progressdata['Invoice_date']; ?></td>
+         <td style="font-size:14px"><?php echo $progressdata['Invoice_date'] ?? ""; ?></td>
       </tr>  
      
       
         <tr>
         <td style="font-size:14px" height="20"><strong>G-35 No</strong></td>
         <td><strong>:</strong></td>
-        <td style="font-size:14px"><?php echo $progressdata['G35_No']; ?></td>
+        <td style="font-size:14px"><?php echo $progressdata['G35_No'] ?? ""; ?></td>
       </tr>
       
         <tr>
         <td style="font-size:14px" height="20"><strong>G-35 Name</strong></td>
         <td><strong>:</strong></td>
-        <td style="font-size:14px"><?php echo $progressdata['G35_Date']; ?></td>
+        <td style="font-size:14px"><?php echo $progressdata['G35_Date'] ?? ""; ?></td>
       </tr>
       
       <tr>
@@ -157,25 +157,25 @@ $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);
        <tr>
         <td style="font-size:14px" height="20"><strong>Supplier Name</strong></td>
         <td><strong>:</strong></td>
-        <td style="font-size:14px"><?php echo $progressdata['Sup_Name']; ?></td>
+        <td style="font-size:14px"><?php echo $progressdata['Sup_Name'] ?? ""; ?></td>
       </tr>
             
        <tr>
         <td style="font-size:14px" height="20"><strong>Supplier Address</strong></td>
         <td><strong>:</strong></td>
-        <td style="font-size:14px"><?php echo $progressdata['Hm_address']; ?></td>
+        <td style="font-size:14px"><?php echo $progressdata['Hm_address'] ?? ""; ?></td>
       </tr>
          
          <tr>
         <td style="font-size:14px" height="20"><strong>Supplier Contact No</strong></td>
         <td><strong>:</strong></td>
-        <td style="font-size:14px"><?php echo $progressdata['Contact_no']; ?></td>
+        <td style="font-size:14px"><?php echo $progressdata['Contact_no'] ?? ""; ?></td>
       </tr>   
          
         <tr>
         <td style="font-size:14px" height="20"><strong>VAT No</strong></td>
         <td><strong>:</strong></td>
-        <td style="font-size:14px"><?php echo $progressdata['Vat_No']; ?></td>
+        <td style="font-size:14px"><?php echo $progressdata['Vat_No'] ?? ""; ?></td>
       </tr>    
           
        <tr>
@@ -190,19 +190,19 @@ $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);
             <tr>  
          <td style="font-size:14px" height="20"><strong>Bill Ref No</strong></td>
         <td><strong>:</strong></td>
-         <td style="font-size:14px"><?php echo $progressdata['Bill_ref_no']; ?></td>
+         <td style="font-size:14px"><?php echo $progressdata['Bill_ref_no'] ?? ""; ?></td>
       </tr> 
       
         <tr>  
          <td style="font-size:14px" height="20"><strong>Bill Received Branch</strong></td>
         <td><strong>:</strong></td>
-         <td style="font-size:14px"><?php echo $progressdata['branch_name']; ?></td>
+         <td style="font-size:14px"><?php echo $progressdata['branch_name'] ?? ""; ?></td>
       </tr>
       
       <tr>
         <td style="font-size:14px" height="20"><strong>Bill Received Date</strong></td>
         <td><strong>:</strong></td>
-         <td style="font-size:14px"><?php echo $progressdata['Recieved_Date']; ?></td>
+         <td style="font-size:14px"><?php echo $progressdata['Recieved_Date'] ?? ""; ?></td>
       </tr>   
          
      
@@ -211,21 +211,21 @@ $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);
         <td style="font-size:14px" height="20"><strong>Bill Status</strong></td>
         <p style="fo"></p>
         <td><strong>:</strong></td>
-        <td style="font-size:14px"><?php if($progressdata['Bill_Status']==1)
+        <td style="font-size:14px"><?php if(isset($progressdata['Bill_Status']) && $progressdata['Bill_Status']==1)
 							{
 							echo '<p style="color:green;">Settled</p>';							
 							
 							} 
-						 if($progressdata['Bill_Status']==0)
+						 if(isset($progressdata['Bill_Status']) && $progressdata['Bill_Status']==0)
 							{
 							echo '<p align="left" style="color:red;">Not Settled</p>';
 							}  
-						 if($progressdata['Bill_Status']==2)
+						 if(isset($progressdata['Bill_Status']) && $progressdata['Bill_Status']==2)
 							{
 							echo '<p><b>Canceled</b></p>';
 							}  
 							
-							 if($progressdata['Bill_Status']==3)
+							 if(isset($progressdata['Bill_Status']) && $progressdata['Bill_Status']==3)
 							{
 							echo '<p><b>Returned</b></p>';
 							}  
@@ -235,13 +235,13 @@ $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);
 						?></td>
       </tr>
       
-      <?php if($progressdata['Bill_Status']==1)	{  ?>
+      <?php if(isset($progressdata['Bill_Status']) && $progressdata['Bill_Status']==1)	{  ?>
       
       
        <tr>
         <td style="font-size:14px" height="20"><strong>Settled Date</strong></td>
         <td><strong>:</strong></td>
-         <td style="font-size:14px"><?php echo $progressdata['Bill_Settled_Date']; ?></td>
+         <td style="font-size:14px"><?php echo $progressdata['Bill_Settled_Date'] ?? ""; ?></td>
       </tr> 
       
       
@@ -252,7 +252,7 @@ $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);
       <tr>
         <td style="font-size:14px" height="20"><strong>Remarks</strong></td>
         <td><strong>:</strong></td>
-         <td style="font-size:14px"><?php echo $progressdata['remarks']; ?></td>
+         <td style="font-size:14px"><?php echo $progressdata['remarks'] ?? ""; ?></td>
       </tr>    
   
        
@@ -283,6 +283,7 @@ $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);
             
             
              <?php 
+             if (isset($progressdata['Bill_No'])) {
 			 $result = ProjectsProgress :: GetBillAmountandVotesToSfhq($billId,$progressdata['Bill_No']);
 					 $total=0;	
 						$i=1;
@@ -308,6 +309,7 @@ $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);
 					  <td class="last"><strong><?php echo number_format($total,'2','.',''); ?></strong></td>
 		    		</tr>
              
+            <?php } ?>
           
 			  </table>
 

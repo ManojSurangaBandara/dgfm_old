@@ -85,7 +85,7 @@ ddaccordion.init({
 			<div class="top-bar">
 
          
-	      <h1 style="text-transform:uppercase"><?php echo $sfhq_name ?? "" ; ?> -Suppliers Report - <?php echo $_SESSION['log_year']; ?>   </h1>
+	      <h1 style="text-transform:uppercase"><?php echo $sfhq_name ?? "Directorate of Finance" ; ?> -Suppliers Report - <?php echo $_SESSION['log_year']; ?>   </h1>
 				<div class="breadcrumbs">
                 
                      

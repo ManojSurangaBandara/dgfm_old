@@ -68,7 +68,7 @@ $unit_id = $_GET['unitid'] ?? "";
 						<td width="172" class="first"><strong>Vote Number</strong></td>
 					    <td class="last"><span id="sprytextfield1">
 					    <label>
-                          <input name="vote_no" type="text" class="textBoxces" id="vote_no" size="24" value="<?php echo $row[1]; ?>" />
+                          <input name="vote_no" type="text" class="textBoxces" id="vote_no" size="24" value="" />
                       <span class="textfieldRequiredMsg">*</span></label>
 </span></td>
 			</tr>
