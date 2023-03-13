@@ -5,36 +5,27 @@ require_once('classes/login.class.php');
 
 $id = isset( $_GET['q'])?$_GET['q']:$id;
 if($id == 3 || $id == 10 ){
-?>
-<table width="100%" border="0">
-  <tr>
-    <td width="30%" align="right" class="loginText">SFHQ</td>
-    <td width="62%">
-    <label>
-    <select name="cmb_sfhq" id="cmb_sfhq">
-      <?php 
 	$sfhq = Login :: getSFHQ();
+  ?>
+  <label for="cmb_sfhq" style="transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);opacity: 0.65;">SFHQ</label>
+                <select name="cmb_sfhq" id="cmb_sfhq" class="form-control">
+                      
+               
+  <?php
   foreach ($sfhq as $row) 
   {
-	
 	?>
-      <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; ?></option>
-      <?php } ?>
-    </select>
-    </label>
-    </td>
-  </tr>
-</table>
-<?php 
+    <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; ?></option>
+  <?php 
+  }
+  ?>
+  </select>
+  <?php
 }
 elseif($id == 4){
 ?>
-<table width="100%" border="0">
-  <tr>
-    <td width="30%" align="right" class="loginText">Branch</td>
-    <td width="58%">
-    <label>
-    <select name="cmb_branch" id="cmb_branch">
+  <label for="cmb_sfhq" style="transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);opacity: 0.65;">Branch</label>
+    <select name="cmb_branch" id="cmb_branch" class="form-control">
       <?php 
 	$branches = Login :: getBranches();
   foreach ($branches as $row) {
@@ -44,9 +35,7 @@ elseif($id == 4){
       <?php } ?>
     </select>
     </label>
-    </td>
-  </tr>
-</table>
+
 <?php 
 }
 elseif($id == 4){

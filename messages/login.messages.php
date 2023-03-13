@@ -20,5 +20,4 @@ switch($msg)
 	break;
 
 }
-echo "<b>".$display_msg."</b>";
-?>
+echo "<span class='error'>".$display_msg."</span>";
