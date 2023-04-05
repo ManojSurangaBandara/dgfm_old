@@ -63,17 +63,17 @@
 <div class="container">
  
 <div class="row">
-  <div class="col-lg-2"></div>
-   <div class="col-lg-4">
+  <!-- <div class="col-lg-2"></div> -->
+   <div class="col-lg-6">
 
       <div class="wow fadeInLeft" style="text-align: center;">
           <img src="images/Army_Logo_my.png" width="200px" align="centere" >
-      <p width="350px" align="centere"  style="color:rgb(255, 165, 0); font-size:35px; text-align: center; font-family: sans-serif; text-shadow: 1px 1px 2px black;"  >
-
-        DIRECTORATE OF FINANCE</p> 
       <p width="350px" align="centere"  style="color:rgb(255, 165, 0); font-size:30px; text-align: center; font-family: sans-serif; text-shadow: 1px 1px 2px black;"  >
 
-        SRI LANKA ARMY</p> 
+        FINANCE MANAGEMENT <br/> AND  <br/> MONITORING SYSTEM</p> 
+      <!-- <p width="350px" align="centere"  style="color:rgb(255, 165, 0); font-size:30px; text-align: center; font-family: sans-serif; text-shadow: 1px 1px 2px black;"  >
+
+        SRI LANKA ARMY</p>  -->
           </div>
      <br>  
    </div>
@@ -150,7 +150,7 @@
           <div class="col-lg-8">
               <center><a href="#" class="footer_text">Software Solution by Dte of IT - SL Army</a></center>
           </div>
-          <div class="col-lg-2 "><a href="#" class="footer_text"> Version 1.0 </a></div>
+          <div class="col-lg-2 "><a href="#" class="footer_text"> Version 1.10 </a></div>
         </div>
     </div>
       

@@ -8,16 +8,16 @@ switch($msg)
 {
 	
 	case '1':
-	$display_msg = "Required field cannot be left blank.";
+	$display_msg = "Required field cannot be left blank";
 	break;
 	
 	case '2':
-	$display_msg = "The username or password you entered is incorrect.";
+	$display_msg = "The username or password you entered is incorrect";
 	break;
 	
 	case '3':
-	$display_msg = "Session has been expired , please login to the system.";
+	$display_msg = "Session has been expired , please login to the system";
 	break;
 
 }
-echo "<span class='error'>".$display_msg."</span>";
+echo "<span style='width: 100%; margin-top: 0.25rem; font-size: 0.875em; color: #d9534f;'>".$display_msg."</span>";
