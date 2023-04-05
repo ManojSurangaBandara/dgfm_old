@@ -330,6 +330,21 @@ $result = Users :: SaveUserCreation($typeid, $branchsfhq,$txtusername,$pass,$myn
 	
 	break;
 	
+	case 'reset':
+	$id	 	=	isset( $_GET['id'])?$_GET['id']:$id;
+		
+		$resultdelete = Users :: ResetUser($id);
+		if($resultdelete==true)
+		  {
+			  header("Location:../ResetPassword.php?msg=32");	
+		  }
+		  elseif($resultdelete==false)
+		  {
+			  header("Location:../ResetPassword.php?msg=33");	
+		  }
+	
+	break;
+	
 	case 'deleteotherAccount':
 		$user_id	 	=	isset( $_GET['userid'])?$_GET['userid']:$user_id;
 		$type	 		=	isset( $_GET['type'])?$_GET['type']:$type;

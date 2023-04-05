@@ -133,7 +133,15 @@ switch($msg)
 	case '31':
 	$display_msg = "Cannot Update Check Details";
 	break;
-
+	
+	case '32':
+	$display_msg = "Password Reset successful";
+	break;
+	
+	case '33':
+	$display_msg = "Cannot Reset Password";
+	break;
+	
 }
 echo "<b>".$display_msg."</b>";
 ?>

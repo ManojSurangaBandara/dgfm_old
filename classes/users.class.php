@@ -233,6 +233,20 @@ class Users{
 		return $result;
 
 	}
+
+	public static function ResetUser($id)
+	{
+		$pass	=	base64_encode('123');
+		$today = date('Y-m-d');
+		$db1 = new db_con();
+		$sqlreset = "update users set pass='$pass' WHERE user_id = $id";
+	//	echo $sqldelete;
+		//die();
+
+		$result = $db1->Execute($sqlreset);
+		return $result;
+
+	}
 	
 }
 
