@@ -170,8 +170,8 @@ var message = confirm("Are you sure you want to delete this vote?")
 if(message==true)
 document.location.href="controller/vote.controller.php?mode=delete&vote_id="+vote_id;
 }
-function delete_Sup(vote_id){
+function delete_Sup(sup_id){
 var message = confirm("Are you sure you want to delete this Supplier?")
 if(message==true)
-document.location.href="controller/vote.controller.php?mode=deleteSup&vote_id="+vote_id;
+document.location.href="controller/vote.controller.php?mode=deleteSup&sup_id="+sup_id;
 }

@@ -216,10 +216,16 @@ switch($mode)
 	break;
 	
 		case 'deleteSup':
-	
-		$sup_id	 	=	isset( $_GET['vote_id'])?$_GET['vote_id']:$vote_id;		
-		
-		$resultdelete = Vote :: Suppplier_Delete($sup_id);		
+
+		$sup_id	 	=	isset( $_GET['sup_id'])?$_GET['sup_id']:$sup_id;		
+				
+		if(Vote::Suppplier_Cant_Delete($sup_id)) //check if entries exist in other tables for this vote id
+		{
+			$resultdelete = false; //should not delete if entries exist
+		}else{ //delete supplier if no entries
+			$resultdelete = Vote :: Suppplier_Delete($sup_id);
+		}
+
 		if($resultdelete==true)
 		  {
 			  header("Location:../Suppliers.php?msg=9");	

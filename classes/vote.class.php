@@ -255,6 +255,17 @@ class Vote{
 		return $data;
 
 	}
+
+	public static function Suppplier_Cant_Delete($sup_id) 
+	{
+		//check if supplier can be safely deleted or not. Do not delete if supplier details exist in other tables
+		$db1 = new db_con();
+		$sqldelete = "SELECT Bill_Id from sfhq_bill_details WHERE Sup_Code='$sup_id'
+						UNION ALL SELECT Bill_Id from txt_bill_details WHERE Bill_Name='$sup_id'";
+		$data = $db1->GetAll($sqldelete);
+	//	echo $sqldelete;
+		return $data;
+	}
 	
 	public static function Suppplier_Delete($vote_id)
 	{

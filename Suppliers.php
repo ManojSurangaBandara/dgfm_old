@@ -224,7 +224,7 @@ Supplier Name
                         <th width="100" rowspan="2">Mobile No</th> 
                          <th width="50" rowspan="2"><center>View</center></th>
                         <th width="50" rowspan="2"><center>Edit</center></th>
-						<!--<th width="80" rowspan="2" class="last">Delete</th>-->
+						<th width="80" rowspan="2" class="last">Delete</th>
 				  </tr>
                   
                   
@@ -258,7 +258,8 @@ Supplier Name
                         
                         
                         
-						<?php /*?><td class="last"><a onclick="delete_Sup('<?php echo $row[0];?>');" href="#" ><img src="images/hr.gif" width="16" height="16" alt="Delete" /></a></td><?php */?>
+						<!-- <?php /*?><td class="last"><a onclick="delete_Sup('<?php echo $row[0];?>');" href="#" ><img src="images/hr.gif" width="16" height="16" alt="Delete" /></a></td><?php */?> -->
+						<td class="last"><center><a onclick="delete_Sup('<?php echo $row[0];?>');" href="#" ><img src="images/hr.gif" width="16" height="16" alt="Delete" /></a></center></td>
                                        
                         </tr>
 					</tr>
