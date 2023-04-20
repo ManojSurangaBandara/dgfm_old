@@ -41,7 +41,7 @@ $phpmailer->SMTPSecure = 'tls'; // Use 'ssl' if you have an older version of PHP
 // )
 // );
 $phpmailer->Username = 'pradeep.s';
-$phpmailer->Password = 'PERA@nadee1984';
+$phpmailer->Password = 'ArRmy@1234';
 $phpmailer->setFrom('pradeep.s@army.lk', 'Pradeep S');
 $phpmailer->addAddress('suranga@army.lk');           // Add a recipient
 $phpmailer->Subject = 'My Email subject';
