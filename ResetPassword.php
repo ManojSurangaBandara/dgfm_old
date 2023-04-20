@@ -226,7 +226,19 @@ ddaccordion.init({
                         <?php }   ?>  
                 		<th width="50">Telephone</th>              
                   		<th width="60"> Create Date</th>	             
-                        <th width="90">Reset Password</th>
+                        
+						<?php  if($status==1) { ?>
+                       
+                                
+                       <th width="90">Reset Password</th>
+                           
+				  	   <?php }   ?>  
+                       
+						<?php  if($status==0) { ?>
+                                
+                       <th width="90">Deact Date</th>
+                                   
+                       <?php }   ?>   
   
 				       </tr>
                 
@@ -248,7 +260,18 @@ ddaccordion.init({
                         <td><?php echo $row[3]; ?></td> <?php } ?> 
                         <td><?php echo $row[4]; ?></td>						
 						<td><?php echo $row[5]; ?></td>
-                        <td class="last"><center><a href="#" onclick="resetnow(<?php echo $row[0]; ?>)" ><img src="images/reset_pw.png" width="16" height="16" alt="Deactivate" /></a></center></td>  
+
+						<?php if($status==1) { ?>
+                        
+							<td class="last"><center><a href="#" onclick="resetnow(<?php echo $row[0]; ?>)" ><img src="images/reset_pw.png" width="16" height="16" alt="Deactivate" /></a></center></td>  
+							
+				  <?php } if($status==0) { ?>
+							
+                            
+                    <td><?php echo $row[6]; ?></td>  
+						
+					<?php } ?>
+                       
 				  </tr>
                      <?php 
 					 $i +=1;
