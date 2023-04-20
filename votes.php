@@ -112,7 +112,7 @@ $user_type_id = $_SESSION['userType'];
                         <th width="54" rowspan="2">Edit</th>
                         
                         <?php // } ?>
-						<!--<th width="80" rowspan="2" class="last">Delete</th>-->
+						<th width="80" rowspan="2" class="last">Delete</th>
 				  </tr>
                   
                   
@@ -144,12 +144,12 @@ $user_type_id = $_SESSION['userType'];
         
                        <?php 
            // if ($user_type_id == 6) { ?>
-                        <td><a href="edit_vote.php?vote_id=<?php echo $row[0]; ?>"><img src="images/edit-icon.gif" width="16" height="16" alt="" /></a></td>
+                        <td><center><a href="edit_vote.php?vote_id=<?php echo $row[0]; ?>"><img src="images/edit-icon.gif" width="16" height="16" alt="" /></a></center></td>
                         
                         <?php  //} ?>
                         
                         
-						<?php /*?><td class="last"><a onclick="delete_vote('<?php echo $row[0];?>');" href="#" ><img src="images/hr.gif" width="16" height="16" alt="Delete" /></a></td><?php */?>
+						<td class="last"><center><a onclick="delete_vote('<?php echo $row[0];?>');" href="#" ><img src="images/hr.gif" width="16" height="16" alt="Delete" /></a></center></td>
                                        
                         </tr>
 					</tr>

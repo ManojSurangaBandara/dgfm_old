@@ -196,12 +196,19 @@ switch($mode)
 	
 		$vote_id	 	=	isset( $_GET['vote_id'])?$_GET['vote_id']:$vote_id;		
 		
-		$resultdelete = Vote :: Vote_Delete($vote_id);		
+		
+		if(Vote::Vote_Cant_Delete($vote_id))
+		{
+			$resultdelete = false; //should not delete if entries exist
+		}else{
+			$resultdelete = Vote :: Vote_Delete($vote_id);
+		}
+
 		if($resultdelete==true)
 		  {
 			  header("Location:../votes.php?msg=5");	
 		  }
-		  elseif($resultdelete==false)
+		elseif($resultdelete==false)
 		  {
 			  header("Location:../votes.php?msg=6");	
 		  }

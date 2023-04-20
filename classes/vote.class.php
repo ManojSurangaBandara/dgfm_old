@@ -233,7 +233,18 @@ class Vote{
 	
 	
 		
-	
+	public static function Vote_Cant_Delete($vote_id) 
+	{
+		//check if vote is can be safely deleted or not. Do not delete if vote details exist in other tables
+		$db1 = new db_con();
+		$sqldelete = "SELECT Vote_ID from del_dfin_bill_details WHERE Vote_ID='$vote_id' 
+						UNION ALL SELECT Vote_ID from del_sfhq_bill_details WHERE Vote_ID='$vote_id'
+						UNION ALL SELECT Vote_ID from sfhq_vote_bill_amount WHERE Vote_ID='$vote_id'
+						UNION ALL SELECT Vote_ID from vote_bill_amount WHERE Vote_ID='$vote_id'";
+		$data = $db1->GetAll($sqldelete);
+	//	echo $sqldelete;
+		return $data;
+	}
 
 	public static function Vote_Delete($vote_id)
 	{
