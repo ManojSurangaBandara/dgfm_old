@@ -100,6 +100,7 @@ switch($mode)
 			$ro=$res[0];
 			
 			$fin_vehno=$ro[0]+1;
+			$nic=0;
 			$vrp=0;
 		}
 		
