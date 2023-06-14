@@ -299,7 +299,7 @@ document.location.href="New_Supplier.php?isveh="+isveh;
 						<td class="first"><strong>Mobile No </strong></td>
 						<td class="last"><span id="sprytextfield6">
 						  <label>
-						   <b> +94 </b><input type="text" pattern="^7[0|1|2|4|5|6|7|8]\d{7}$" title="Nine numbers with leading 7. No zero at the beginning. Mbile numbers only." max="999999999" min="700000000" name="mobile" id="mobile" /> <span class="textfieldRequiredMsg">*</span>
+						   <b> +94 </b><input type="text" pattern="^7[0|1|2|4|5|6|7|8]\d{7}$" title="Nine numbers with leading 7. No zero at the beginning. Mobile numbers only." max="999999999" min="700000000" name="mobile" id="mobile" /> <span class="textfieldRequiredMsg">*</span>
 					    </label>
 					   </span>
 					   <b>Ex :- 711231234</b>
@@ -326,7 +326,7 @@ document.location.href="New_Supplier.php?isveh="+isveh;
 						<td class="first"><strong>Email Address</strong></td>
 						<td class="last">
 						  <label>
-						    <input type="text" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$"  size="30" name="email" id="email" /> 
+						    <input type="text" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" title="Email address only" size="30" name="email" id="email" /> 
 					    </label>
 					   </td>
 					</tr>
