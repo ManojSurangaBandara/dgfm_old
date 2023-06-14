@@ -11,7 +11,7 @@ header("Location:index.php");
 
 
 
-$project_id 	= $_GET['projectid'];
+$project_id 	= $_GET['projectid'] ?? 0;
 //$projtype_id	= isset( $_GET['typeid'])?$_GET['typeid']:$projtype_id;
 //$ptype	  		= isset( $_GET['ptype'])?$_GET['ptype']:$ptype;
 $status	  		= isset( $_GET['cval'])?$_GET['cval']:$status;

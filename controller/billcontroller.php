@@ -598,7 +598,7 @@ switch($mode)
 	
 	
 	case 'editSFHQ':	
-	
+
 	$bill_no 			= 	isset( $_POST['bill_no'])?$_POST['bill_no']:$bill_no;	
 	$bill_id			= 	isset( $_GET['projectid'])?$_GET['projectid']:$bill_id;	
 	$sfhq_id			= 	isset( $_GET['sfhq_id'])?$_GET['sfhq_id']:$sfhq_id;		
@@ -644,6 +644,7 @@ switch($mode)
 	$modified_date		=	date('Y-m-d');
 	$modified_user		= 	$_SESSION['userID'];
 					
+	$project_id	 	=	isset( $_GET['projectid'])?$_GET['projectid']:$project_id;
 		
 	$unit_id =	isset( $_POST['unit'])?$_POST['unit']:0;					
 	if($unit_id==0)
@@ -655,7 +656,11 @@ switch($mode)
 	$allocated_regiment=$unit_id;
 	}
 	
-	
+
+	if($allocated_regiment==0){
+		header("Location:../EditSfhqBills.php?msg=35&projectid=".$project_id."&branch_id=".$branch_id);
+		break;
+	}
 		
 		$result =  Bills :: EditBillsDetailsSFHQ($bill_no,
 									   $brach_id,			   
@@ -682,38 +687,70 @@ switch($mode)
 		
 		//echo 'sssssssssssssssssssssssssssssssssss'; exit;
 		
-		if($billidxx1 != 0 ){
-			$result =  Bills :: UpdateBillAmountDetailsToSfhq($billidxx1,$bill_no,$vote_id1,$amount1);
+		if(is_numeric(trim($billidxx1)) && $billidxx1 != 0){
+			
+			if($vote_id1 !=0){
+				$result =  Bills :: UpdateBillAmountDetailsToSfhq($billidxx1,$bill_no,$vote_id1,$amount1);
+			}
+			
 		}
 		elseif($vote_id1 != 0){
-			$result =  Bills :: InsertbillAmountDetailsToSfhq($bill_no,$vote_id1,$amount1);
+
+			$result =  Bills :: InsertbillAmountDetailsToSfhq($bill_no,$vote_id1,$amount1,$bill_id);
 		}
-		if($billidxx2 != 0){
-			$result =  Bills :: UpdateBillAmountDetailsToSfhq($billidxx2,$bill_no,$vote_id2,$amount2);
+		if(is_numeric(trim($billidxx2)) && $billidxx2 != 0){
+
+			if($vote_id2 !=0 && $vote_id1 != $vote_id2){
+				
+				$result =  Bills :: UpdateBillAmountDetailsToSfhq($billidxx2,$bill_no,$vote_id2,$amount2);
+			}elseif($vote_id2 !=0){
+				
+				header("Location:../EditSfhqBills.php?msg=34&projectid=".$project_id."&branch_id=".$branch_id);	
+				break;
+			}
+			
 		}
 		elseif($vote_id2 != 0){
-			$result =  Bills :: InsertbillAmountDetailsToSfhq($bill_no,$vote_id2,$amount2);
+			
+			if($vote_id1 != $vote_id2){
+				$result =  Bills :: InsertbillAmountDetailsToSfhq($bill_no,$vote_id2,$amount2,$bill_id);
+			}else{
+				header("Location:../EditSfhqBills.php?msg=34&projectid=".$project_id."&branch_id=".$branch_id);	
+				break;
+			}
+		
 		}
-		if($billidxx3 != 0){
-			$result =  Bills :: UpdateBillAmountDetailsToSfhq($billidxx3,$bill_no,$vote_id3,$amount3);
+		if(is_numeric(trim($billidxx3)) && $billidxx3 != 0){
+			
+			if($vote_id3 !=0 && $vote_id1 != $vote_id3 && $vote_id2 != $vote_id3){
+				
+				$result =  Bills :: UpdateBillAmountDetailsToSfhq($billidxx3,$bill_no,$vote_id3,$amount3);
+				
+			}elseif($vote_id3 !=0){
+				
+				header("Location:../EditSfhqBills.php?msg=34&projectid=".$project_id."&branch_id=".$branch_id);	
+				break;
+			}
+			
 		}
 		elseif($vote_id3 != 0){
-			$result =  Bills :: InsertbillAmountDetailsToSfhq($bill_no,$vote_id3,$amount3);
+		
+			if($vote_id1 != $vote_id3 && $vote_id2 != $vote_id3){
+				$result =  Bills :: InsertbillAmountDetailsToSfhq($bill_no,$vote_id3,$amount3,$bill_id);
+			}else{
+				header("Location:../EditSfhqBills.php?msg=34&projectid=".$project_id."&branch_id=".$branch_id);	
+				break;
+			}
 		}
 		
-		
-		
-				if($result==true)
-				
-				{
-					
-					header("Location:../projects.php?msg=3&branch_id=6");	
-				}
-				elseif($result==false)
-				{
-					
-					header("Location:../EditSfhqBills.php?msg=4&branch_id=6");		
-				}
+		if($result==true)
+		{
+			header("Location:../projects.php?msg=3&branch_id=6");	
+		}
+		elseif($result==false)
+		{
+			header("Location:../EditSfhqBills.php?msg=4&branch_id=6");		
+		}
 		
 	break;
 	

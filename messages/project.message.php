@@ -141,7 +141,14 @@ switch($msg)
 	case '33':
 	$display_msg = "Cannot Reset Password";
 	break;
+
+	case '34':
+	$display_msg = "Duplicate Vote Codes";
+	break;
 	
+	case '35':
+	$display_msg = "Incorrect Operational Controller";
+	break;
 }
 echo "<b>".$display_msg."</b>";
 ?>

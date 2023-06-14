@@ -2537,7 +2537,8 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 	public static function GetBillDataToSFHQ($sfhq_id,$id,$user_type)
 	{
 		$db1 = new db_con();
-		$sqlselect = "SELECT  d.Bill_Id   
+		$sqlselect = "SELECT  
+		d.Bill_Id   
 		,d.Bill_No
 		,d.Sup_Code		
 		,d.Recieved_Date 
@@ -2550,8 +2551,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 		,s.Sup_Name		
 		,u.Unit
 		,(SELECT rtn_reason FROM sfhq_return_details WHERE Bill_Id = $id AND Auto_id = (SELECT MAX(Auto_id) FROM sfhq_return_details WHERE Bill_Id = $id GROUP BY Bill_Id)) as rtn_reason
-		,(SELECT Auto_id FROM sfhq_return_details WHERE Bill_Id = $id AND Auto_id = (SELECT MAX(Auto_id) 
-		 FROM sfhq_return_details WHERE Bill_Id = $id GROUP BY Bill_Id)) as Auto_no
+		,(SELECT Auto_id FROM sfhq_return_details WHERE Bill_Id = $id AND Auto_id = (SELECT MAX(Auto_id) FROM sfhq_return_details WHERE Bill_Id = $id GROUP BY Bill_Id)) as Auto_no
 		,b.branch_id
 		,d.Unit_Id
 		,d.details
@@ -2568,8 +2568,12 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 		,d.bill_period_from
 		,d.bill_period_to
 		,d.file_ref
-		,s.Act_No,k.Bnk_Code,s.bnk_loc_id
-		,s.nic,s.mobile
+		,s.Act_No
+		,k.Bnk_Code
+		,s.bnk_loc_id
+		,s.nic
+		,s.mobile
+		,d.ledger_date
 		
 		FROM sfhq_bill_details as d		
 		

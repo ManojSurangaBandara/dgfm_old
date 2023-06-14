@@ -12,7 +12,7 @@ header("Location:index.php");
 }
 $user_type_id 	= $_SESSION['userType'];
 
-$project_id 	= $_GET['projectid'];
+$project_id 	= $_GET['projectid'] ?? 0;
 //$status	  		= isset( $_GET['cval'])?$_GET['cval']:0;
 $branch_id		= isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 

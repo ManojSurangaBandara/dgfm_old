@@ -11,7 +11,7 @@ header("Location:index.php");
 
 
 $sfhq_id 		= $_SESSION['sfhqID'];
-$project_id 	= $_GET['projectid'];
+$project_id 	= $_GET['projectid'] ?? 0;
 $status	  		= isset( $_GET['cval'])?$_GET['cval']:$status;
 $user_type_id 	= $_SESSION['userType'];
 $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;

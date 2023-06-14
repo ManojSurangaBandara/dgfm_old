@@ -7,7 +7,7 @@ require_once('classes/common.class.php');
 if(!isset($_SESSION['userID'])){
 header("Location:index.php");
 }
-$project_id   = $_GET['projectid'];
+$project_id   = $_GET['projectid'] ?? 0;
 $progress_id  = $_GET['progress_id'];
 $ptype        = $_GET['ptype'];
 

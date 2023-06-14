@@ -8,7 +8,7 @@ if(!isset($_SESSION['userID'])){
 header("Location:index.php");
 }
 $unit_id	=	isset( $_GET['unitid'])?$_GET['unitid']:1;
-$project_id =  $_GET['projectID'];
+$project_id =  $_GET['projectID'] ?? 0;
 $ptype =  $_GET['ptype'];
 
 $projdata = Common :: GetProject($project_id);

@@ -10,7 +10,7 @@ require_once('classes/progress_report.class.php');
 if(!isset($_SESSION['userID'])){
 header("Location:index.php");
 }
-$project_id 	= $_GET['projectid'];
+$project_id 	= $_GET['projectid'] ?? 0;
 //$status	  		= isset( $_GET['cval'])?$_GET['cval']:$status;
 $user_type_id 	= $_SESSION['userType'];
 
@@ -110,7 +110,7 @@ function showUser3(str,ar)
   
 if (str=="")
   {
-  
+
    document.getElementById("txtHint3").innerHTML="";
   return;
   }
@@ -205,8 +205,9 @@ xmlhttp.send();
                 <?php
 				if($project_id>0)
 				{
+// echo $sfhq_id;exit;
                 	$result = Projects :: GetBillDataToSFHQ($sfhq_id,$project_id,$user_type_id);
-					//echo $result;
+					// echo count($result);  ;exit;
 					$row=$result[0];
 					
 				}		
@@ -462,7 +463,7 @@ xmlhttp.send();
                 <td width="26%" class="first"><strong>Amount<span class="last">(LKR)</span></strong></td>
                </tr>
                <tr>
-                 <td><select name="vote_id1"  style="width:160px"   id="vote_id1" onchange="showUser1(this.value,<?php echo $billamountarr[0]; ?>)">
+                 <td><select name="vote_id1"  style="width:160px"   id="vote_id1" onchange="showUser1(this.value,<?php echo $billamountarr[0] ?? 0; ?>)">
                    <option value="0" ></option>
 				   <?php
               $esrunit = array();
@@ -504,7 +505,7 @@ xmlhttp.send();
              
                  
                <tr>
-                 <td><select name="vote_id2" style="width:160px"   id="vote_id2" onchange="showUser2(this.value,<?php echo $billamountarr[1]; ?>)">
+                 <td><select name="vote_id2" style="width:160px"   id="vote_id2" onchange="showUser2(this.value,<?php echo $billamountarr[1] ?? 0; ?>)">
                    <option value="0" ></option>
 				   <?php 
 							$esrunit = Common :: GetReleventVotesName($branch_id);
@@ -512,7 +513,7 @@ xmlhttp.send();
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if(isset($voteidarr[1]) && ($rowesrunit[0] == $voteidarr[1])){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>
-                 </select><input name="hdnbill_id2" type="hidden" value="<?php echo $idarr[1] ?>" /></td>
+                 </select><input name="hdnbill_id2" type="hidden" value="<?php echo $idarr[1] ?? "" ?>" /></td>
                 
                     
 					  <td colspan="2" id="txtHint2">
@@ -552,7 +553,7 @@ xmlhttp.send();
                  </tr>
                 
                 <tr>
-                 <td><select name="vote_id3"  style="width:160px"   id="vote_id3" onchange="showUser3(this.value,<?php echo $billamountarr[2]; ?>)">
+                 <td><select name="vote_id3"  style="width:160px"   id="vote_id3" onchange="showUser3(this.value,<?php echo $billamountarr[2] ?? 0; ?>)">
                    			<option value="0" ></option>
 				   <?php 
 							$esrunit = Common :: GetReleventVotesName($branch_id);

@@ -8,7 +8,7 @@ if(!isset($_SESSION['userID'])){
 header("Location:index.php");
 }
 
-$project_id   = $_GET['projectID'];
+$project_id   = $_GET['projectID'] ?? 0;
 $project_name = $_GET['projname'];
 $ptype    	  = $_GET['ptype']; 
 ?>

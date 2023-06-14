@@ -8,7 +8,7 @@ require_once('classes/progress_report.class.php');
 if(!isset($_SESSION['userID'])){
 header("Location:index.php");
 }
-$project_id 	= $_GET['projectid'];
+$project_id 	= $_GET['projectid'] ?? 0;
 $status	  		= isset( $_GET['cval'])?$_GET['cval']:$status;
 $user_type_id 	= $_SESSION['userType'];
 $sfhq_id 		= $_SESSION['sfhqID'];
