@@ -638,6 +638,8 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 		WHERE t.Bill_Id = $bill_id and v.Bill_Id = $bill_id 
 		AND  t.Bill_No='$bill_no' and v.Bill_No='$bill_no' ";
 		$data = $db1->Execute($sqlinsert);
+
+		return $data;
 		
 	}
 	
@@ -666,10 +668,10 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 		return $data;
 	}
 	
-	public static function InsertbillAmountDetails($bill_no,$vote_id1,$amount1,$billid){
+	public static function InsertbillAmountDetails($bill_no,$vote_id1,$amount1,$billid,$recieved_date,$Payee_name,$invoice_date){
 		$db1 = new db_con();
-												$sqlinsert = "INSERT INTO  vote_bill_amount(Bill_No,Bill_Id,Vote_ID,Amount)
-												VALUES ('$bill_no',$billid,$vote_id1,'$amount1' )";
+												$sqlinsert = "INSERT INTO  vote_bill_amount(Bill_No,Vote_ID,Amount,Current_Year,Bill_Id,Bill_Staus,Recieved_Month,Sup_Code,Invoice_Year)
+												VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),$billid,0,MONTH('$recieved_date'),$Payee_name,MONTH('$invoice_date') )";
 											//	echo $sqlinsert;
 											//	die();
 												$data1 = $db1->Execute($sqlinsert);	 

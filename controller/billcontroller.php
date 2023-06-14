@@ -530,7 +530,7 @@ switch($mode)
 	$vote_id1			=	isset( $_POST['vote_id1'])?$_POST['vote_id1']:$vote_id1;
 	$vote_id2			=	isset( $_POST['vote_id2'])?$_POST['vote_id2']:0;
 	$vote_id3			=	isset( $_POST['vote_id3'])?$_POST['vote_id3']:0;	
-	$amount1			=	isset( $_POST['amount1'])?$_POST['amount1']:$amount1;
+	$amount1			=	isset( $_POST['amount1'])?$_POST['amount1']:0;
 	$amount2			=	isset( $_POST['amount2'])?$_POST['amount2']:0;
 	$amount3			=	isset( $_POST['amount3'])?$_POST['amount3']:0;	
 	$billidxx1			=	isset( $_POST['hdnbill_id1'])?$_POST['hdnbill_id1']:0;
@@ -542,6 +542,12 @@ switch($mode)
 	$modified_date		=	date('Y-m-d');
 	$modified_user		= 	$_SESSION['userID'];
 	$log_year			= $_SESSION['log_year'];	
+
+	$amount1 = empty($amount1) ? 0 : $amount1;
+	$amount2 = empty($amount2) ? 0 : $amount2;
+	$amount3 = empty($amount3) ? 0 : $amount3;
+
+	$project_id	 	=	isset( $_GET['projectid'])?$_GET['projectid']:$project_id;
 		
 	$result =  Bills :: EditBillsDetailsBigUser($bill_no,
 									   $brach_id,			   
@@ -564,24 +570,56 @@ switch($mode)
 		
 		//echo 'sssssssssssssssssssssssssssssssssss'; exit;
 		
-		if($billidxx1 != 0 ){
-			$result =  Bills :: UpdateBillAmountDetails($billidxx1,$bill_no,$vote_id1,$amount1);
+		if(is_numeric(trim($billidxx1)) && $billidxx1 != 0){
+			if($vote_id1 !=0){
+				
+				$result =  Bills :: UpdateBillAmountDetails($billidxx1,$bill_no,$vote_id1,$amount1);
+			}
 		}
 		elseif($vote_id1 != 0){
-			$result =  Bills :: InsertbillAmountDetails($bill_no,$vote_id1,$amount1,$bill_id);
+			$result =  Bills :: InsertbillAmountDetails($bill_no,$vote_id1,$amount1,$bill_id,$recieved_date,$Payee_name,$invoice_date);
 		}
-		if($billidxx2 != 0){
-			$result =  Bills :: UpdateBillAmountDetails($billidxx2,$bill_no,$vote_id2,$amount2);
+
+		if(is_numeric(trim($billidxx2)) && $billidxx2 != 0){
+			
+			if($vote_id2 !=0 && $vote_id1 != $vote_id2){
+				
+				$result =  Bills :: UpdateBillAmountDetails($billidxx2,$bill_no,$vote_id2,$amount2);
+			}elseif($vote_id2 !=0){
+				
+				header("Location:../EditBigUserBill.php?msg=34&projectid=".$project_id."&branch_id=".$branch_id);	
+				break;
+			}
 		}
 		elseif($vote_id2 != 0){
-			$result =  Bills :: InsertbillAmountDetails($bill_no,$vote_id2,$amount2,$bill_id);
+			
+			if($vote_id1 != $vote_id2){
+				$result =  Bills :: InsertbillAmountDetails($bill_no,$vote_id2,$amount2,$bill_id,$recieved_date,$Payee_name,$invoice_date);
+			}else{
+				header("Location:../EditBigUserBill.php?msg=34&projectid=".$project_id."&branch_id=".$branch_id);
+				break;
+			}
 		}
-		if($billidxx3 != 0){
-			$result =  Bills :: UpdateBillAmountDetails($billidxx3,$bill_no,$vote_id3,$amount3);
+		if(is_numeric(trim($billidxx3)) && $billidxx3 != 0){
+			
+			if($vote_id3 !=0 && $vote_id1 != $vote_id3 && $vote_id2 != $vote_id3){
+				$result =  Bills :: UpdateBillAmountDetails($billidxx3,$bill_no,$vote_id3,$amount3);
+			}elseif($vote_id3 !=0){
+				
+				header("Location:../EditBigUserBill.php?msg=34&projectid=".$project_id."&branch_id=".$branch_id);	
+				break;
+			}
 		}
 		elseif($vote_id3 != 0){
-			$result =  Bills :: InsertbillAmountDetails($bill_no,$vote_id3,$amount3,$bill_id);
+
+			if($vote_id1 != $vote_id3 && $vote_id2 != $vote_id3){
+				$result =  Bills :: InsertbillAmountDetails($bill_no,$vote_id3,$amount3,$bill_id,$recieved_date,$Payee_name,$invoice_date);
+			}else{
+				header("Location:../EditBigUserBill.php?msg=34&projectid=".$project_id."&branch_id=".$branch_id);
+				break;
+			}
 		}
+		
 		
 		
 				if($result==true)
