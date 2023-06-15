@@ -185,7 +185,7 @@ document.location.href="NewAccountCreation.php?typeid="+typeid;
 				  <td class="first"><strong>NIC</strong></td>
 					  <td class="last"><span id="sprytextfield4">
 				      <label>
-				        <input type="text" name="nic" id="nic" size="35"  />
+				        <input type="text" name="nic" id="nic" pattern="^(?:19|20)?\d{2}[0-9]{10}|[0-9]{9}[X|V]$" size="35"  />
 				      </label>
      <span class="textfieldRequiredMsg">*</span></span></td>
     		</tr>
@@ -194,7 +194,7 @@ document.location.href="NewAccountCreation.php?typeid="+typeid;
 				  <td class="first"><strong>Telephone</strong></td>
 					  <td class="last"><span id="sprytextfield5">
 				      <label>
-				        <input type="text" name="tele" id="tele" size="35"  />
+				        <input type="text" name="tele" id="tele" pattern="^0((11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|4|5|6|7|8)\d)\d{6}$" title="Ten numbers. Mobile or landline numbers" max="999999999"  min="100000000"  size="35"  />
 				      </label>
      <span class="textfieldRequiredMsg">*</span></span></td>
     		</tr>
@@ -203,7 +203,7 @@ document.location.href="NewAccountCreation.php?typeid="+typeid;
 				  <td class="first"><strong>E Mail</strong></td>
 					  <td class="last"><span id="sprytextfield6">
 				      <label>
-				        <input type="text" name="email" id="email" size="35"  />
+				        <input type="text" name="email" id="email" pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" title="Email address only" size="35"  />
 				      </label>
      <span class="textfieldRequiredMsg">*</span></span></td>
     		</tr>
