@@ -295,9 +295,9 @@ $date_of_tec_appointed	=	isset( $_POST['txtdateoftechappointed'])?$_POST['txtdat
 			{				
 			$com_status=0;
 			$msg=25;
-			$today='0000-00-00';
+			$today='1000-01-01';
 			$cheque_no=" ";
-			$chequeDate='0000-00-00';
+			$chequeDate='1000-01-01';
 			
 			}
 		

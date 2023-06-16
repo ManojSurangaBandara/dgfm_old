@@ -2801,7 +2801,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 		SET T.Bill_Status = 0 , 
 		T.Modified_Date = '".$today."'
 		,V.Bill_Staus= 0,
-		T.Bill_Settled_Date = '0000-00-00'  
+		T.Bill_Settled_Date = '1000-01-01'  
 		WHERE T.Bill_Id = $id";
 		//echo $sqlsettle;
 		
@@ -2846,7 +2846,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 		SET T.Bill_Status = 0 , 
 		T.Modified_Date = '".$today."'
 		,V.Bill_Staus= 0,
-		T.Bill_Settled_Date = '0000-00-00'  
+		T.Bill_Settled_Date = '1000-01-01'  
 		
 		WHERE T.Bill_Id = $id and T.Sfhq_Id = $sfhq_id ";
 		
@@ -2856,7 +2856,7 @@ $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";
 		
 		
 		
-		//$sqlsettle = "update sfhq_bill_details set Bill_Status = 0, Bill_Settled_Date='0000-00-00' 
+		//$sqlsettle = "update sfhq_bill_details set Bill_Status = 0, Bill_Settled_Date='1000-01-01' 
 		//where sfhq_id = $sfhq_id and Bill_Id = $id";
 		//echo $sqlsettle;
 		
