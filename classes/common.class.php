@@ -321,7 +321,7 @@ class Common{
 		FROM txt_bill_details as d
 		INNER JOIN m_supplier_list as s on s.Sup_id =d.Bill_Name
 		INNER JOIN  m_branches as b on d.branch_id=b.branch_id 
-		LEFT OUTER JOIN return_details AS r on r.Bill_Id=d.Bill_Id and r.act_date='0000-00-00'		
+		LEFT OUTER JOIN return_details AS r on r.Bill_Id=d.Bill_Id and r.act_date='1000-01-01'		
 		LEFT OUTER JOIN m_return AS rt on rt.rtn_id = r.rtn_reason 
 		 
 		where d.Bill_Id = $billId ";
@@ -365,7 +365,7 @@ class Common{
 		FROM txt_bill_details as d
 		INNER JOIN m_supplier_list as s on s.Sup_id =d.Bill_Name
 		INNER JOIN  m_branches as b on d.branch_id=b.branch_id 
-		LEFT OUTER JOIN return_details AS r on r.Bill_Id=d.Bill_Id and r.act_date='0000-00-00'		
+		LEFT OUTER JOIN return_details AS r on r.Bill_Id=d.Bill_Id and r.act_date='1000-01-01'		
 		LEFT OUTER JOIN m_return AS rt on rt.rtn_id = r.rtn_reason 
 		 
 		where d.Bill_Id = $billId ";
@@ -542,7 +542,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		INNER JOIN  m_branches as b on d.branch_id=b.branch_id 		
 		INNER JOIN  m_unit_distribution_chart as u on d.Unit_Id=u.Distribution_Id 	
 		INNER JOIN m_sfhq as sf on sf.ID=d.sfhq_id		
-		LEFT OUTER JOIN sfhq_return_details AS 	r ON r.Bill_Id= d.Bill_Id AND r.act_date='0000-00-00'
+		LEFT OUTER JOIN sfhq_return_details AS 	r ON r.Bill_Id= d.Bill_Id AND r.act_date='1000-01-01'
 		LEFT OUTER JOIN m_return AS rt on rt.rtn_id = r.rtn_reason 
 	
 		where d.Bill_Id = $billId ";
@@ -641,7 +641,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		INNER JOIN  m_branches as b on d.branch_id=b.branch_id 		
 		INNER JOIN  m_unit_distribution_chart as u on d.Unit_Id=u.Distribution_Id 			
 		INNER JOIN m_sfhq as h on h.Id = d.Sfhq_Id
-		LEFT OUTER JOIN sfhq_return_details AS 	r ON r.Bill_Id= d.Bill_Id AND r.act_date='0000-00-00'
+		LEFT OUTER JOIN sfhq_return_details AS 	r ON r.Bill_Id= d.Bill_Id AND r.act_date='1000-01-01'
 		LEFT OUTER JOIN m_return AS rt on rt.rtn_id = r.rtn_reason 
 	
 		where d.Bill_Id = $billId  ";
@@ -690,7 +690,7 @@ WHERE s.Sup_id = (SELECT Bill_Name FROM txt_bill_details WHERE Bill_Id = $bil_id
 		INNER JOIN m_supplier_list as s on s.Sup_id =d.Sup_Code
 		INNER JOIN  m_branches as b on d.branch_id=b.branch_id 		
 		INNER JOIN  m_unit_distribution_chart as u on d.Unit_Id=u.Distribution_Id 			
-		LEFT OUTER JOIN sfhq_return_details AS 	r ON r.Bill_Id= d.Bill_Id AND r.act_date='0000-00-00'
+		LEFT OUTER JOIN sfhq_return_details AS 	r ON r.Bill_Id= d.Bill_Id AND r.act_date='1000-01-01'
 		LEFT OUTER JOIN m_return AS rt on rt.rtn_id = r.rtn_reason 
 	
 		where d.Bill_Id = $billId  ";
