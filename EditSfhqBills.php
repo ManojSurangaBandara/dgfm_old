@@ -472,7 +472,7 @@ xmlhttp.send();
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if( isset($voteidarr[0]) && ($rowesrunit[0] == $voteidarr[0])){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>
-                 </select><input name="hdnbill_id1" type="hidden" value="<?php echo $idarr[0] ?>" /></td>
+                 </select><input name="hdnbill_id1" type="hidden" value="<?php echo $idarr[0] ?? '' ?>" /></td>
               
            
 				    <td colspan="2" id="txtHint1">
@@ -513,7 +513,7 @@ xmlhttp.send();
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if(isset($voteidarr[1]) && ($rowesrunit[0] == $voteidarr[1])){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>
-                 </select><input name="hdnbill_id2" type="hidden" value="<?php echo $idarr[1] ?? "" ?>" /></td>
+                 </select><input name="hdnbill_id2" type="hidden" value="<?php echo $idarr[1] ?? '' ?>" /></td>
                 
                     
 					  <td colspan="2" id="txtHint2">
@@ -561,7 +561,7 @@ xmlhttp.send();
 							?>
                    <option value="<?php echo $rowesrunit[0]; ?>" <?php if( isset($voteidarr[2]) && ($rowesrunit[0] == $voteidarr[2])){ echo "selected=selected"; }?>><?php echo $rowesrunit[1]; ?></option>
                    <?php } ?>
-                 </select><input name="hdnbill_id3" type="hidden" value="<?php echo $idarr[2] ?>" /></td>
+                 </select><input name="hdnbill_id3" type="hidden" value="<?php echo $idarr[2] ?? '' ?>" /></td>
                 
                     
 					  <td colspan="2" id="txtHint3"><table cellpadding="0" cellspacing="0">

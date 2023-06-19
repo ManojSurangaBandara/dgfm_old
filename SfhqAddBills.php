@@ -12,7 +12,7 @@ $user_id 		= $_SESSION['userID'];
 $user_type_id 	= $_SESSION['userType'];
 $sfhq_id 		= $_SESSION['sfhqID'];
 
-$brach_id  		= isset( $_GET['brach_id'])?$_GET['brach_id']:$brach_id ;
+$brach_id  		= isset( $_GET['brach_id'])?$_GET['brach_id']:0 ;
 $sup_id   		= isset( $_GET['sup_id'])?$_GET['sup_id']:0 ;
 $vote_id1  		= isset( $_GET['vote_id1'])?$_GET['vote_id1']:0 ;
 $vote_id2   	= isset( $_GET['vote_id2'])?$_GET['vote_id2']:0 ;
@@ -266,7 +266,7 @@ xmlhttp.send();
 					 
 					  }
 					 ?>
-					<input type="hidden"  name="unit" style="width:350px"   id="unit" value="<?php echo $unit;  ?>"  />
+					<input type="hidden"  name="unit" style="width:350px"   id="unit" value="<?php echo $unit ?? 0;  ?>"  />
 					
                 		 
 								

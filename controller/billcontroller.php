@@ -198,7 +198,7 @@ switch($mode)
 	$vote_id1			=	isset( $_POST['vote_id1'])?$_POST['vote_id1']:$vote_id1;
 	$vote_id2			=	isset( $_POST['vote_id2'])?$_POST['vote_id2']:0;
 	$vote_id3			=	isset( $_POST['vote_id3'])?$_POST['vote_id3']:0;	
-	$amount1			=	isset( $_POST['amount1'])?$_POST['amount1']:$amount1;
+	$amount1			=	isset( $_POST['amount1'])?$_POST['amount1']:0;
 	$amount2			=	isset( $_POST['amount2'])?$_POST['amount2']:0;
 	$amount3			=	isset( $_POST['amount3'])?$_POST['amount3']:0;
 	$details			=	isset( $_POST['details'])?$_POST['details']:'';	
@@ -230,7 +230,7 @@ switch($mode)
 	else
 	{
 
-	
+
 	$result = Bills :: saveNewSfhqBill($brach_id,
 									   $sfhq_id, 
 									   $allocated_regiment,
