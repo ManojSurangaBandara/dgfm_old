@@ -380,7 +380,7 @@ $branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
                          <td class="first"><strong>Cheque Date</strong></td>
                         <td> 
                         <label>
-                          <input name="chequeDate" type="date" required="" class="textBoxces" id="chequeDate" />
+                          <input name="chequeDate" type="date" class="textBoxces" id="chequeDate" />
                         </label>
                         </td>
                         

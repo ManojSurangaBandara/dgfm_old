@@ -338,7 +338,7 @@ $date_of_tec_appointed	=	isset( $_POST['txtdateoftechappointed'])?$_POST['txtdat
 		$branch_id		=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;
 		
 		$cheque_no 		= 	isset( $_POST['cheque_no'])?$_POST['cheque_no']:$cheque_no;		
-		$chequeDate 	= 	isset( $_POST['chequeDate'])?$_POST['chequeDate']:$chequeDate;		
+		$chequeDate 	= 	isset( $_POST['chequeDate']) && !empty($_POST['chequeDate']) ? $_POST['chequeDate']:'1000-01-01';		
 		
 			if($status=='false')
 			{					
