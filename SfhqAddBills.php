@@ -418,14 +418,14 @@ xmlhttp.send();
                  <td> <strong> From </strong> </td>
                           <td> <span id="sprytextfield2">
                         <label>
-                          <input name="from_period" type="date" required="" class="textBoxces" id="from_period"   />
+                          <input name="from_period" type="date" class="textBoxces" id="from_period"   />
                         </label>
                         </td>
                       
                     <td> <strong> To </strong> </td>
                           <td> <span id="sprytextfield2">
                         <label>
-                          <input name="to_period"  type="date" required="" class="textBoxces" id="to_period"  />
+                          <input name="to_period"  type="date" class="textBoxces" id="to_period"  />
                         </label>
                         </td>
               </table>

@@ -191,8 +191,8 @@ switch($mode)
 	$Payee_name			=	isset( $_POST['Payee_name'])?$_POST['Payee_name']:$Payee_name;	
 	$recieved_date		=	isset( $_POST['txtstart_date'])?$_POST['txtstart_date']:$txtstart_date;
     $ledger_date		=	isset( $_POST['ledger_date']) && !empty($_POST['ledger_date'])? $_POST['ledger_date']:'1000-01-01';
-	$from_period		=	isset( $_POST['from_period'])?$_POST['from_period']:$from_period;
-	$to_period			=	isset( $_POST['to_period'])?$_POST['to_period']:$to_period;
+	$from_period		=	isset( $_POST['from_period']) && !empty($_POST['from_period']) ?$_POST['from_period']:'1000-01-01';
+	$to_period			=	isset( $_POST['to_period']) && !empty($_POST['to_period']) ? $_POST['to_period']:'1000-01-01';
 	
 	$remarks			=	isset( $_POST['remarks'])?$_POST['remarks']:$remarks;
 	$vote_id1			=	isset( $_POST['vote_id1'])?$_POST['vote_id1']:$vote_id1;
