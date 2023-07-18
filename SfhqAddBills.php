@@ -383,7 +383,7 @@ xmlhttp.send();
 						<td class="first"><strong>Ledgered Date</strong></td>
 						<td class="last">
                         <label>
-                          <input name="ledger_date"  type="date" required="" class="textBoxces" id="ledger_date"  />
+                          <input name="ledger_date"  type="date" class="textBoxces" id="ledger_date"  />
                         </label>
                        </td>
 					</tr>	

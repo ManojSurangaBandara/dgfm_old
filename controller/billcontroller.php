@@ -190,7 +190,7 @@ switch($mode)
 	$bill_ref_no		=	isset( $_POST['bill_ref_no'])?$_POST['bill_ref_no']:$bill_ref_no;
 	$Payee_name			=	isset( $_POST['Payee_name'])?$_POST['Payee_name']:$Payee_name;	
 	$recieved_date		=	isset( $_POST['txtstart_date'])?$_POST['txtstart_date']:$txtstart_date;
-    $ledger_date		=	isset( $_POST['ledger_date'])?$_POST['ledger_date']:$ledger_date;
+    $ledger_date		=	isset( $_POST['ledger_date']) && !empty($_POST['ledger_date'])? $_POST['ledger_date']:'1000-01-01';
 	$from_period		=	isset( $_POST['from_period'])?$_POST['from_period']:$from_period;
 	$to_period			=	isset( $_POST['to_period'])?$_POST['to_period']:$to_period;
 	
@@ -272,7 +272,7 @@ switch($mode)
 	$bill_ref_no		=	isset( $_POST['bill_ref_no'])?$_POST['bill_ref_no']:$bill_ref_no;
 	$Payee_name			=	isset( $_POST['Payee_name'])?$_POST['Payee_name']:$Payee_name;	
 	$recieved_date		=	isset( $_POST['txtstart_date'])?$_POST['txtstart_date']:$txtstart_date;
-    $ledger_date		=	isset( $_POST['ledger_date'])?$_POST['ledger_date']:$ledger_date;
+    $ledger_date		=	isset( $_POST['ledger_date']) && !empty($_POST['ledger_date']) ? $_POST['ledger_date']:'1000-01-01';
 	
 	$from_period		=	isset( $_POST['from_period'])?$_POST['from_period']:$from_period;
 	$to_period			=	isset( $_POST['to_period'])?$_POST['to_period']:$to_period;
@@ -514,7 +514,7 @@ switch($mode)
 	$branch_id		 	=	isset( $_GET['branch_id'])?$_GET['branch_id']:$branch_id;  // this branch used to load previouse details in the project page
 	$brach_id			=	isset( $_POST['brach_id'])?$_POST['brach_id']:$brach_id;		
 	$bill_ref_no		=	isset( $_POST['bill_ref_no'])?$_POST['bill_ref_no']:$bill_ref_no;
-	$ledger_date		=	isset( $_POST['ledger_date'])?$_POST['ledger_date']:$ledger_date;
+	$ledger_date		=	isset( $_POST['ledger_date']) && !empty($_POST['ledger_date']) ? $_POST['ledger_date']:'1000-01-01';
     
     $Payee_name			=	isset( $_POST['Payee_name'])?$_POST['Payee_name']:$Payee_name;	
 	$recieved_date		=	isset( $_POST['txtstart_date'])?$_POST['txtstart_date']:$txtstart_date;	
@@ -646,7 +646,7 @@ switch($mode)
 	$brach_id			=	isset( $_POST['brach_id'])?$_POST['brach_id']:$brach_id;		
 	$allocated_regiment	=	isset( $_POST['allocated_regiment'])?$_POST['allocated_regiment']:$allocated_regiment;	
 	$bill_ref_no		=	isset( $_POST['bill_ref_no'])?$_POST['bill_ref_no']:$bill_ref_no;
-	$ledger_date		=	isset( $_POST['ledger_date'])?$_POST['ledger_date']:$ledger_date;
+	$ledger_date		=	isset( $_POST['ledger_date']) && !empty($_POST['ledger_date']) ? $_POST['ledger_date']:'1000-01-01';
         
     $Payee_name			=	isset( $_POST['Payee_name'])?$_POST['Payee_name']:$Payee_name;	
 	$recieved_date		=	isset( $_POST['txtstart_date'])?$_POST['txtstart_date']:$txtstart_date;
