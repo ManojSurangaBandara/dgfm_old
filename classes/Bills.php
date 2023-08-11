@@ -223,7 +223,7 @@ class Bills{
 		header("Location:../SfhqAddBills.php?msg=1&brach_id=".$brach_id."&maxresult=".$bill_no."&sup_id=".$Payee_name."&vote_id1=".$vote_id1."&vote_id2=".$vote_id2."&vote_id3=".$vote_id3."&votename=".$_POST['vote_name1']."&votename2=".$_POST['vote_name2']."&votename3=".$_POST['vote_name3']."&re_date=".$_POST['txtstart_date']."&in_date=".$_POST['invoice_date']."&details1=".$_POST['details']);
 		
 				}
-				elseif($result==false)
+				else
 				{
 					header("Location:../SfhqAddBills.php?msg=2");	
 				}		
@@ -430,7 +430,7 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 					header("Location:../ChiefAccAddbills.php?msg=1&brach_id=".$brach_id."&maxresult=".$bill_no."&sup_id=".$Payee_name."&vote_id1=".$vote_id1."&vote_id2=".$vote_id2."&vote_id3=".$vote_id3."&votename=".$_POST['vote_name1']."&votename2=".$_POST['vote_name2']."&votename3=".$_POST['vote_name3']."&re_date=".$_POST['txtstart_date']."&in_date=".$_POST['invoice_date']."&details1=".$_POST['details']);
 		
 				}
-				elseif($result==false)
+				else
 				{
 					header("Location:../ChiefAccAddbills.php?msg=2");	
 				}

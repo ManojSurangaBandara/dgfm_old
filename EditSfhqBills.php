@@ -379,7 +379,7 @@ xmlhttp.send();
               			<td class="first"><strong>Ledgered Date</strong></td>
 						<td class="last">
                         <label>
-                          <input name="ledger_date" value="<?php echo $row[35]; ?>"  type="date" required="" class="textBoxces" id="ledger_date"  />
+                          <input name="ledger_date" value="<?php echo $row[35]; ?>"  type="date" class="textBoxces" id="ledger_date"  />
                         </label>
                        </td>
 					</tr>	
@@ -412,12 +412,12 @@ xmlhttp.send();
                         
                         
                         <label>
-                          <input name="from_period" value="<?php echo $row[27]; ?>" type="date" required="" class="textBoxces" id="from_period"   />
+                          <input name="from_period" value="<?php echo $row[27]; ?>" type="date" class="textBoxces" id="from_period"   />
                         </label>
                        
                         
         <label>
-          <input name="to_period" value="<?php echo $row[28]; ?>"  type="date" required="" class="textBoxces" id="to_period"  />
+          <input name="to_period" value="<?php echo $row[28]; ?>"  type="date" class="textBoxces" id="to_period"  />
         </label>
         
                         

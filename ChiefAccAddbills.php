@@ -33,6 +33,19 @@ $maxresult  		= isset( $_GET['maxresult'])?$_GET['maxresult']:0 ;
 <script src="SpryAssets/SpryValidationSelect.js" type="text/javascript"></script>
 <script src="SpryAssets/SpryValidationTextarea.js" type="text/javascript"></script>
 <script language="JavaScript" type="text/JavaScript" src="js/comonscript.js"></script>
+<script type="text/javascript" src="jquery-1.4.1.js"></script>
+<script type="text/javascript" src="ui/jquery.ui.datepicker.js"></script>
+<link href="themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script>
+    $(function() {
+      $(".dateinput").datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: new Date(1000, 0, 1),
+        maxDate: null, // Optional: Set a maximum date if needed
+        showAnim: ""
+      });
+    });
+  </script>
 <script type="text/javascript">
 
 
@@ -265,7 +278,7 @@ xmlhttp.send();
                     <td> <strong> Date </strong> </td>
                           <td> <span id="sprytextfield2">
                         <label>
-                          <input name="invoice_date" type="date" required="" class="textBoxces" id="invoice_date" value="<?php echo $_GET['in_date'] ?? "";  ?>"  />
+                          <input name="invoice_date" type="text" required="" class="textBoxces dateinput" id="invoice_date" value="<?php echo $_GET['in_date'] ?? "";  ?>"  title="Minimum date allowed is '1000-01-01'"  pattern="(1[0-9]{3}|20[0-9]{2})-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1]|10|20)" placeholder="YYYY-MM-DD" />
                         </label>
                         </td>
               </table>
@@ -291,7 +304,7 @@ xmlhttp.send();
                     <td> <strong> Date </strong> </td>
                           <td> <span id="sprytextfield7">
                         <label>
-                          <input name="g35_date" type="date" required="" class="textBoxces" id="g35_date" value="<?php echo $_GET['in_date'] ?? "";  ?>"  />
+                          <input name="g35_date" type="text" required="" class="textBoxces dateinput" id="g35_date" value="<?php echo $_GET['in_date'] ?? "";  ?>"  title="Minimum date allowed is '1000-01-01'"  pattern="(1[0-9]{3}|20[0-9]{2})-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1]|10|20)" placeholder="YYYY-MM-DD" />
                         </label>
                         </td>
               </table>
@@ -336,7 +349,7 @@ xmlhttp.send();
 						<td class="first"><strong>Ledgered Date</strong></td>
 						<td class="last">
                         <label>
-                          <input name="ledger_date"  type="date" required="" class="textBoxces" id="ledger_date"  />
+                          <input name="ledger_date"  type="text" class="textBoxces dateinput" id="ledger_date"  title="Minimum date allowed is '1000-01-01'"  pattern="(1[0-9]{3}|20[0-9]{2})-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1]|10|20)" placeholder="YYYY-MM-DD" />
                         </label>
                        </td>
 					</tr>	
@@ -350,7 +363,7 @@ xmlhttp.send();
 						<td class="first"><strong>Received Date</strong></td>
 						<td class="last"><span id="sprytextfield4">
                         <label>
-                          <input name="txtstart_date"  type="date" required="" class="textBoxces" id="txtstart_date" value="<?php echo $_GET['re_date'] ?? "";  ?>"  />
+                          <input name="txtstart_date"  type="text" required="" class="textBoxces dateinput" id="txtstart_date" value="<?php echo $_GET['re_date'] ?? "";  ?>"  title="Minimum date allowed is '1000-01-01'"  pattern="(1[0-9]{3}|20[0-9]{2})-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1]|10|20)" placeholder="YYYY-MM-DD" />
                         </label>
                         </td>
 					</tr>	
@@ -371,14 +384,14 @@ xmlhttp.send();
                  <td> <strong> From </strong> </td>
                           <td> <span id="sprytextfield2">
                         <label>
-                          <input name="from_period" type="date" required="" class="textBoxces" id="from_period"   />
+                          <input name="from_period" type="text" class="textBoxces dateinput" id="from_period"   title="Minimum date allowed is '1000-01-01'"  pattern="(1[0-9]{3}|20[0-9]{2})-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1]|10|20)" placeholder="YYYY-MM-DD" />
                         </label>
                         </td>
                       
                     <td> <strong> To </strong> </td>
                           <td> <span id="sprytextfield2">
                         <label>
-                          <input name="to_period"  type="date" required="" class="textBoxces" id="to_period"  />
+                          <input name="to_period"  type="text" class="textBoxces dateinput" id="to_period"  title="Minimum date allowed is '1000-01-01'"  pattern="(1[0-9]{3}|20[0-9]{2})-(0[1-9]|1[0-2])-([0-2][1-9]|3[0-1]|10|20)" placeholder="YYYY-MM-DD" />
                         </label>
                         </td>
               </table>

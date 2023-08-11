@@ -2663,7 +2663,7 @@ INNER JOIN m_branches as b on b.branch_id=p.Branch_ID and b.Related_to_sfhq=1 OR
 		$ins = "INSERT INTO del_sfhq_bill_details ( Bill_No,Bill_ref_no,Sup_Code,Recieved_Date,	Invoice_No,
 		G35_No,G35_Date,Invoice_date,Sfhq_Id,Vote_ID,Amount,Cheque_No,Returned_Date,Create_Date,Create_User_ID,
 		Deleted_Date,Deleted_User_ID)
-		SELECT s.Bill_No,s.Bill_ref_no,s.Sup_Code,s.Recieved_Date,s.Invoice_No,s.Invoice_date,s.G35_No,s.G35_Date,
+		SELECT s.Bill_No,s.Bill_ref_no,s.Sup_Code,s.Recieved_Date,s.Invoice_No,s.G35_No,s.G35_Date,s.Invoice_date,
 		s.Sfhq_Id,v.Vote_ID,v.Amount,s.Cheque_No,r.rtn_date,s.Create_Date,s.Create_User_ID,'$today',$user_id
 		FROM sfhq_bill_details AS s
 		INNER JOIN sfhq_vote_bill_amount AS v ON v.Bill_Id = s.Bill_Id AND v.Bill_No = s.Bill_No
@@ -2678,7 +2678,7 @@ $sqldelete2  = "DELETE FROM sfhq_bill_details WHERE Bill_Id = $id and Bill_No = 
 $sqldelete3  = "DELETE FROM sfhq_return_details WHERE Bill_Id = $id ";	
 		
 		//echo $ins; die();
-
+		
 		$insdata = $db1->Execute($ins);	
 		
 		if($insdata==1){

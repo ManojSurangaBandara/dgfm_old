@@ -198,9 +198,9 @@ switch($mode)
 	$vote_id1			=	isset( $_POST['vote_id1'])?$_POST['vote_id1']:$vote_id1;
 	$vote_id2			=	isset( $_POST['vote_id2'])?$_POST['vote_id2']:0;
 	$vote_id3			=	isset( $_POST['vote_id3'])?$_POST['vote_id3']:0;	
-	$amount1			=	isset( $_POST['amount1'])?$_POST['amount1']:0;
-	$amount2			=	isset( $_POST['amount2'])?$_POST['amount2']:0;
-	$amount3			=	isset( $_POST['amount3'])?$_POST['amount3']:0;
+	$amount1			=	isset( $_POST['amount1']) && !empty($_POST['amount1']) ? $_POST['amount1']:0;
+	$amount2			=	isset( $_POST['amount2']) && !empty($_POST['amount2']) ? $_POST['amount2']:0;
+	$amount3			=	isset( $_POST['amount3']) && !empty($_POST['amount3']) ? $_POST['amount3']:0;
 	$details			=	isset( $_POST['details'])?$_POST['details']:'';	
 	
 	$ststus				= 0;			
@@ -274,8 +274,8 @@ switch($mode)
 	$recieved_date		=	isset( $_POST['txtstart_date'])?$_POST['txtstart_date']:$txtstart_date;
     $ledger_date		=	isset( $_POST['ledger_date']) && !empty($_POST['ledger_date']) ? $_POST['ledger_date']:'1000-01-01';
 	
-	$from_period		=	isset( $_POST['from_period'])?$_POST['from_period']:$from_period;
-	$to_period			=	isset( $_POST['to_period'])?$_POST['to_period']:$to_period;
+	$from_period		=	isset( $_POST['from_period']) && !empty($_POST['from_period']) ? $_POST['from_period']:'1000-01-01';
+	$to_period			=	isset( $_POST['to_period']) && !empty($_POST['to_period']) ? $_POST['to_period']:'1000-01-01';
 	
 	$Invoice_no			=	isset( $_POST['Invoice_no'])?$_POST['Invoice_no']:$Invoice_no;
 	$invoice_date		=	isset( $_POST['invoice_date'])?$_POST['invoice_date']:$invoice_date;
@@ -288,9 +288,9 @@ switch($mode)
 	$vote_id1			=	isset( $_POST['vote_id1'])?$_POST['vote_id1']:$vote_id1;
 	$vote_id2			=	isset( $_POST['vote_id2'])?$_POST['vote_id2']:0;
 	$vote_id3			=	isset( $_POST['vote_id3'])?$_POST['vote_id3']:0;	
-	$amount1			=	isset( $_POST['amount1'])?$_POST['amount1']:$amount1;
-	$amount2			=	isset( $_POST['amount2'])?$_POST['amount2']:0;
-	$amount3			=	isset( $_POST['amount3'])?$_POST['amount3']:0;
+	$amount1			=	isset( $_POST['amount1']) && !empty($_POST['amount1']) ? $_POST['amount1']:0;
+	$amount2			=	isset( $_POST['amount2']) && !empty($_POST['amount2']) ? $_POST['amount2']:0;
+	$amount3			=	isset( $_POST['amount3']) && !empty($_POST['amount3']) ? $_POST['amount3']:0;
 	$details			=	isset( $_POST['details'])?$_POST['details']:'';
 
 	$user_id			=	isset( $_GET['user_id'])?$_GET['user_id']:$user_id;	
@@ -525,14 +525,14 @@ switch($mode)
 	$remarks			=	isset( $_POST['remarks'])?$_POST['remarks']:$remarks;
 	$details			=	isset( $_POST['details'])?$_POST['details']:'';
 	
-	$from_period		=	isset( $_POST['from_period'])?$_POST['from_period']:$from_period;
-	$to_period			=	isset( $_POST['to_period'])?$_POST['to_period']:$to_period;
+	$from_period		=	isset( $_POST['from_period']) && !empty($_POST['from_period']) ? $_POST['from_period']:'1000-01-01';
+	$to_period			=	isset( $_POST['to_period']) && !empty($_POST['to_period']) ? $_POST['to_period']:'1000-01-01';
 	$vote_id1			=	isset( $_POST['vote_id1'])?$_POST['vote_id1']:$vote_id1;
 	$vote_id2			=	isset( $_POST['vote_id2'])?$_POST['vote_id2']:0;
 	$vote_id3			=	isset( $_POST['vote_id3'])?$_POST['vote_id3']:0;	
-	$amount1			=	isset( $_POST['amount1'])?$_POST['amount1']:0;
-	$amount2			=	isset( $_POST['amount2'])?$_POST['amount2']:0;
-	$amount3			=	isset( $_POST['amount3'])?$_POST['amount3']:0;	
+	$amount1			=	isset( $_POST['amount1']) && !empty($_POST['amount1']) ? $_POST['amount1']:0;
+	$amount2			=	isset( $_POST['amount2']) && !empty($_POST['amount2']) ? $_POST['amount2']:0;
+	$amount3			=	isset( $_POST['amount3']) && !empty($_POST['amount3']) ? $_POST['amount3']:0;	
 	$billidxx1			=	isset( $_POST['hdnbill_id1'])?$_POST['hdnbill_id1']:0;
 	$billidxx2			=	isset( $_POST['hdnbill_id2'])?$_POST['hdnbill_id2']:0;
 	$billidxx3			=	isset( $_POST['hdnbill_id3'])?$_POST['hdnbill_id3']:0;
@@ -542,10 +542,6 @@ switch($mode)
 	$modified_date		=	date('Y-m-d');
 	$modified_user		= 	$_SESSION['userID'];
 	$log_year			= $_SESSION['log_year'];	
-
-	$amount1 = empty($amount1) ? 0 : $amount1;
-	$amount2 = empty($amount2) ? 0 : $amount2;
-	$amount3 = empty($amount3) ? 0 : $amount3;
 
 	$project_id	 	=	isset( $_GET['projectid'])?$_GET['projectid']:$project_id;
 		
@@ -651,8 +647,8 @@ switch($mode)
     $Payee_name			=	isset( $_POST['Payee_name'])?$_POST['Payee_name']:$Payee_name;	
 	$recieved_date		=	isset( $_POST['txtstart_date'])?$_POST['txtstart_date']:$txtstart_date;
 	
-	$from_period		=	isset( $_POST['from_period'])?$_POST['from_period']:$from_period;
-	$to_period		=	isset( $_POST['to_period'])?$_POST['to_period']:$to_period;
+	$from_period		=	isset( $_POST['from_period']) && !empty($_POST['from_period']) ? $_POST['from_period']:'1000-01-01';
+	$to_period			=	isset( $_POST['to_period']) && !empty($_POST['to_period']) ? $_POST['to_period']:'1000-01-01';
 	
 	$Invoice_no			=	isset( $_POST['Invoice_no'])?$_POST['Invoice_no']:$Invoice_no;
 	$invoice_date		=	isset( $_POST['invoice_date'])?$_POST['invoice_date']:$invoice_date;
@@ -664,9 +660,9 @@ switch($mode)
 	$vote_id1			=	isset( $_POST['vote_id1'])?$_POST['vote_id1']:$vote_id1;
 	$vote_id2			=	isset( $_POST['vote_id2'])?$_POST['vote_id2']:$vote_id2;
 	$vote_id3			=	isset( $_POST['vote_id3'])?$_POST['vote_id3']:$vote_id3;	
-	$amount1			=	isset( $_POST['amount1'])?$_POST['amount1']:$amount1;
-	$amount2			=	isset( $_POST['amount2'])?$_POST['amount2']:$amount2;
-	$amount3			=	isset( $_POST['amount3'])?$_POST['amount3']:$amount3;
+	$amount1			=	isset( $_POST['amount1']) && !empty($_POST['amount1']) ? $_POST['amount1']:0;
+	$amount2			=	isset( $_POST['amount2']) && !empty($_POST['amount2']) ? $_POST['amount2']:0;
+	$amount3			=	isset( $_POST['amount3']) && !empty($_POST['amount3']) ? $_POST['amount3']:0;
 	$details			=	isset( $_POST['details'])?$_POST['details']:'';
 	
 	$billidxx1			=	isset( $_POST['hdnbill_id1'])?$_POST['hdnbill_id1']:0;
