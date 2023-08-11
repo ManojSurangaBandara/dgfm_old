@@ -11,6 +11,8 @@ class db_con{
 		try {
 			$this->conn = new PDO("mysql:host=$this->hostname;dbname=$this->dbname", $this->username, $this->password);
 			$this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			$sql = "SET SESSION sql_mode = 'NO_ZERO_IN_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION'";
+    		$this->conn->exec($sql);
 		} catch (PDOException $e) {
 			echo 'Error: ' . $e->getMessage();
 		}
