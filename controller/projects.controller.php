@@ -356,12 +356,15 @@ $date_of_tec_appointed	=	isset( $_POST['txtdateoftechappointed'])?$_POST['txtdat
 			
 			if($data['is_vehicle']==1){			
 				
-			$username = 'esmsusr_280';
-			$password = '2d6egs3';
-			$session= createSession('', $username, $password,'');
-			sendMessages($session,'SL ARMY FIN',$data['smsbody'],$data['mob'],0);
-			closeSession($session);
-			
+				$username = 'esmsusr_280';
+				$password = '2d6egs3';
+				try{
+					$session= createSession('', $username, $password,'');
+					sendMessages($session,'SL ARMY FIN',$data['smsbody'],$data['mob'],0);
+					closeSession($session);
+				} catch (Exception $exc) {
+
+				}
 			}
 			
 			

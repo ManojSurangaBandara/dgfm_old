@@ -32,7 +32,8 @@
 function getClient()
 {
 	ini_set("soap.wsdl_cache_enabled", "0");
-	$client = new SoapClient("http://smeapps.mobitel.lk:8585/EnterpriseSMSV3/EnterpriseSMSWS?wsdl");
+	// $client = new SoapClient("http://smeapps.mobitel.lk:8585/EnterpriseSMSV3/EnterpriseSMSWS?wsdl");
+	$client = new SoapClient("https://msmsenterpriseapi.mobitel.lk/mSMSEnterpriseAPI/mSMSEnterpriseAPI.wsdl");
 	return $client;
 }
 
