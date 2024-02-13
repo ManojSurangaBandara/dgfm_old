@@ -162,6 +162,7 @@
 					 ,"<strong>G-35 Date</strong>"
 					 ,"<strong>G-35 No</strong>"
 					,"<strong>Received Date</strong>"
+					,"<strong>Received Month</strong>"
 					,"<strong>Reference No</strong>"
 					,"<strong>Remarks</strong>"	
 					,"<strong>Entered Date</strong>"
@@ -190,6 +191,7 @@
 					 ,"<strong>G-35 Date</strong>"
 					 ,"<strong>G-35 No</strong>"						
 					,"<strong>Received Date</strong>"
+					,"<strong>Received Month</strong>"
 					,"<strong>Reference No</strong>"
 					,"<strong>Remarks</strong>"	
 					,"<strong>Entered Date</strong>"
@@ -224,6 +226,7 @@
 					,"<strong>G-35 Date</strong>"
 					,"<strong>G-35 No</strong>"
 					,"<strong>Received Date</strong>"
+					,"<strong>Received Month</strong>"
 					,"<strong>Reference No</strong>"
 					,"<strong>Remarks</strong>"		
 					,"<strong>Entered Date</strong>"
@@ -257,6 +260,7 @@
 					 ,"<strong>G-35 Date</strong>"
 					 ,"<strong>G-35 No</strong>"				 
 					 ,"<strong>Received Date</strong>"
+					 ,"<strong>Received Month</strong>"
 					 ,"<strong>Reference No</strong>"
 					 ,"<strong>Remarks</strong>"		
 					 ,"<strong>Entered Date</strong>"
@@ -311,6 +315,7 @@
 				$excel->writeCol($rowesrunit[16]);
 				$excel->writeCol($rowesrunit[15]);				
 				$excel->writeCol($rowesrunit[7]);
+				$excel->writeCol(date('m', strtotime($rowesrunit[7])));
 				$excel->writeCol($rowesrunit[8]);
 				$excel->writeCol($rowesrunit[9]);				
 				$excel->writeCol($rowesrunit[10]);
