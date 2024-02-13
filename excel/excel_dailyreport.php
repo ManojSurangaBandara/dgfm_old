@@ -151,6 +151,7 @@
 					 ,"<strong>Directorate Name</strong>"
 					 ,"<strong>Supplier Name</strong>"					  
 					 ,"<strong>Supplier Address</strong>"
+					 ,"<strong>Supplier Mobile No</strong>"
 					 ,"<strong>VAT Reg Number</strong>"		
 					 ,"<strong>Bill Period</strong>"				 
 					,"<strong>Vote Code</strong>"
@@ -178,6 +179,7 @@
 					 ,"<strong>Directorate Name</strong>"
 					 ,"<strong>Supplier Name</strong>"					  
 					 ,"<strong>Supplier Address</strong>"
+					 ,"<strong>Supplier Mobile No</strong>"
 					 ,"<strong>VAT Reg Number</strong>"	
 					  ,"<strong>Bill Period</strong>"				 
 					 ,"<strong>Vote Code</strong>"
@@ -211,6 +213,7 @@
 					 ,"<strong>Directorate Name</strong>"
 					 ,"<strong>Supplier Name</strong>"					  
 					 ,"<strong>Supplier Address</strong>"
+					 ,"<strong>Supplier Mobile No</strong>"
 					 ,"<strong>VAT Reg Number</strong>"	
 					  ,"<strong>Bill Period</strong>"				 
 					,"<strong>Vote Code</strong>"
@@ -243,6 +246,7 @@
 					 ,"<strong>Directorate Name</strong>"
 					 ,"<strong>Supplier Name</strong>"					 
 					 ,"<strong>Supplier Address</strong>"
+					 ,"<strong>Supplier Mobile No</strong>"
 					 ,"<strong>VAT Reg Number</strong>"	
 					  ,"<strong>Bill Period</strong>"				 
 					 ,"<strong>Vote Code</strong>"
@@ -294,7 +298,8 @@
 				$excel->writeCol($rowesrunit[1]);
 				$excel->writeCol($rowesrunit[2]);	
 				$excel->writeCol($rowesrunit[3]);				
-				$excel->writeCol($rowesrunit[22].", ".$rowesrunit[23].", ".$rowesrunit[24].", ".$rowesrunit[25]);	
+				$excel->writeCol($rowesrunit[22].", ".$rowesrunit[23].", ".$rowesrunit[24].", ".$rowesrunit[25]);
+				$excel->writeCol($rowesrunit[32]);	
 				$excel->writeCol($rowesrunit[18]);	
 				$excel->writeCol($rowesrunit[26]." - ".$rowesrunit[27]);								
 				$excel->writeCol($rowesrunit[4]);

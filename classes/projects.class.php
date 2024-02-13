@@ -1382,6 +1382,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		END ) as vehNo
         ,l.Veh_Place
         ,b.ledger_date
+		,s.mobile
 		
 		FROM sfhq_bill_details as b 
 		INNER JOIN m_supplier_list as s on b.Sup_Code=s.Sup_id	AND s.sup_type_id=$sup_type_id									
@@ -1448,6 +1449,7 @@ AND ab.Bill_Staus = 1 WHERE ab.Vote_ID = V.vote_id AND ab.Bill_Staus = 1),0)
 		END ) as vehNo
 		,l.Veh_Place
         ,b.ledger_date
+		,s.mobile
         
 		FROM txt_bill_details as b 
 		INNER JOIN m_supplier_list as s on b.Bill_Name =s.Sup_id AND s.sup_type_id=$sup_type_id									
