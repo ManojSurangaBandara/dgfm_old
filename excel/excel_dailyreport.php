@@ -7,9 +7,14 @@
 
 	    	
 	$today = date("m.d.y");
-	$totalReport = $_SESSION['totalReport'] ?? 0; 
+	$totalReport = $_SESSION['totalReport'] ?? 0;
+	$accoffice = $_POST['accoffice'] ?? 0;
+	if ($accoffice == 1) {
+		$totalReport = 1;
+	}				
+
 	if ($totalReport == 0) {
-		$sfhq_id 	= $_SESSION['sfhqID'];
+		$sfhq_id = $_SESSION['sfhqID'];
 	} else {
 		$sfhq_id = -1;
 	}

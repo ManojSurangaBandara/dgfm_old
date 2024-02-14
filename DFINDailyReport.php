@@ -98,6 +98,17 @@ ddaccordion.init({
 						<th class="full" colspan="2">&nbsp;</th>
 					</tr>
                     
+					<tr>
+						<td ><strong>Account Office</strong></td>
+						<td>
+							<label>             
+								<select name="accoffice"  id="accoffice"  style="width:120px;" >
+									<option value="0">DFIN only</option>
+									<option value="1">DFIN & all SFHQ</option>           
+								</select>
+							</label> 
+						</td>
+					</tr>
                         
 					<tr>
 						<td ><strong>Report Type</strong></td>
