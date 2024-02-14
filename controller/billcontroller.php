@@ -81,7 +81,7 @@ switch($mode)
 	case 'reportdgfm':	
 	
 	
-	$accoffice 			= 	isset( $_POST['accoffice'])?$_POST['accoffice']:$accoffice;	
+	$accoffice 			= 	isset( $_POST['accoffice'])?$_POST['accoffice']:$accoffice;
 	$rtptype			=	isset( $_POST['rtptype'])?$_POST['rtptype']:$rtptype;
 	
 	
@@ -128,41 +128,50 @@ switch($mode)
 				
 				////////	 This is for Sfhqs reports
 				
-				if(($accoffice > 0) && ($rtptype==1))				
+				if(($accoffice > 0 && $accoffice < 8) && ($rtptype==1))				
 				{
 				
 					$_SESSION['sfhqID'] = $accoffice;						
 					header("Location:../SupplierStatment.php");	
 				}
-				if(($accoffice > 0) && ($rtptype==2))				
+				if(($accoffice > 0 && $accoffice < 8) && ($rtptype==2))				
 				{
 					$_SESSION['sfhqID'] = $accoffice;
 					header("Location:../VoteStatmentReprt.php");	
 				}
-				if(($accoffice > 0) && ($rtptype==3))				
+				if(($accoffice > 0 && $accoffice < 8) && ($rtptype==3))				
 				{
 					$_SESSION['sfhqID'] = $accoffice;
 					header("Location:../SupOutstandReciDate.php");	
 				}
-				if(($accoffice > 0) && ($rtptype==4))				
+				if(($accoffice > 0 && $accoffice < 8) && ($rtptype==4))				
 				{
 					$_SESSION['sfhqID'] = $accoffice;
 					header("Location:../SupAgeAnalysisonlyreport.php");	
 				}
-				if(($accoffice > 0) && ($rtptype==5))				
+				if(($accoffice > 0 && $accoffice < 8) && ($rtptype==5))				
 				{
 					$_SESSION['sfhqID'] = $accoffice;
 					header("Location:../AgeAnalysisofOutStanding.php");	
 				}
-				if(($accoffice > 0) && ($rtptype==6))				
+				if(($accoffice > 0 && $accoffice < 8) && ($rtptype==6))				
 				{
 					$_SESSION['sfhqID'] = $accoffice;
 					header("Location:../DirSummeryRpt.php");	
 				}
 				
-				if(($accoffice > 0) && ($rtptype==7))				
+				if(($accoffice > 0 && $accoffice < 8) && ($rtptype==7))				
 				{
 					$_SESSION['sfhqID'] = $accoffice;
+					header("Location:../dailyreport.php");	
+				}
+
+				// this is for DFIN & all SFHQ daily reports
+				
+				if(($accoffice == 8) && ($rtptype==7))				
+				{
+					// $_SESSION['sfhqID'] = 8;
+					$_SESSION['totalReport'] = 1;
 					header("Location:../dailyreport.php");	
 				}
 			

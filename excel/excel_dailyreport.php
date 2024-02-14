@@ -5,13 +5,16 @@
 	include('../classes/projects.class.php');	
 	include("excelwriter.inc.php");
 
-
 	    	
-	$today = date("m.d.y");	
-	$sfhq_id 	= $_SESSION['sfhqID'];	
+	$today = date("m.d.y");
+	$totalReport = $_SESSION['totalReport'] ?? 0; 
+	if ($totalReport == 0) {
+		$sfhq_id 	= $_SESSION['sfhqID'];
+	} else {
+		$sfhq_id = -1;
+	}
+
 	$excel=new ExcelWriter($sfhq_id."Daily_Report.xls");	
-	
-	
 	
 	if($excel==false){
 		echo $excel->error;
@@ -33,31 +36,23 @@
 			$sfhq_name='Dte of Fin ';
 			$trans_vote = isset( $_POST['trans_vote'])?$_POST['trans_vote']:$trans_vote;
 			
-			if($trans_vote==0){		
+			if($trans_vote==0){
 			$vttype='vt_type_id';						
 			$sup_type_id='s.sup_type_id'; 
 			$veh_type = "All Type of Supplier";
 			}
 			else {
-				
-							
 				$sup_type_id=1;
 				$vttype='vt_type_id and vt_type_id != 13';  // hard corded to remove unwanted votes
 				$trns_title = "Removed Transferble Votes and Supplier";
-				
-				
 			}
-			
-			
-		}
-		
-		else {
-		$sfname = Projects :: GetSFHQName($sfhq_id);
-		
-		foreach ($sfname as $sftitle) {
-			$sfhq_name = $sftitle[0];
-		}
-					
+		} elseif ($sfhq_id > 0) {
+			$sfname = Projects :: GetSFHQName($sfhq_id);
+			foreach ($sfname as $sftitle) {
+				$sfhq_name = $sftitle[0];
+			}
+		} elseif ($sfhq_id == -1) {
+			$sfhq_name = "Dte of Fin & all SFHQ";
 		}
 		
 		
@@ -93,22 +88,17 @@
 		
 		//echo $vttype; die();
 		
-		if($vttype==0 && $trans_vote==0){			
+		if ($vttype==0 && $trans_vote==0) {			
 			$vttype='vt_type_id';
 			$vt_title='All';			
 			$sup_type_id='s.sup_type_id';  // thiis requirement is only for Chief acc rporting 5 suppliers have been made 0 for getting this report manualy 
 			
-		}
-		
-		else {
-		$sup_type_id=1;   // thiis requirement is only for Chief acc rporting 5 suppliers have been made 0 for getting this report manualy 	
-			
-		$vttitle = Projects :: GetTypesofVotes($vttype);
-		
-		foreach ($vttitle as $title) {
-			$vt_title = $title[0];
-		}
-					
+		} else {
+			$sup_type_id=1;   // thiis requirement is only for Chief acc rporting 5 suppliers have been made 0 for getting this report manualy 	
+			$vttitle = Projects :: GetTypesofVotes($vttype);
+			foreach ($vttitle as $title) {
+				$vt_title = $title[0];
+			}
 		}
 		
 		
@@ -282,20 +272,33 @@
 		$excel->writeLine($myArr);	
 		
 		
-		if($sfhq_id>0){		
+		if($sfhq_id > 0){		
 			
 		$esrunit = Projects :: GetDailyReportforSfhq($billstatus,$txt_as_at_date,$txt_to_date,$sfhq_id,$dtrange,$veh_val,$vttype,$sup_type_id );	
 		}
 		
-		else 
+		elseif ($sfhq_id == 0)
 		{
 			$esrunit = Projects :: GetDailyReportforTripoli($billstatus,$txt_as_at_date,$txt_to_date,$dtrange,$veh_val,$vttype,$sup_type_id);	
+		} elseif ($sfhq_id == -1) {
+
+			$esrunit_1 = Projects :: GetDailyReportforSfhq($billstatus,$txt_as_at_date,$txt_to_date, 1 ,$dtrange,$veh_val,$vttype,$sup_type_id );	
+			$esrunit_2 = Projects :: GetDailyReportforSfhq($billstatus,$txt_as_at_date,$txt_to_date, 2 ,$dtrange,$veh_val,$vttype,$sup_type_id );	
+			$esrunit_3 = Projects :: GetDailyReportforSfhq($billstatus,$txt_as_at_date,$txt_to_date, 3 ,$dtrange,$veh_val,$vttype,$sup_type_id );	
+			$esrunit_4 = Projects :: GetDailyReportforSfhq($billstatus,$txt_as_at_date,$txt_to_date, 4 ,$dtrange,$veh_val,$vttype,$sup_type_id );	
+			$esrunit_5 = Projects :: GetDailyReportforSfhq($billstatus,$txt_as_at_date,$txt_to_date, 5 ,$dtrange,$veh_val,$vttype,$sup_type_id );	
+			$esrunit_6 = Projects :: GetDailyReportforSfhq($billstatus,$txt_as_at_date,$txt_to_date, 6 ,$dtrange,$veh_val,$vttype,$sup_type_id );	
+			$esrunit_7 = Projects :: GetDailyReportforSfhq($billstatus,$txt_as_at_date,$txt_to_date, 7 ,$dtrange,$veh_val,$vttype,$sup_type_id );	
+			$esrunit_8 = Projects :: GetDailyReportforTripoli($billstatus,$txt_as_at_date,$txt_to_date,$dtrange,$veh_val,$vttype,$sup_type_id);
+		
+			$esrunit = array_merge($esrunit_1, $esrunit_2, $esrunit_3, $esrunit_4, $esrunit_5, $esrunit_6, $esrunit_7, $esrunit_8);
+			
+			$_SESSION['totalReport'] = 0;
 		}
 		$i=1;		
 		
 		$total=0;
-		//echo $esrunit;
-		//die();
+		// echo $esrunit;
 					
 	foreach ($esrunit as $rowesrunit) {
 				$excel->writeCol($i);	

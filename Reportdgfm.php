@@ -103,48 +103,50 @@ ddaccordion.init({
                     	
 						<th class="full" colspan="2">&nbsp;</th>
 					</tr>
-                    
-                        
+
+                    <tr class="bg">
+
+						<td valign="top" class="first"><strong>Report Type</strong></td>
+						<td class="last"> &nbsp;  
+						<select name="rtptype" class="ComboBoxcesSmall" id="rtptype"  style="width:220px;" >                      
+							<option value="0" >- Please Select -</option> 
+							<option value="1" >Supplier Statement</option> 
+							<option value="2" >Vote Statement</option>
+							<option value="3" >Supplier Outstanding</option>  
+							<option value="4" >Supplier Age Analysis </option>
+							<option value="5" >Vote Age Analysis </option>                     
+							<option value="6" >Directorate Summary</option>       
+							<option value="7" >Daily Report</option>         
+						</select></td>
+                      
+                      
+		    		</tr>  
+
 					<tr>
 						<td ><strong>Account Office</strong></td>
 					    <td class="last"> &nbsp;  
                         
-                        <select name="accoffice" class="ComboBoxcesSmall" id="accoffice"  style="width:220px;" >
-                        
-                         <?php if($user_type_id==2) { ?>
-                        
-                       <option value="0" >DIRECTORATE OF FINANCE</option>
-                          
-                    <?php } ?>
-                           
-                          <option value="1" >SFHQ(WEST)</option>  
-                          <option value="2" >SFHQ(W)</option>
-                          <option value="3" >SFHQ(E)</option>  
-                          <option value="4" >SFHQ(J)</option>
-                          <option value="5" >SFHQ(KLN)</option>  
-                          <option value="6" >SFHQ(M)</option>
-                          <option value="7" >SFHQ(C)</option>
-                        
-            </select></td>
+							<select  disabled name="accoffice" class="ComboBoxcesSmall" id="accoffice"  style="width:220px;" >
+
+								<option value="-1" disabled selected ></option>
+								<?php if($user_type_id==2) {?>
+
+									<option value="0" >DIRECTORATE OF FINANCE</option>
+
+								<?php } ?>
+
+									<option value="1" >SFHQ(WEST)</option>  
+									<option value="2" >SFHQ(W)</option>
+									<option value="3" >SFHQ(E)</option>  
+									<option value="4" >SFHQ(J)</option>
+									<option value="5" >SFHQ(KLN)</option>  
+									<option value="6" >SFHQ(M)</option>
+									<option value="7" >SFHQ(C)</option>
+
+							</select></td>
        
 					</tr>
-					
-                              	<tr class="bg">
 
-					  <td valign="top" class="first"><strong>Report Type</strong></td>
-					  <td class="last"> &nbsp;  
-                      <select name="rtptype" class="ComboBoxcesSmall" id="rtptype"  style="width:220px;" >                      
-                      <option value="1" >Supplier Statement</option> 
-                      <option value="2" >Vote Statement</option>
-                      <option value="3" >Supplier Outstanding</option>  
-                      <option value="4" >Supplier Age Analysis </option>
-                      <option value="5" >Vote Age Analysis </option>                     
-                      <option value="6" >Directorate Summary</option>       
-                      <option value="7" >Daily Report</option>         
-            </select></td>
-                      
-                      
-		    		</tr>  
                     <tr class="bg">
 
 					  <td class="last">&nbsp;</td>
@@ -181,6 +183,31 @@ var spryselect1 = new Spry.Widget.ValidationSelect("spryselect1", {invalidValue:
 var sprytextfield1 = new Spry.Widget.ValidationTextField("sprytextfield1");
 var sprytextfield2 = new Spry.Widget.ValidationTextField("sprytextfield2");
 //-->
+</script>
+
+<script>
+	var reportType = document.getElementById('rtptype');
+	reportType.addEventListener('change', function () {
+
+		var accOffice = document.getElementById('accoffice');
+		accOffice.disabled = false;
+		
+		if (reportType.options[7].selected) {
+			const newOption = document.createElement('option');
+			const optionText = document.createTextNode('DFIN & all SFHQ');
+			newOption.appendChild(optionText);
+			newOption.setAttribute('value','8');
+			accOffice.appendChild(newOption);
+		} else {
+			for (var i = 0 ; i < accOffice.options.length; i++) {
+				if (accOffice.options[i].value == "8") {
+					accOffice.remove(i);
+				}
+			}
+		}
+		accOffice[0].innerHTML = '~ Please Select ~';
+		accOffice[0].selected = true;
+	});
 </script>
 </body>
 </html>
