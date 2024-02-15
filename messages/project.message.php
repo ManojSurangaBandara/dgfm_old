@@ -149,6 +149,10 @@ switch($msg)
 	case '35':
 	$display_msg = "Incorrect Operational Controller";
 	break;
+
+	case '36':
+	$display_msg = "Invoice Number Exist";
+	break;
 }
 echo "<b>".$display_msg."</b>";
 ?>

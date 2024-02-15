@@ -319,9 +319,9 @@ switch($mode)
 	if( ($invoice_date > $recieved_date) || ($from_period > $to_period) )
 	{
 		header("Location:../ChiefAccAddbills.php?msg=27");
-	}
-	else
-	{		
+	} elseif (Bills::isInvoiceExist($Payee_name, $Invoice_no)) {
+		header("Location:../ChiefAccAddbills.php?msg=36");
+	} else {		
 	
 	$result = Bills :: saveNewBigUserBill(
 									   $brach_id,			   

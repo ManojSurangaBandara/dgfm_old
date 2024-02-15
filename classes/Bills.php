@@ -871,6 +871,19 @@ VALUES ('$bill_no',$vote_id1,'$amount1',EXTRACT(YEAR FROM CURDATE()),(SELECT MAX
 
 	}
 
+	public static function isInvoiceExist($Payee_name, $Invoice_no) 
+	{
+		$db1 = new db_con();
+		$sql = "SELECT * FROM txt_bill_details WHERE Bill_Name='".$Payee_name."' AND Invoice_No='".$Invoice_no."'";
+		$data = $db1->GetAll($sql);
+
+		if (Count($data) > 0) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
 	
 	
 }
