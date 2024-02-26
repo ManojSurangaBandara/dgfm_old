@@ -164,6 +164,8 @@
                     ,"<strong>Ledgered Date</strong>"
 					,"<strong>Vehicle No</strong>"	
                     ,"<strong>Vehicle Running Place</strong>"	
+
+                    ,"<strong>Activated Date</strong>"	
 						
 						,"");
 		}
@@ -268,6 +270,8 @@
 					 ,"<strong>Check Date</strong>"
 					 ,"<strong>Return Date</strong>"	
 					 ,"<strong>Return Reason</strong>"
+
+					 ,"<strong>Activated Date</strong>"	
 					
 					 ,"");
 		}
@@ -332,8 +336,9 @@
                 $excel->writeCol($rowesrunit[30]);
 				
 								
-				//if($billstatus==0){			
-				//}
+				if($billstatus==0){	
+					$excel->writeCol($rowesrunit[33]);	
+				}
 				
 				if($billstatus==1){				
 				$excel->writeCol($rowesrunit[11]);				
@@ -358,6 +363,7 @@
 				$excel->writeCol($rowesrunit[20]);					
 				$excel->writeCol($rowesrunit[12]);
 				$excel->writeCol($rowesrunit[13]);
+				$excel->writeCol($rowesrunit[33]);
 				
 				}
 				

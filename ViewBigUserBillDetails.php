@@ -221,7 +221,19 @@ $status			=	isset( $_GET['status'])?$_GET['status']:$status;
 						
 						?></td>
       </tr>
+
+
+      <?php if($progressdata['Bill_Status']==0)	{  ?>
+
+        <tr>
+        <td style="font-size:14px" height="20"><strong>Activated Date</strong></td>
+        <td><strong>:</strong></td>
+         <td style="font-size:14px"><?php echo $progressdata['act_date']; ?></td>
+      </tr>
+
+      <?php } ?>
       
+
       <?php if($progressdata['Bill_Status']==1)	{  ?>
       
       
