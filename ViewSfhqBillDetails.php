@@ -250,7 +250,7 @@ $progressdata = Common :: GetSFHQBillDetailsToView($billId,$user_type_id);
       <?php if($progressdata['Bill_Status']==0)	{  ?>
 
         <tr>
-          <td style="font-size:14px" height="20"><strong>Activated Date</strong></td>
+          <td style="font-size:14px" height="20"><strong>Return In Date</strong></td>
           <td><strong>:</strong></td>
           <td style="font-size:14px"><?php echo $progressdata['act_date']; ?></td>
         </tr>

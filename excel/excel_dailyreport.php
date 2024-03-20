@@ -165,7 +165,7 @@
 					,"<strong>Vehicle No</strong>"	
                     ,"<strong>Vehicle Running Place</strong>"	
 
-                    ,"<strong>Activated Date</strong>"	
+                    ,"<strong>Return In Date</strong>"	
 						
 						,"");
 		}
@@ -271,7 +271,7 @@
 					 ,"<strong>Return Date</strong>"	
 					 ,"<strong>Return Reason</strong>"
 
-					 ,"<strong>Activated Date</strong>"	
+					 ,"<strong>Return In Date</strong>"	
 					
 					 ,"");
 		}
